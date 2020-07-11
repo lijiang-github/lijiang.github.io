@@ -1,0 +1,30 @@
+.meizu-proinfo .advertise{
+	width: 100%;
+	background: #F4F4F4;
+	padding-top: 27px;
+	padding-bottom: 60px;
+}
+.meizu-proinfo .advertise>.container>.title{
+	height: 74px;
+	line-height: 74px;
+	font-size: 24px;
+}
+
+.meizu-proinfo .posfix{
+	height: 97px;
+	width: 44px;
+	position:fixed;
+	bottom: 54px;
+	right: 264px;
+}
+.meizu-proinfo .posfix>a{
+	height: 44px;
+	width: 44px;
+}
+.meizu-proinfo .posfix>a.email{
+	margin-bottom: 9px;
+	background: url(../images/email.png) no-repeat center center;
+}
+.meizu-proinfo .posfix>a.back{
+	background: url(../images/back.png) no-repeat center center;
+}

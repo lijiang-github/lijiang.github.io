@@ -1,0 +1,26 @@
+.meizu-info-top{
+	width: 100%;
+	height: 70px;
+	background: #F6F8FB;
+}
+.meizu-info-top>.container>span{
+	height: 70px;
+	line-height: 70px;
+	font-size: 26px;
+}
+.meizu-info-top>.container>.topRbox{
+	height: 70px;
+	line-height: 70px;
+}
+.meizu-info-top>.container>.topRbox>a{
+	display: inline;
+	padding: 0 20px;
+	border-left: 1px solid #DEDEDE;
+}
+.meizu-info-top>.container>.topRbox>a:hover{
+	color: #00C3F5;
+}
+
+.meizu-info-top>.container>.topRbox>a.first{
+	border: 0;
+}

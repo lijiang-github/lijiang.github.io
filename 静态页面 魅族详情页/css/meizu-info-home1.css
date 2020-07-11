@@ -1,0 +1,366 @@
+.meizu-proinfo .home1{
+	margin-top: 20px;
+}
+.meizu-proinfo .home1>.Limg-box{
+	width: 556px;
+}
+.meizu-proinfo .home1>.Limg-box>.bigimg{
+	width: 556px;
+	height: 556px;
+}
+.meizu-proinfo .home1>.Limg-box>.bigimg>img{
+	width: 100%;
+	height: 100%;
+}
+.meizu-proinfo .home1>.Limg-box>.smallimg{
+	width: 100%;
+	height: 80px;
+}
+.meizu-proinfo .home1>.Limg-box>.smallimg>a{
+	height: 80px;
+	width: 80px;
+	margin-left: 48px;
+}
+.meizu-proinfo .home1>.Limg-box>.smallimg>a:hover{
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.18);
+}
+
+.meizu-proinfo .home1>.Limg-box>.smallimg>a>img{
+	height: 100%;
+	width: 100%;
+}
+
+.meizu-proinfo .home1>.Limg-box>.icon-box{
+	height: 44px;
+	margin-top: 33px;
+	margin-left: 20px;
+}
+.meizu-proinfo .home1>.Limg-box>.icon-box>a{
+	height: 44px;
+	width: 40px;
+	margin-left: 28px;
+}
+.meizu-proinfo .home1>.Limg-box>.icon-box>a>img{
+	height: 20px;
+	margin: 0 10px;
+}
+.meizu-proinfo .home1>.Limg-box>.icon-box>a>span{
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	font-size: 12px;
+	color: #BFBFBF;
+}
+
+.meizu-proinfo .home1>.Rinfo-box{
+	width: 640px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.title{
+	height: 34px;
+	line-height: 34px;
+	margin-top: 32px;
+	font-size: 28px;
+	color: #262626;
+	font-weight: bold;
+}
+.meizu-proinfo .home1>.Rinfo-box>.red-text1{
+	display: inline-block;
+	height: 15px;
+	line-height: 15px;
+	font-size: 14px;
+	color: #E22841;
+	margin-top: 6px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.red-text2{
+	display: inline-block;
+	height: 15px;
+	line-height: 15px;
+	font-size: 14px;
+	color: #E22841;
+	/* padding: 0 5px; */
+	border-right: 1px solid #E22841;
+	margin-top: 6px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.last{
+	border: 0;
+}
+
+.meizu-proinfo .home1>.Rinfo-box>.price-box{
+	width: 640px;
+	height: 98px;
+	margin-top: 14px;
+	background: #F4F6FA;
+}
+.meizu-proinfo .home1>.Rinfo-box>.price-box>.price{
+	height: 34px;
+	line-height: 34px;
+	padding-top: 17px;
+	padding-left: 10px;
+	color: #E02B41;
+}
+.meizu-proinfo .home1>.Rinfo-box>.price-box>.price>.span1{
+	font-size: 24px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.price-box>.price>.span2{
+	font-size: 36px;
+}
+
+.meizu-proinfo .home1>.Rinfo-box>.price-box>.text-box{
+	height: 22px;
+	line-height: 22px;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-top: 13px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.price-box>.text-box>.span1{
+	display: inline-block;
+	width: 72px;
+	height: 22px;
+	background: #F2EAEF;
+	text-align: center;
+	color: #E02B41;
+}
+.meizu-proinfo .home1>.Rinfo-box>.price-box>.text-box>.span2{
+	display: inline-block;
+	padding-left: 12px;
+	color: #595959;
+}
+.meizu-proinfo .home1>.Rinfo-box>.price-box>.text-box>a{
+	padding-left: 10px;
+	color: #27B3FF;
+}
+
+/* add-box*/
+.meizu-proinfo .home1>.Rinfo-box>.addbox{
+	height: 116px;
+	width: 100%;
+	border-bottom: 1px dashed #DEDEDE;
+}
+.meizu-proinfo .home1>.Rinfo-box>.addbox>.text1{
+	height: 24px;
+	margin-left: 10px;
+	margin-top: 11px;
+	line-height: 24px;
+	color: #8C8C8C;
+	font-size: 12px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.addbox>.text1>span{
+	display: inline-block;
+	height: 24px;
+	padding-left: 24px;
+	padding-right: 20px;
+	background: url(../images/勾.png) no-repeat 0 1px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.addbox>.text1>.span1{
+	width: 64px;
+	padding: 0px;
+	background: none;
+}
+.meizu-proinfo .home1>.Rinfo-box>.addbox>.text2{
+	height: 24px;
+	margin-top: 9px;
+	margin-left: 10px;
+	font-size: 12px;
+	line-height: 24px;
+	position: relative;
+}
+.meizu-proinfo .home1>.Rinfo-box>.addbox>.text2>.span1{
+	display: inline-block;
+	height: 24px;
+	width: 64px;
+	color: #8C8C8C;
+}
+.meizu-proinfo .home1>.Rinfo-box>.addbox>.text2>.span2{
+	color: #262626;
+	font-size: 14px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.addbox>.text2>.span2>.but{
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-top:6px solid #262626;
+	position: absolute;
+	top: 9px;
+	left: 165px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.addbox>.text3{
+	height: 24px;
+	margin-top: 2px;
+	margin-left: 74px;
+	line-height: 24px;
+	font-size: 12px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.addbox>.text3>.span1{
+	display: inline-block;
+	height: 24px;
+	color: #8C8C8C;
+}
+.meizu-proinfo .home1>.Rinfo-box>.addbox>.text3>.span2{
+	height: 24px;
+	padding-left: 30px;
+	color: #27B3FF;
+	background: url(../images/商城客服icon.png) no-repeat 9px center;
+}
+
+/* select-box */
+/* box1 */
+.meizu-proinfo .home1>.Rinfo-box>.select{
+	width: 100%;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box1{
+	width: 100%;
+	height: 114px;
+	margin-top: 10px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box1>span{
+	width: 64px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 12px;
+	margin-left: 10px;
+	margin-top: 10px;
+	color: #8C8C8C;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box1>.table{
+	height: 104px;
+	margin-top: 10px;
+	width: 565px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box1>.table>.td{
+	width: 174px;
+	border: 1px solid #BFBFBF;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	color: #595959;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box1>.table>.td:hover{
+	border-color: #000000;
+	color: #000;
+}
+
+
+/* box2 */
+.meizu-proinfo .home1>.Rinfo-box>.select>.box2{
+	width: 100%;
+	height: 62px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box2>span{
+	width: 64px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 12px;
+	margin-left: 10px;
+	margin-top: 10px;
+	color: #8C8C8C;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box2>.table{
+	height: 52px;
+	margin-top: 10px;
+	width: 565px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box2>.table>.td{
+	width: 174px;
+	border: 1px solid #BFBFBF;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	color: #595959;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box2>.table>.td:hover{
+	border-color: #000000;
+	color: #000;
+}
+
+/* box3 */
+.meizu-proinfo .home1>.Rinfo-box>.select>.box3{
+	width: 100%;
+	height: 40px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box3>span{
+	width: 64px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	margin-left: 10px;
+	margin-top: 10px;
+	color: #8C8C8C;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box3>.table{
+	height: 50px;
+	margin-top: 10px;
+	width: 565px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box3>.table>.td1{
+	width: 29px;
+	height: 38px;
+	border: 1px solid #BFBFBF;
+	margin-bottom: 10px;
+	text-align: center;
+	line-height: 38px;
+	font-size: 14px;
+	color: #E0E0E0;
+	background: #F7F7F7;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box3>.table>.td2{
+	width: 59px;
+	height: 38px;
+	border-top: 1px solid #BFBFBF;
+	border-bottom: 1px solid #BFBFBF;
+	margin-bottom: 10px;
+	text-align: center;
+	line-height: 38px;
+	font-size: 14px;
+	color: #595959;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box3>.table>.td3{
+	width: 29px;
+	height: 38px;
+	border: 1px solid #BFBFBF;
+	margin-bottom: 10px;
+	text-align: center;
+	line-height: 38px;
+	font-size: 14px;
+	color: #000;
+	background: #F7F7F7;
+}
+
+/* box4 */
+.meizu-proinfo .home1>.Rinfo-box>.select>.box4{
+	height: 56px;
+	margin-top: 37px;
+	margin-bottom: 60px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box4>a{
+	height: 54px;
+	width: 208px;
+	border: 1px solid #27B3FF;
+	line-height: 54px;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 3px;
+	margin-right: 22px;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box4>a.but1{
+	background: #27B3FF;
+	color: white;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box4>a.but1:hover{
+	background: #23A0E5;
+	border-color: #23A0E5;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box4>a.but2{
+	background: white;
+	color: #27B3FF;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box4>a.but2:hover{
+background: #EEF8FD;
+}
+.meizu-proinfo .home1>.Rinfo-box>.select>.box4{
+
+
+
