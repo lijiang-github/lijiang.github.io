@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视差</title>
+    <link rel="stylesheet" href="parallax.css">
+</head>
+<body>
+    <!-- 视差效果 模块 -->
+    <section class="parallax-content">
+        <div class="view-circle">
+            <div class="img-box"><img src="./images/pratice01/pc1.png" alt=""></div>
+            <div class="img-box"><img src="./images/pratice01/pc2.png" alt=""></div>
+            <div class="img-box"><img src="./images/pratice01/pc3.png" alt=""></div>
+        </div>
+        <div class="view-circle">
+            <div class="img-box"><img src="./images/pratice01/pc4.png" alt=""></div>
+            <div class="img-box"><img src="./images/pratice01/pc6.png" alt=""></div>
+            <div class="img-box"><img src="./images/pratice01/pc5.png" alt=""></div>
+        </div>
+        <div class="view-circle">
+            <div class="img-box"><img src="./images/pratice01/pc7.png" alt=""></div>
+            <div class="img-box"><img src="./images/pratice01/pc9.png" alt=""></div>
+            <div class="img-box"><img src="./images/pratice01/pc8.png" alt=""></div>
+        </div>
+    </section>
+    <script>
+        // 初始化body的高度 使它与窗口等高
+        document.querySelector('body').style.minHeight = window.innerHeight+'px';
+        // 响应式设置 
+        // 通过监听窗口的大小变化改变body的高度
+        window.onresize = function(){
+            document.querySelector('body').style.minHeight = window.innerHeight+'px';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+body{
+    padding: 0;
+    margin: 0;
+    // 居中
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parallax-content{
+    display: flex;
+    justify-content: center;
+    .view-circle{
+        cursor: pointer;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 50px;
+        overflow: hidden;
+        position: relative;
+        transition: transform .2s linear;
+        .img-box{
+            height: 200px;
+            width: auto;
+            position: absolute;
+            left: 0;
+            top: 0;
+            img{
+                height: 200px;
+                width: auto;
+            }
+            &:nth-child(2){
+                margin-left: -600px;
+                z-index: 1;
+            }
+        }
+        &:hover{
+            transform: scale(1.1);
+            .img-box:nth-child(1){
+                animation: slower 3s linear 1 forwards;
+            }            
+            .img-box:nth-child(2){
+                animation: norm 3s linear 1 forwards;
+            }            
+            .img-box:nth-child(3){
+                animation: faster 3s linear 1 forwards;
+            }            
+        }
+        &:nth-child(3){
+            .img-box:nth-child(2){
+                margin-left: -400px;
+                z-index: 1;
+            }
+            .img-box:nth-child(3){
+                margin-left: -300px;
+            }
+        }
+        &:nth-child(3):hover{
+            .img-box:nth-child(3){
+                animation: faster 3s linear 1 forwards;
+            }
+        }
+    }
+}
+// 动画效果
+@keyframes faster {
+    to{
+        margin-left: -400px;
+    }
+}
+@keyframes slower {
+    to{
+        margin-left: -20px;
+    }
+}
+@keyframes norm {
+    to{
+        margin-left: 0;
+    }
+}

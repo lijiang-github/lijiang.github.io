@@ -1,0 +1,128 @@
+main .v-tit h2 {
+  font-weight: bolder;
+}
+main .v-content {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+}
+main .v-content .v-btn {
+  perspective: 100px;
+  margin: 8px;
+  position: relative;
+}
+main .v-content .v-btn > div {
+  padding: 15px;
+  background-color: #ddd;
+  color: #666;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+@keyframes pulse {
+  25% {
+    transform: translateZ(20px);
+  }
+  75% {
+    transform: translateZ(-20px);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+@keyframes pulseGrow {
+  25% {
+    transform: translateZ(20px);
+  }
+  50% {
+    transform: translateZ(0);
+  }
+  75% {
+    transform: translateZ(20px);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+@keyframes pulseShrink {
+  25% {
+    transform: translateZ(-20px);
+  }
+  50% {
+    transform: translateZ(0px);
+  }
+  75% {
+    transform: translateZ(-20px);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+@keyframes push {
+  50% {
+    transform: translateZ(-20px);
+  }
+}
+@keyframes pop {
+  50% {
+    transform: translateZ(20px);
+  }
+}
+@keyframes bounceIn {
+  33% {
+    transform: translateZ(10px);
+  }
+  50% {
+    transform: translateZ(5px);
+  }
+  100% {
+    transform: translateZ(20px);
+  }
+}
+@keyframes bounceOut {
+  33% {
+    transform: translateZ(-10px);
+  }
+  50% {
+    transform: translateZ(-5px);
+  }
+  100% {
+    transform: translateZ(-20px);
+  }
+}
+.twoD-transition .btn-A-1 {
+  transform: translate3d();
+}
+.twoD-transition .btn-A-1:hover {
+  transform: translateZ(20px);
+}
+.twoD-transition .btn-A-2:hover {
+  transform: translateZ(-20px);
+}
+.twoD-transition .btn-A-3:hover {
+  animation: pulse 1s linear infinite;
+  -webkit-animation: pulse 1s linear infinite;
+}
+.twoD-transition .btn-A-4:hover {
+  animation: pulseGrow 1s linear infinite;
+  -webkit-animation: pulseGrow 1s linear infinite;
+}
+.twoD-transition .btn-A-5:hover {
+  animation: pulseShrink 1s linear infinite;
+  -webkit-animation: pulseShrink 1s linear infinite;
+}
+.twoD-transition .btn-A-6:hover {
+  animation: push 0.4s linear 1;
+  -webkit-animation: push 0.4s linear 1;
+}
+.twoD-transition .btn-A-7:hover {
+  animation: pop 0.4s linear 1;
+  -webkit-animation: pop 0.4s linear 1;
+}
+.twoD-transition .btn-A-8:hover {
+  animation: bounceIn 0.6s linear forwards;
+  -webkit-animation: bounceIn 0.6s linear forwards;
+}
+.twoD-transition .btn-A-9:hover {
+  animation: bounceOut 0.6s linear forwards;
+  -webkit-animation: bounceOut 0.6s linear forwards;
+}

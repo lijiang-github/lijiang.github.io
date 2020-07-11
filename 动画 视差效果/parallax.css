@@ -1,0 +1,73 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parallax-content {
+  display: flex;
+  justify-content: center;
+}
+.parallax-content .view-circle {
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 50px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s linear;
+}
+.parallax-content .view-circle .img-box {
+  height: 200px;
+  width: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.parallax-content .view-circle .img-box img {
+  height: 200px;
+  width: auto;
+}
+.parallax-content .view-circle .img-box:nth-child(2) {
+  margin-left: -600px;
+  z-index: 1;
+}
+.parallax-content .view-circle:hover {
+  transform: scale(1.1);
+}
+.parallax-content .view-circle:hover .img-box:nth-child(1) {
+  animation: slower 3s linear 1 forwards;
+}
+.parallax-content .view-circle:hover .img-box:nth-child(2) {
+  animation: norm 3s linear 1 forwards;
+}
+.parallax-content .view-circle:hover .img-box:nth-child(3) {
+  animation: faster 3s linear 1 forwards;
+}
+.parallax-content .view-circle:nth-child(3) .img-box:nth-child(2) {
+  margin-left: -400px;
+  z-index: 1;
+}
+.parallax-content .view-circle:nth-child(3) .img-box:nth-child(3) {
+  margin-left: -300px;
+}
+.parallax-content .view-circle:nth-child(3):hover .img-box:nth-child(3) {
+  animation: faster 3s linear 1 forwards;
+}
+@keyframes faster {
+  to {
+    margin-left: -400px;
+  }
+}
+@keyframes slower {
+  to {
+    margin-left: -20px;
+  }
+}
+@keyframes norm {
+  to {
+    margin-left: 0;
+  }
+}

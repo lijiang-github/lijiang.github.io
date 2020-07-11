@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑动视差效果</title>
+    <link rel="stylesheet" href="scroll.parallax.css">
+</head>
+<body>
+    <main>
+        <!-- 滚动视差 模块 -->
+        <section class="scroll-parallax part-1">
+            <div class="bg"></div>
+            <article class="bg-3d">
+                <div class="part-1-bg bg-1"></div>
+                <div class="part-1-bg bg-2"></div>
+                <div class="part-1-bg bg-3"></div>
+                <div class="part-1-bg bg-4"></div>
+                <div class="part-1-bg bg-5"></div>
+                <div class="part-1-bg bg-6"></div>
+                <div class="part-1-bg bg-7"></div>
+            </article>
+            <article class="content">
+                <div class="wrap">
+                    <h1>NBNBNBNBNBNBNBNBN</h1>
+                    <p>sfas pihpf fhpi ihsha hihihudsdf uidsuhfb s uud uhvuiu gi ygo gyu gyuy u uy ygyf fufyy ufuy d sdg sdg sdfgf ds gffsd g fg dsf gr as fa gfad g r ge g hr  wr s f g s dfsa f dsaf e </p>
+                </div>
+            </article>
+        </section>
+        <section class="scroll-parallax part-2">
+            <article class="bg-3d">
+                <div class="part-2-bg bg-1"></div>
+                <div class="part-2-bg bg-2"></div>
+                <div class="part-2-bg bg-3"></div>
+            </article>
+        </section>
+    </main>
+    <script>
+        // 获取节点
+        let part_1_bgs = document.querySelectorAll('.part-1-bg');
+        let part_2_bgs = document.querySelectorAll('.part-2-bg');
+
+        // 获取窗口滑动监听事件
+        // 各个背景的移动根据不同的百分比乘以滑轮滑动的距离
+        // 造成视差效果
+        window.onscroll = function(event){
+            let top = window.scrollY;
+
+            part_1_bgs.forEach((element,index) => {
+                element.style['margin-top'] = '-' + top*(index+1)*10/100 + "px";
+            });
+            if(top>=1100&&top<=2100){
+                part_2_bgs.forEach((element,index) => {
+                    element.style['margin-top'] =  (top-1100) + "px";
+                });
+            }
+        }
+    </script>
+</body>
+</html>

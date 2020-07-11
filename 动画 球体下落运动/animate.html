@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .ball{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-image: radial-gradient(at 50px 50px,rgba(255,255,255,0),rgba(119, 230, 230,1));
+            position: absolute;
+            top: 0;
+            
+
+            animation: ball 1s ease-in alternate infinite;
+        }
+
+        @keyframes ball {
+            0%{
+                top: 0;
+            }
+            100%{
+                top: 150px;
+            }
+        }
+
+        .bg{
+            width: 200px;
+            height: 100px;
+            border-radius: 100px / 50px;
+            background-image: radial-gradient(rgba(191,191,191,.7),rgba(255,255,255,0));
+            position: absolute;
+            top:300px;
+            left: 0;
+
+            animation: shadow 1s ease-in alternate infinite;
+        }
+        @keyframes shadow {
+            0%{
+                transform: scale(1.8);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <div class="ball"></div>
+        <div class="bg"></div>
+    </div>
+</body>
+</html>

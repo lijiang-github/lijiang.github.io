@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮效果</title>
+    <style>
+        .btn{
+            display: inline-block;
+            font-size: 18px;
+            line-height: 1em;
+            padding: 15px;
+            margin: 8px;
+            background-color: #ddd;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn" name="Wobble Bottom">Wobble Bottom</div>
+    <style>
+        .btn[name="Wobble Bottom"]{
+            transform-origin: top;
+        }
+        .btn[name="Wobble Bottom"]:hover{
+            animation: Wobble-Bottom .7s ease-in-out 1 ;
+        }
+        @keyframes Wobble-Bottom {
+            0%{
+                transform: skewX(0);
+            }
+            10%{
+                transform: skewX(-20deg);
+            }
+            30%{
+                transform: skewX(16deg);
+            }
+            50%{
+                transform: skewX(-12deg);
+            }
+            70%{
+                transform: skewX(8deg);
+            }
+            90%{
+                transform: skewX(-4deg);
+            }   
+            100%{
+                transform: skewX(0);
+            }
+        }
+    </style>
+    <div class="btn" name="Buzz">Buzz</div>
+    <div class="btn" name="Buzz Out">Buzz Out</div>
+    <style>
+        .btn[name="Buzz"]{
+            transform-origin: 50% 400%;
+        }
+        .btn[name="Buzz"]:hover{
+            animation: Buzz .15s linear infinite;
+        } 
+        .btn[name="Buzz Out"]{
+            transform-origin: 50% 400%;
+        }
+        .btn[name="Buzz Out"]:hover{
+            animation: Buzz .15s linear 5;
+        } 
+        @keyframes Buzz {
+            0%{
+                transform:rotate(0deg);
+            }
+            25%{
+                transform:rotate(1deg);
+            }
+            75%{
+                transform:rotate(-1deg);
+            }
+            100%{
+                transform:rotate(0deg);
+            }
+        }
+    </style>
+</body>
+</html>

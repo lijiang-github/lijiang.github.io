@@ -1,0 +1,132 @@
+main{
+    .v-tit h2{
+        font-weight: bolder;
+    }
+    .v-content{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        .v-btn{
+            perspective: 100px;
+            margin: 8px;
+            position: relative;
+            >div{
+                padding: 15px;
+                background-color: #ddd;
+                color: #666;
+                cursor: pointer;
+                transition: transform .5s;
+            }
+        }
+    }
+}
+@keyframes pulse{
+    25%{
+        transform: translateZ(20px);
+    }
+    75%{
+        transform: translateZ(-20px);
+    }
+    100%{
+        transform: translateZ(0);
+    }
+}
+@keyframes pulseGrow{
+    25%{
+        transform: translateZ(20px);
+    }
+    50%{
+        transform: translateZ(0);
+    }
+    75%{
+        transform: translateZ(20px);
+    }
+    100%{
+        transform: translateZ(0);
+    }
+}
+@keyframes pulseShrink{
+    25%{
+        transform: translateZ(-20px);
+    }
+    50%{
+        transform: translateZ(0px);
+    }
+    75%{
+        transform: translateZ(-20px);
+    }
+    100%{
+        transform: translateZ(0);
+    }
+}
+@keyframes push{
+    50%{
+        transform: translateZ(-20px);
+    }
+}
+@keyframes pop{
+    50%{
+        transform: translateZ(20px);
+    }
+}
+@keyframes bounceIn{
+    33%{
+        transform: translateZ(10px);
+    }
+    50%{
+        transform: translateZ(5px);
+    }
+    100%{
+        transform: translateZ(20px);
+    }
+}
+@keyframes bounceOut{
+    33%{
+        transform: translateZ(-10px);
+    }
+    50%{
+        transform: translateZ(-5px);
+    }
+    100%{
+        transform: translateZ(-20px);
+    }
+}
+.twoD-transition{
+    .btn-A-1{
+        transform: translate3d(); // 打开GPU图像处理 使得效果呈现更加流畅
+    }
+    .btn-A-1:hover{
+        transform: translateZ(20px);
+    }
+    .btn-A-2:hover{
+        transform: translateZ(-20px);
+    }
+    .btn-A-3:hover{
+        animation: pulse 1s linear infinite;
+        -webkit-animation: pulse 1s linear infinite;
+    }
+    .btn-A-4:hover{
+        animation: pulseGrow 1s linear infinite;
+        -webkit-animation: pulseGrow 1s linear infinite;
+    }
+    .btn-A-5:hover{
+        animation: pulseShrink 1s linear infinite;
+        -webkit-animation: pulseShrink 1s linear infinite;
+    }
+    .btn-A-6:hover{
+        animation: push .4s linear 1;
+        -webkit-animation: push .4s linear 1;
+    }
+    .btn-A-7:hover{
+        animation: pop .4s linear 1;
+        -webkit-animation: pop .4s linear 1;
+    }
+    .btn-A-8:hover{
+        animation: bounceIn .6s linear forwards;
+        -webkit-animation: bounceIn .6s linear forwards;
+    }
+    .btn-A-9:hover{
+        animation: bounceOut .6s linear forwards;
+        -webkit-animation: bounceOut .6s linear forwards;
+    }
+}
