@@ -1,0 +1,86 @@
+.wrap{
+	width: 1200px;
+	height: 580px;
+	margin: 100px auto;
+	border: 1px solid red;
+	position: relative;
+}
+
+.slide{
+	width: 100%;
+	height: 100%;
+}
+ul{
+	list-style: none;
+}
+.slide li{
+	position: absolute;
+	width: 800px;
+	left: 200px;
+	top: 80px;
+	/* 第一张图片 */
+	/* position: absolute;
+	width: 400px;
+	top: 0;
+	left: 50px;
+	opacity: 0.3;
+	z-index: 1; */
+	/* 第二张图片 */
+	/* position: absolute;
+	width: 600px;
+	left: 0;
+	top: 50px;
+	opacity: 0.8;
+	z-index: 2; */
+	/* 第三张图片 */
+	/* position: absolute;
+	width: 800px;
+	left: 200px;
+	top: 80px;
+	opacity: 1;
+	z-index: 3; */
+	/* 第四张图片 */
+	/* position: absolute;
+	width: 600px;
+	left: 600px;
+	top: 50px;
+	opacity: 0.8;
+	z-index: 2; */
+	/* 第五张图片 */
+	/* position: absolute;
+	width: 400px;
+	top: 0;
+	left: 750px;
+	opacity: 0.3;
+	z-index: 1; */
+}
+.slide li img{
+	width: 100%;
+}
+
+.slide .arrow{
+	width: 1200px;
+	height: 70px;
+	position: absolute;
+	top: 50%;
+	margin-top: -35px;
+	opacity: 0;
+}
+.slide .arrow .btnL{
+	position: absolute;
+	left: 0;
+	width: 40px;
+	height: 70px;
+	background:black url(../../day01/images/icon-slides.png) no-repeat 0 0;
+	z-index: 100;
+	cursor: pointer;
+}
+.slide .arrow .btnR{
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	width: 40px;
+	height: 70px;
+	background: black url(../../day01/images/icon-slides.png) no-repeat -41px 0;
+	z-index: 100;
+}

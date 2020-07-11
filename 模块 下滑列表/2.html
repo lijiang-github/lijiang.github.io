@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: #2D2C41;
+			}
+
+			.box {
+				width: 358px;
+				border-radius: 5px;
+				overflow: hidden;
+				margin: 100px auto;
+			}
+
+			.table {
+				width: 100%;
+				height: 46px;
+				cursor: pointer;
+				border-bottom: 1px solid #CCCCCC;
+				color: #4D4D4D;
+				font-size: 14px;
+				line-height: 46px;
+				overflow: hidden;
+				text-indent: 43px;
+				background: white url(img/1.jpg) no-repeat 0 0;
+				position: relative;
+			}
+
+			.table b {
+				display: block;
+				width: 100%;
+				height: 46px;
+				background: url(img/2.jpg) no-repeat right bottom;
+			}
+
+			.last {
+				border: 0;
+			}
+
+			ul {
+				width: 100%;
+				background: #444359;
+				margin: 0;
+				padding: 0;
+			}
+
+			li {
+				height: 40px;
+				border-bottom: 1px solid #4B4A5E;
+				line-height: 40px;
+				text-indent: 43px;
+				font-size: 14px;
+				color: #D9D9D9;
+
+			}
+
+			li:hover {
+				background: #B03B4D;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="table">
+				<b>Diseño web</b>
+				<ul>
+					<li>Photoshop</li>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>Maquetacion web</li>
+				</ul>
+			</div>
+			<div class="table">
+				<b>Diseño web</b>
+				<ul>
+					<li>Photoshop</li>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>Maquetacion web</li>
+				</ul>
+			</div>
+			<div class="table">
+				<b>Diseño web</b>
+				<ul>
+					<li>Photoshop</li>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>Maquetacion web</li>
+				</ul>
+			</div>
+			<div class="table">
+				<b>Diseño web</b>
+				<ul>
+					<li>Photoshop</li>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>Maquetacion web</li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="base.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var tabs = $(".table");
+			var uls = $("ul");
+			tabs[tabs.length - 1].style.border = "0";
+
+			for (var i = 0; i < tabs.length; i++) {
+				uls[i].lastElementChild.style.border = "0";
+				tabs[i].index = i;
+				tabs[i].num = 0;
+				tabs[i].onclick = function() {
+					if (this.num == 1) {
+						animateChange3(this, {"height": 46});
+						this.num = 0;
+						this.style.background = "white url(img/1.jpg) no-repeat 0 0";
+						this.style.color = "#4D4D4D";
+						this.firstElementChild.style.background = "url(img/2.jpg) no-repeat right bottom";
+					} else {
+						for (var j = 0; j < tabs.length; j++) {
+							animateChange3(tabs[j], {"height": 46});
+							tabs[j].num = 0;
+							tabs[j].style.background = "white url(img/1.jpg) no-repeat 0 0";
+							tabs[j].style.color = "#4D4D4D";
+							tabs[j].firstElementChild.style.background = "url(img/2.jpg) no-repeat right bottom";
+						}
+						animateChange3(this, {"height": 209});
+						this.num = 1;
+						this.style.background = "white url(img/1-1.jpg) no-repeat 0 0";
+						this.style.color = "#B03B4D";
+						this.firstElementChild.style.background = "url(img/2-2.jpg) no-repeat right bottom";
+					}
+				}
+			}
+
+
+			function animateChange3(obj, json, index) {
+				clearInterval(obj.timer);
+
+				obj.timer = setInterval(function() {
+					for (attr in json) {
+						var flag = true;
+
+						for (attr in json) {
+							var current = parseInt(getStyle(obj, attr));
+							//计算步长
+							var step = (json[attr] - current) / 10;
+							step = step > 0 ? Math.ceil(step) : Math.floor(step);
+							obj.style[attr] = current + step + "px";
+							if (current != json[attr]) {
+								flag = false;
+							}
+						}
+						if (flag) {
+							clearInterval(obj.timer);
+						}
+					}
+
+				}, 10);
+			}
+		</script>
+	</body>
+</html>

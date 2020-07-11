@@ -1,0 +1,91 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.container {
+	width: 910px;
+	margin: 0 auto;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	color: #333333;
+	text-decoration: none;
+}
+
+input {
+	background: none;
+	outline: none;
+	padding: 0px;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0px;
+	line-height: 0px;
+	visibility: hidden;
+}
+
+.clearfix {
+	zoom: 1;
+	/* 为了兼容ie浏览器 */
+}
+
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+h1{
+	font-size: 22px;
+}
+h2{
+	font-size: 20px;
+}
+h3{
+	font-size: 18px;
+}
+h4{
+	font-size: 16px;
+}
+h5{
+	font-size: 14px;
+}
+h6{
+	font-size: 12px;
+}
+.mi-li-sty1:hover{
+	position: relative;        /* 需要借用的要注意......没想好 */
+	left: 0;
+	bottom: 2px;
+}
+.aSty1,.spSty1{
+	display: block;
+}
+.aSty2,.spSty2{
+	display: inline-block;
+}
+.bcolorhome2star{
+	width: 100%;
+	background-color: #F5F5F5;
+}
+
+.space-boxB:after{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 5px;
+	position:absolute;
+	bottom: -5px;
+	background: rgba(0,0,0,0.1);
+}

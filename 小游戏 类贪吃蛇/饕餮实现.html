@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.border {
+				width: 1400px;
+				height: 700px;
+				border: 5px solid #000000;
+				margin: 20px auto;
+				position: relative;
+			}
+
+			.zhujue {
+				background: #00FFFF;
+				z-index: 10;
+			}
+
+			.lurenjia {
+				width: 10px;
+				height: 10px;
+				background: #000000;
+				position: absolute;
+			}
+
+			
+			a {
+				background: #808080;
+				display: block;
+				width: 100%;
+				height: 100%;
+				display: none;
+				text-align: center;
+				line-height: 700px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="border">
+			<div class="zhujue" style="width: 10px;height: 10px;position: absolute;top: 100px;left: 100px;"></div>
+			<div class="lurenjia jia1" style="width: 10px;height: 10px;position: absolute;top: 200px;left: 100px;"></div>
+			<div class="lurenjia jia2" style="width: 10px;height: 10px;position: absolute;top: 200px;left: 200px;"></div>
+			<div class="lurenjia jia3" style="width: 10px;height: 10px;position: absolute;top: 200px;left: 300px;"></div>
+			<div class="lurenjia jia4" style="width: 10px;height: 10px;position: absolute;top: 200px;left: 400px;"></div> 
+			<div class="lurenjia jia5" style="width: 10px;height: 10px;position: absolute;top: 200px;left: 500px;"></div>
+			<div class="lurenjia jia6" style="width: 10px;height: 10px;position: absolute;top:600px;left: 900px;"></div>
+			<div class="lurenjia jia7" style="width: 10px;height: 10px;position: absolute;top:600px;left: 1000px;"></div>
+			<div class="lurenjia jia8" style="width: 10px;height: 10px;position: absolute;top:600px;left: 1100px;"></div>
+			<div class="lurenjia jia9" style="width: 10px;height: 10px;position: absolute;top:600px;left: 1200px;"></div>
+			<div class="lurenjia jia0" style="width: 10px;height: 10px;position: absolute;top:600px;left: 1300px;"></div>
+			<a href="">点击重新开始游戏</a>
+		</div>
+		<script type="text/javascript">
+			//获取zhujue class
+			var zhujue = document.getElementsByClassName("zhujue")[0];
+
+			//zhujue自己动 函数
+			var leftJL = 100;
+			var topJL = 100;
+			var con = 0; //控制移动方向的变量
+			var chi = 0; //控制吞噬效果的变量
+			// console.log(TF);
+			var clock = setInterval(zijidong, 10);
+
+			function zijidong() {
+				//上下左右移动
+				if (con == 0) {
+					leftJL += 1; //右移
+					zhujue.style.left = leftJL + "px";
+				} else if (con == 1) {
+					leftJL -= 1; //左移
+					zhujue.style.left = leftJL + "px";
+				} else if (con == 2) {
+					topJL -= 1; //上移
+					zhujue.style.top = topJL + "px";
+				} else if (con == 3) {
+					topJL += 1; //下移
+					zhujue.style.top = topJL + "px";
+				}
+				//碰到lurenjia 长大一圈,并且lurenjia消失,包括结束条件
+				kun();
+				
+			}
+
+			//键盘触发控制
+			window.onkeydown = function(event) {
+				if (event.keyCode == 38) {
+					con = 2; //上键
+				} else if (event.keyCode == 39) {
+					con = 0; //右键
+				} else if (event.keyCode == 40) {
+					con = 3; //下键
+				} else if (event.keyCode == 37) {
+					con = 1; //左键
+				}
+
+			}
+			
+			// //吞吃效果 函数
+			//获取lurenjia 类名
+			var lurenjia = document.getElementsByClassName("lurenjia");
+			var zjheight = 10;
+			var zjwidth = 10;
+			var chi = []; //控制吞噬效果的变量
+			var oveac = 0; //游戏结束开关
+			
+			for(var i = 0; i < lurenjia.length; i++){
+				chi[i] = 0;
+			}
+			
+			function kun(){
+				for(var i = 0; i < lurenjia.length; i++){
+					var zhujueW = Number(zhujue.style.width.split("px")[0]); 
+					var zhujueH = Number(zhujue.style.height.split("px")[0]);
+					var lurenW = Number(lurenjia[i].style.width.split("px")[0]); 
+					var lurenH = Number(lurenjia[i].style.height.split("px")[0]);
+					var lurenjiaL = Number(lurenjia[i].style.left.split("px")[0]);
+					var lurenjiaT = Number(lurenjia[i].style.top.split("px")[0]);
+					
+					var chiL = lurenjiaL - zhujueW + 1;
+					var chiR = lurenjiaL + lurenW - 1;
+					var chiT = lurenjiaT - zhujueH + 1;
+					var chiB = lurenjiaT + lurenH - 1;
+					
+					//碰到lurenjia 长大一圈,并且lurenjia消失
+					if (chi[i] == 0) {
+						if (leftJL <= chiR && leftJL >= chiL) {
+							if (topJL <= chiB && topJL >= chiT) {
+								chi[i] = 1;
+								zjwidth += 10;
+								zjheight += 10;
+								zhujue.style.height = zjheight + "px";
+								zhujue.style.width = zjwidth + "px";
+								lurenjia[i].style.display = "none";
+							}
+						}
+					}
+				} 	
+				// //结束条件
+				if (oveac == 0) {
+					if (topJL < 0 || topJL > 700-zhujueH || leftJL < 0 || leftJL > 1400-zhujueW) {
+						alert("game over");
+						var btn = document.getElementsByTagName("a")[0];
+						btn.style.display = "block";
+						oveac = 1;
+						clearInterval(clock);
+					}
+				}
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

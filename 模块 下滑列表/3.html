@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="basestyle.css" />
+		<style type="text/css">
+			.box {
+				width: 578px;
+				margin: 100px auto;
+
+			}
+
+			.scroll {
+				height: 180px;
+				overflow: hidden;
+			}
+			.scroll .line{
+				width: 1px;
+				height: 286px;
+				margin: 26px 38px 0 32px;
+				background: #550527;
+			}
+			.table{
+				width: 507px;
+				position: relative;
+				margin-bottom: 12px;
+				background: url(img/3.jpg) no-repeat right 0;
+			}
+			
+			.table b{
+				width: 15px;
+				height: 15px;
+				background: white;
+				border: 1px solid #550527;
+				border-radius: 50%;;
+				position: absolute;
+				top: 18px;
+				left: -47px;
+			}
+			
+			.table .hidbox{
+				height: 52px;
+				width: 507px;
+				overflow: hidden;
+				box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.18);
+				background: url(img/4.jpg) no-repeat 0 0;
+			}
+
+			.table .hidbox span {
+				display: block;
+				height: 52px;
+				width: 507px;
+				line-height: 52px;
+				font-size: 18px;
+				color: #550527;
+				text-indent: 26px;
+				font-weight: bolder;
+				/* background: url(img/3.jpg) no-repeat right 0; */
+				cursor: pointer;
+			}
+			.table .hidbox .text{
+				width: 452px;
+				line-height: 30px;
+				height: 151px;
+				font-size: 14px;
+				color: #305275;
+				padding: 0 26px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box clearfix">
+			<div class="scroll fl">
+				<div class="line"></div>
+			</div>
+			<div class="table fl">
+				<b></b>
+				<div class="hidbox">
+					<span>Section 1</span>
+					<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id
+						pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus
+						condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros.</div>
+				</div>
+			</div>
+			<div class="table fl">
+				<b></b>
+				<div class="hidbox">
+					<span>Section 2</span>
+					<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id
+						pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus
+						condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros.</div>
+				</div>
+			</div>
+			<div class="table fl">
+				<b></b>
+				<div class="hidbox">
+					<span>Section 3</span>
+					<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id
+						pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus
+						condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros.</div>
+				</div>
+			</div>
+			
+
+		</div>
+
+		<script src="base.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var hidboxs = $(".hidbox");
+			var tabs = $(".table");
+			var scroll = $(".scroll")[0];
+			for (var i = 0; i < hidboxs.length; i++) {
+				hidboxs[i].index = i;
+				hidboxs[i].num = 0
+				hidboxs[i].index = i;
+				hidboxs[i].onclick = function() {
+					if(this.num == 1){
+						animateChange3(this, {"height": 52});
+						animateChange3(scroll, {"height": 180});
+						this.num = 0;
+						tabs[this.index].style.background = "url(img/3.jpg) no-repeat right 0";
+					}else{
+						for (var j = 0; j < hidboxs.length; j++) {
+							animateChange3(hidboxs[j], {"height": 52});
+							animateChange3(scroll, {"height": 180});
+							tabs[j].style.background = "url(img/3.jpg) no-repeat right 0";
+							hidboxs[j].num = 0;
+						}
+						animateChange3(this, {"height": 217});
+						animateChange3(scroll, {"height": 345});
+						this.num = 1;
+						tabs[this.index].style.background = "url(img/3-3.jpg) no-repeat right 0";
+					}
+				}
+			}
+
+
+			function animateChange3(obj, json) {
+				clearInterval(obj.timer);
+
+				obj.timer = setInterval(function() {
+					// scroll.style.height = box.offsetHeight + "px";
+					for (attr in json) {
+						var flag = true;
+
+						for (attr in json) {
+							var current = parseInt(getStyle(obj, attr));
+							//计算步长
+							var step = (json[attr] - current) / 10;
+							step = step > 0 ? Math.ceil(step) : Math.floor(step);
+							obj.style[attr] = current + step + "px";
+							if (current != json[attr]) {
+								flag = false;
+							}
+						}
+						if (flag) {
+							clearInterval(obj.timer);
+						}
+					}
+
+				}, 10);
+			}
+		</script>
+	</body>
+</html>
