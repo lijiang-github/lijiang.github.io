@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变形</title>
+</head>
+<body>
+
+
+    <!-- 幽灵按钮模块 -->
+    <button><i></i><p>幽灵按钮</p></button>
+    <style>
+        button{
+            margin: 100px;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            background-color: lightblue;
+            border: none;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+        button i{
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            transform: scale(0);
+            opacity: 0;
+            transition: transform 1s, opacity 1s;
+        }
+        button:hover i{
+            transform: scale(41);
+            opacity: 1;
+        }
+        button:hover p{
+            color: #fff;
+        }
+        button p{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: color 1s;
+        }
+    </style>
+    <script>
+        var btn = document.querySelector('button');
+        var dot = btn.querySelector('i');
+
+        btn.onmouseover = function(event){
+            dot.style.top = event.offsetY  + 'px';
+            dot.style.left = event.offsetX + 'px';
+        }
+        btn.onmouseout = function(event){
+            dot.style.top = event.offsetY  + 'px';
+            dot.style.left = event.offsetX + 'px';
+        }
+    </script>
+</body>
+</html>
