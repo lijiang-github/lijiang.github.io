@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>完整拖拽上传</title>
+    <style>
+        #target{
+            padding: 20px;
+            height: auto;
+            border: 5px solid #999;
+            color: #c0c0c0;
+            font-size: 40px;
+            text-align: center;
+            min-height: 100px;
+        }
+        #target.con{
+            box-shadow: inset 0 0 90px #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>拖拽功能 Drag￥Drop </h1>
+        </header>
+        <div class="jumbotron">
+            <p>世界那么大我想去看看，不过最近比较危险</p>
+            <img src="../images/1.jpg" height="100px" alt="">
+        </div>
+        <h2>拖拽区域</h2>
+        <div id="target" class="">
+
+        </div>
+    </div>
+
+    <script>
+        // 拖拽区域
+        var target = document.querySelector("#target");
+        // 拖拽进去触发事件
+        target.addEventListener("dragenter",function(){
+            this.classList.add("con");
+        })
+        // 拖拽离开触发事件
+        target.addEventListener("dragleave",function(){
+            this.classList.remove("con");
+        })
+
+        // 拖拽完成触发事件 阻止冒泡
+        target.addEventListener("dragover",function(e){
+            e.preventDefault(); // 阻止默认事件
+            e.stopPropagation(); // 阻止冒泡事件
+        },false);
+        // 上面加了一个false 阻止获取或捕获阶段的冒泡事件
+        // 一般是默认false的，但是考虑到浏览器的兼容，打了上去
+
+
+        // 文字与图片名称拖拽效果
+        // （拖拽）落下触发事件 拖拽操作
+        target.addEventListener("drop",function(e){
+            console.log(e);
+            // 阻止拖拽落下的默认事件 浏览器默认打开文件
+            e.preventDefault();
+
+            var imgs = e.dataTransfer.files;
+            console.log(imgs);
+            if(imgs.length){
+                // 外部拖拽文件 
+                for(var i = 0 ; i < imgs.length ; i++){
+                    var fr = new FileReader();
+                    fr.readAsDataURL(imgs[i]);
+                    fr.onloadend = (function(i){
+                        return function(e){
+                            var text = '';
+                            text += "<p><img src='" +e.target.result + "' width='200' ></p>";
+                            target.innerHTML += text;
+                        }
+                    })(i)
+                }
+            }else{
+                // 内置方法获取文件路径e.dataTransfer.getData("text/uri-list")
+                var img_url = e.dataTransfer.getData("text/uri-list");
+                
+                if(img_url){
+                    // 图片拖拽
+                    var img = document.createElement("img");
+                    img.src = img_url;
+                    img.width = 200 ;
+                    this.appendChild(img);
+                    console.log(img)
+                }else{
+                    // 文字拖拽
+                    // 内置方法获取文本e.dataTransfer.getData("text/plain")
+                    target.innerHTML = e.dataTransfer.getData("text/plain");
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

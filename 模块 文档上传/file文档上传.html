@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>file文档上传</title>
+    <style>
+        li{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="file" multiple>
+    <ul>
+
+    </ul>
+    <script>
+        // querySelector() html5获取DOC方法
+        var file = document.querySelector("#file");
+        var ul = document.querySelector("ul");
+
+        file.onchange = function(){
+            var imgs = this.files;
+            for(var i = 0 ; i < imgs.length ; i++){
+                // 创建读取文件 内置方法
+                var fr = new FileReader();
+                //通过图片信息读取图片文件
+                fr.readAsDataURL(imgs[i]); 
+                
+                // 图片读取往后触发方法 闭包
+                fr.onloadend = (function(i){
+                    return function(e){
+                        var str = '';
+                        str += "<li>"
+                        str += "<h3>名称：" + imgs[i].name + "</h3>"
+                        str += "<p>大小：" + imgs[i].size + "</p>"
+                        str += "<p>时间：" + imgs[i].lastModifiedDate.toLocaleDateString() + "</p>"
+                        str += "<p>时间：" + imgs[i].lastModifiedDate.toLocaleTimeString() + "</p>"
+                        str += "<p>类型：" + imgs[i].type + "</p>"
+                        str += '<img src="' + e.target.result + '" width="200">'
+                        str += "</li>"
+                        ul.innerHTML += str;
+                    }
+                })(i);
+            }
+
+        }
+    </script>
+</body>
+</html>
