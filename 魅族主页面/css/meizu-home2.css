@@ -1,0 +1,39 @@
+.home2{
+	width: 100%;
+	border-bottom: 1px solid #EEEEEE;
+}
+.home2>div{
+	height: 277px;
+}
+.home2>div>a{
+	width: 310px;
+	height: 277px;
+	position: relative;
+}
+.home2>div>a:hover{
+	opacity: 0.7;
+}
+.home2>div>a>img{
+	display: block;
+	width: 118px;
+	margin: 55px auto 0 auto;
+}
+.home2>div>a>span.span1{
+	width: 100%;
+	font-size: 20px;
+	color: #333333;
+	position: absolute;
+	bottom: 71px;
+	text-align: center;
+}
+.home2>div>a>span.span2{
+	width: 100%;
+	font-size: 14px;
+	color: #999999;
+	position: absolute;
+	bottom: 50px;
+	text-align: center;
+}
+.home2>div>a>
+.home2>div>a>
+.home2>div>a>
