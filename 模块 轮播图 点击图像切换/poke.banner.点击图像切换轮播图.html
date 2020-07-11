@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击图像切换轮播图</title>
+</head>
+<body>
+    <!-- 点击图像切换轮播图 模块 -->
+    <section class="slide-click-img">
+        <ul class="slide">
+            <li><a href="javascript:void(0)"><img src="img/poke-1.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0)"><img src="img/poke-2.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0)"><img src="img/poke-3.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0)"><img src="img/poke-4.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0)"><img src="img/poke-5.jpg" alt=""></a></li>
+        </ul>
+        <ol class="radio-img-box">
+            <li class="active"><a href="javascript:void(0)"><img src="img/poke-1.jpg" alt=""></a></li>
+            <li ><a href="javascript:void(0)"><img src="img/poke-2.jpg" alt=""></a></li>
+            <li ><a href="javascript:void(0)"><img src="img/poke-3.jpg" alt=""></a></li>
+            <li ><a href="javascript:void(0)"><img src="img/poke-4.jpg" alt=""></a></li>
+            <li ><a href="javascript:void(0)"><img src="img/poke-5.jpg" alt=""></a></li>
+        </ol>
+    </section>
+
+    <style>
+        body,ul,ol{
+            margin: 0;
+            padding: 0;
+
+        }
+        ul,ol{
+            list-style: none;
+        }
+        .slide-click-img{
+            width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .slide-click-img ul.slide{
+            width: 5000px;
+            transition: margin-left .5s ease-in-out;
+        }
+        .slide-click-img ul.slide::after{
+            content: "";
+            display: block;
+            height: 0;
+            line-height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+        .slide-click-img ul.slide >li{
+            float: left;
+        }
+        .slide-click-img ul.slide >li img{
+            width: 1000px;
+        }
+        .slide-click-img ol.radio-img-box{
+            position: absolute;
+            bottom: 300px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        ol.radio-img-box li{
+            margin: 0 20px;
+            position: relative;
+        }
+        ol.radio-img-box a::after{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .4);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        ol.radio-img-box a{
+            display: block;
+            overflow: hidden;
+        }
+        ol.radio-img-box li.active a::after{
+            background-color: rgba(0, 0, 0, 0);
+        }
+        ol.radio-img-box img{
+            border: 4px solid #ddd;
+            width:150px;
+            float: left;
+        }
+        ol.radio-img-box li.active img{
+            border: 4px solid red;
+        }
+    </style>
+    <script>
+        let slide = document.querySelector(".slide");
+        let imgW = document.querySelector(".slide li").clientWidth;
+        let radio = document.querySelectorAll(".radio-img-box li");
+        radio.forEach((element,index) => {
+            element.onclick = function(){
+                this.className = "active";
+                let _index = index;
+                slide.style.marginLeft = '-' + imgW*_index + 'px';
+                radio.forEach((element,index)=>{
+                    if(index != _index){
+                        element.className = "";
+                    }
+                })
+            }
+        });
+
+    </script>
+</body>
+</html>
