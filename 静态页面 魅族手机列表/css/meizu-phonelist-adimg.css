@@ -1,0 +1,6 @@
+.meizu-phone-list>.meizu-list-adimg{
+	width: 100%;
+	height: 450px;
+	background: url(../images/meizu-list-img1.jpg) no-repeat center center;
+	background-size: auto 450px;
+}

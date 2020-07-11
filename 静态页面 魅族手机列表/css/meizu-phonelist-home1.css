@@ -1,0 +1,245 @@
+.home1{
+	
+}
+.home1>.title{
+	height: 78px;
+	width: 100%;
+	padding-top: 65px;
+}
+.home1>.title>.fl{
+	display: inline-block;
+	font-size: 28px;
+	line-height: 78px;
+	font-weight: 200;
+	color: #515151;
+}
+.home1>.title>.Rurl{
+	display: inline-block;
+	margin-top:35px;
+	height: 18px;
+	position: relative;
+}
+.home1>.title>.Rurl>a{
+	font-size: 16px;
+	padding-left: 30px;
+	color: #343434;
+	line-height: 18px;
+}
+.home1>.title>.Rurl>a:hover{
+	color: #00C3F5;
+}
+.home1>.title>.Rurl>a.last{
+	padding-right: 13px;
+}
+.home1>.title>.Rurl>.topradiu{
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-bottom-color: #343434;
+	position: absolute;
+	bottom: 8px;
+	right: -2px;
+}
+.home1>.title>.Rurl>.botradiu{
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-top-color: #343434;
+	position: absolute;
+	bottom: -4px;
+	right: -2px;
+}
+.home1>.title>.Rurl>.topradiu:hover{
+	border-bottom-color: #00C3F5;
+}
+.home1>.title>.Rurl>.botradiu:hover{
+	border-top-color: #00C3F5;
+}
+
+/* phone-list */
+.home1>.phone-list{
+	width: 1254px;
+}
+.home1>.phone-list>li{
+	height: 556px;
+	width: 403px;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	background: white;
+	position: relative;
+}
+.home1>.phone-list>li>a{
+	width: 100%;
+	height: 100%;
+}
+.home1>.phone-list>li>a>.yuan{
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	position: absolute;
+	top: 18px;
+	left: 18px;
+	background-color: #FF5387;
+	border-radius: 50%;
+	z-index: 10;
+}
+.home1>.phone-list>li>a>img{
+	width: 306px;
+	position: absolute;
+	top: 51px;
+	left: 48px;
+}
+.home1>.phone-list>li>a>.span1{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-size: 22px;
+	color: #333333;
+	position: absolute;
+	bottom: 116px;
+	font-weight: 200;
+}
+.home1>.phone-list>li>a>.span2{
+	width: 100%;
+	height: 14px;
+	line-height: 14px;
+	font-size: 16px;
+	text-align: center;
+	color: #666666;
+	position: absolute;
+	bottom: 86px;
+}
+.home1>.phone-list>li>a>.span3{
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	color: #CC0000;
+	position: absolute;
+	bottom: 37px;
+}
+.home1>.phone-list>li>a>.span3>.span3-1{
+	font-size: 14px;
+}
+.home1>.phone-list>li>a>.span3>.span3-2{
+	font-size: 26px;
+}
+
+
+.home1>.phone-list>li>.hidradios{
+	height: 26px;
+	width: 100%;
+	position: absolute;
+	bottom: 160px;
+	text-align: center;
+	display: none;
+}
+.home1>.phone-list>li:hover>.hidradios{
+	display: block;
+}
+.home1>.phone-list>li>.hidradios>.radio{
+	width: 18px;
+	height: 18px;
+	margin: 8px 13px;
+	border-radius: 50%;
+	background: #0E5A9C;
+	position: relative;
+}
+.home1>.phone-list>li>.hidradios>.radio>span{
+	width: 24px;
+	height: 24px;
+	border: 1px solid #B2B2B2;
+	border-radius: 50%;
+	position: absolute;
+	top: -4px;
+	left: -4px;
+	display: none;
+}
+.home1>.phone-list>li>.hidradios>.radio:hover>span{
+	display: block;
+}
+.home1>.advertise{
+	height: 248px;
+	width: 100%;
+}
+.home1>.advertise>img{
+	height: 248px;
+	width: 100%;
+	float: left;
+}
+
+/* recommend */
+.home1>.recommend{
+	width: 100%;
+	height: 431px;
+}
+.home1>.recommend>li{
+	width: 310px;
+	height: 100%;
+	position: relative;
+	background: white;
+}
+.home1>.recommend>li>a{
+	height: 100%;
+	width: 100%;
+}
+.home1>.recommend>li>a>img{
+	width: 250px;
+	position: absolute;
+	left: 30px;
+	top: 25px;
+}
+.home1>.recommend>li:hover>a>img{
+	width: 260px;
+	position: absolute;
+	left: 25px;
+	top: 20px;
+}
+.home1>.recommend>li>a>.span1{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-size: 22px;
+	color: #333333;
+	position: absolute;
+	bottom: 97px;
+	font-weight: 200;
+}
+.home1>.recommend>li>a>.span2{
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	color: #CC0000;
+	position: absolute;
+	bottom: 53px;
+}
+.home1>.recommend>li>a>.span2>.span2-1{
+	font-size: 14px;
+}
+.home1>.recommend>li>a>.span2>.span2-2{
+	font-size: 26px;
+}
+
+/* last-radio-box */
+.home1>.last-radio-box{
+	height: 80px;
+	width: 100%;
+	text-align: center;
+}
+.home1>.last-radio-box>a{
+	width: 10px;
+	height: 10px;
+	border: 1px solid #A1A1A1;
+	background: white;
+	border-radius: 50%;
+	margin: 34px 6px;
+}
+.home1>.last-radio-box>a:hover{
+	background: #A1A1A1;
+}
