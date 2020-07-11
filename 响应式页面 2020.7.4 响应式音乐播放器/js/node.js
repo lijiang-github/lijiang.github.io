@@ -1,0 +1,18 @@
+// 引入required模块
+const http = require("http");
+// 创建服务器 
+// 使用http.createServer()方法
+http.createServer(function(requset,response){
+    // 发送HTTP头部
+    // HTTP 状态值: 200 : ok
+    // 内容类型： text/plain
+    response.writeHead(200,{'Content-Type':'text/plain'});
+
+    // 发送响应数据 “Hello World”
+    response.end('Hello World\n');
+}).listen(8888);
+
+console.log('Server running at http://127.0.0.1:8888/');
+
+// 在D:\> 下cmd  
+// 然后 node 路径/文件名

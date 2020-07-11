@@ -1,0 +1,47 @@
+.new-song .list {
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+.new-song .list .wrapbox {
+  border: 1px solid #DDD;
+  background-color: #fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.new-song .list .wrapbox h2 {
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  border-bottom: 2px solid hsla(4, 100%, 50%, 0.94);
+}
+.new-song .list .wrapbox .list-language {
+  padding: 10px;
+}
+.new-song .list .wrapbox .list-language h3,
+.new-song .list .wrapbox .list-language .breadcrumb {
+  display: inline;
+  margin: 0;
+  font-size: 14px;
+  padding: 0 5px;
+  background-color: inherit;
+}
+.new-song .list .wrapbox .list-language .tag-icon {
+  position: relative;
+  top: 3px;
+  padding-right: 10px;
+}
+.new-song .list .wrapbox .list-language .active {
+  color: hsla(4, 100%, 50%, 0.94);
+}
+.new-song .list .wrapbox .table {
+  margin-top: 30px;
+}
+.new-song .list .wrapbox .table a,
+.new-song .list .wrapbox .table a:hover {
+  color: #333;
+}
+.new-song .list .wrapbox .table a:focus {
+  color: hsla(4, 100%, 50%, 0.94);
+}
+.new-song .list .wrapbox nav {
+  text-align: center;
+}
