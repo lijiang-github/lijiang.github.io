@@ -1,0 +1,39 @@
+
+/* 这里是home1 family-slide */
+.home1{
+	width: 100%;
+	min-width: 1240px;	
+	position: relative;
+}
+.family-slide{
+	height: 670px;
+	background: url(../images/family-slide-img1.jpg) no-repeat center bottom;
+	background-size: auto 670px;
+}
+
+.family-slide>.but-box{
+	height: 8px;
+	width: 100%;
+	position: absolute;
+	bottom: 31px;
+	text-align: center;
+}
+.family-slide>.but-box>.radio{
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin: 0 8px;
+	background: white;
+	border-radius: 50%;
+}
+.family-slide>.but-box>.radio:hover{
+	width: 6px;
+	height: 6px;
+	background: none;
+	border: 1px solid white;
+}
+
+.family-slide
+.family-slide
+.family-slide
+.family-slide
