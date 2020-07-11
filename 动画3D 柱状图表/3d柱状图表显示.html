@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="3d.chart.css">
+</head>
+<body>
+    <!-- 3d柱状表 模块 -->
+    <section class="v-chart-3d" onclick="">
+        <div class="v-card">
+            <div class="v-gray">
+                <h1>STEPS</h1>
+                <p>THIS WEEK</p>
+                <ul class="chart">
+                    <li>
+                        <div class="plane plane-a">12,000</div>
+                        <div class="plane plane-b"></div>
+                        <div class="plane plane-c">C</div>
+                    </li>
+                    <li>
+                        <div class="plane plane-a">6,000</div>
+                        <div class="plane plane-b"></div>
+                        <div class="plane plane-c">O</div>
+                    </li>
+                    <li>
+                        <div class="plane plane-a">18,000</div>
+                        <div class="plane plane-b"></div>
+                        <div class="plane plane-c">L</div>
+                    </li>
+                    <li>
+                        <div class="plane plane-a">12,000</div>
+                        <div class="plane plane-b"></div>
+                        <div class="plane plane-c">O</div>
+                    </li>
+                    <li>
+                        <div class="plane plane-a">6,000</div>
+                        <div class="plane plane-b"></div>
+                        <div class="plane plane-c">R</div>
+                    </li>
+                </ul>
+                <span>93，000</span>
+            </div>
+        </div>
+        <div class="v-card-behind"></div>
+    </section>
+
+    <script>
+        document.querySelector('body').style.height = window.innerHeight + 'px';
+        window.onresize = function(){
+            document.querySelector('body').style.height = window.innerHeight + 'px';
+        }
+    </script>
+</body>
+</html>

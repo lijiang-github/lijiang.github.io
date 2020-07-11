@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正反面翻转效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #5E96F2;
+        }
+        ul{
+            list-style: none;
+        }
+
+        ul{
+            width: 300px;
+            margin: 100px auto;
+
+            position: relative;
+
+            perspective: 400px;
+            transform-style: preserve-3d;
+            transition: all 1s linear;
+        }
+        ul li{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-image: url(./img/bg.png);
+            background-repeat: no-repeat;
+
+            position: absolute;
+            top: 0;
+        }
+        .outside{
+            background-position: left center;
+            transform: translateZ(1px);
+        }
+        .inside{
+            background-position: right center;
+            transform: rotateY(180deg);
+        }
+        ul:hover{
+            transform: rotateY(180deg);
+        }
+
+        /* 点击效果 */
+        .con{
+            box-sizing: border-box;
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            margin-top: -3px;
+            border: 3px solid red;
+            border-radius: 50%;
+            animation: con .5s linear;
+            opacity: 1;
+            
+        }
+        @keyframes con {
+            100%{
+                width: 40px;
+                height: 40px;
+                opacity: 0;
+                margin-left: -20px;
+                margin-top: -20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="outside"></li>
+        <li class="inside"></li>
+    </ul>
+
+    <script src="./libs/jquery/jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            // 点击效果
+            $(document).mousedown(function(e){
+                var left = e.pageX;
+                var top = e.pageY;
+                var div ='';
+                div += '<div class="con" style="';
+                div += 'position:absolute;top:'+top+'px;left:'+left+'px;';
+                div += '"></div>';
+                $("body").append(div);
+
+                $(".con").on("animationend",function(){
+                    $(this).remove();
+                })
+            })
+        })
+    </script>
+</body>
+</html>

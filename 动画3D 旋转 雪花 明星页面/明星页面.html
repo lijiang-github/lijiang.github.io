@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>透视动画旋转</title>
+    <style>
+        html,body,ul{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow: hidden;
+            background-color: black;
+            background-image: url(./images/bg.jpg);
+            background-size: auto 700px;
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+        ul{
+            list-style: none;
+        }
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+
+            /* 透视 */
+            perspective: 400px;
+        }
+
+        ul.wrap{
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            margin-top: 350px;
+
+            position: relative;
+
+            
+            /* 保持3d效果 */
+            transform-style: preserve-3d;
+            /* 动画 */
+            animation: toround 10s linear infinite;
+        }
+        @keyframes toround {
+            100%{
+                transform: rotate3d(0,30,0,360deg);
+            }
+        }
+        .wrap>li{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+            border: 5px solid violet;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .wrap>li img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrap>li:nth-child(1){
+            transform: rotateY(0) translateZ(180px);
+        }
+        .wrap>li:nth-child(2){
+            transform: rotateY(60deg) translateZ(180px);
+        }
+        .wrap>li:nth-child(3){
+            transform: rotateY(120deg) translateZ(180px);
+        }
+        .wrap>li:nth-child(4){
+            transform: rotateY(180deg) translateZ(180px);
+        }
+        .wrap>li:nth-child(5){
+            transform: rotateY(240deg) translateZ(180px);
+        }
+        .wrap>li:nth-child(6){
+            transform: rotateY(300deg) translateZ(180px);
+        }
+        /* 心 */
+        .xin{
+            width: 120px;
+            height: 120px;
+            background-image: url(./images/xin.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            position: absolute;
+            top: 300px;
+            left: 800px;
+            opacity: 0.5;
+
+            animation: xinmove 10s linear infinite;
+        }
+        @keyframes xinmove{
+            0%{
+                transform: translate3d(0,0,0);
+                opacity: 0.3;
+            }
+            25%{
+                transform: translate3d(100px,100px,0);
+                opacity: 1;
+            }
+            50%{
+                transform: translate3d(0px,200px,0);
+                opacity: 0;
+            }
+            51%{
+                transform: translate3d(-600px,-100px,0);
+                opacity: 0;
+            }
+            75%{
+                transform: translate3d(-300px,-200px,0);
+                opacity: 1;
+            }
+            100%{
+                transform: translate3d(0,0,0);
+                opacity: 0;
+            }
+        }
+
+        /* 雪花 */
+        ul.xuehua{
+            width: 100%;
+            
+            position: absolute;
+            top: 10px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        ul.xuehua.xuehua-1{
+            left: 10px;    
+        }
+        ul.xuehua.xuehua-2{
+            top: 100px;
+            left: 20px;    
+        }
+        ul.xuehua.xuehua-3{
+            top: 50px;
+            left: 30px;    
+        }
+        ul.xuehua.xuehua-4{
+            top: 200px;
+            left: 77px;    
+        }
+        ul.xuehua.xuehua-5{
+            top: 300px;
+            left: 50px;    
+        }
+        .xuehua li{
+            width: 1px;
+            height: 1px;
+            background-color: #fff;
+            opacity: 0;
+
+            transform-origin: 20px 0;
+        }
+        .xuehua-1 li{
+            animation: xuehua-1 15s linear infinite;
+        }
+        @keyframes xuehua-1 {
+            25%{
+                transform: translate(0,100px) rotate(180deg);
+                opacity: .6;
+            }
+            50%{
+                transform: translate(0,200px) rotate(360deg);
+                opacity: .3;
+            }
+            75%{
+                transform: translate(0,300px) rotate(540deg);
+                opacity: 1;
+            }
+            100%{
+                transform: translate(0,500px) rotate(720deg);
+                opacity: .3;
+            }
+        }
+        .xuehua-2 li{
+            animation: xuehua-2 16s linear infinite;
+        }
+        @keyframes xuehua-2 {
+            25%{
+                transform: translate(0,100px) rotate(-180deg);
+                opacity: 1;
+            }
+            50%{
+                transform: translate(0,200px) rotate(-360deg);
+                opacity: .3;
+            }
+            75%{
+                transform: translate(0,300px) rotate(-540deg);
+                opacity: 1;
+            }
+            100%{
+                transform: translate(0,500px) rotate(-720deg);
+                opacity: .3;
+            }
+        }
+        .xuehua-3 li{
+            animation: xuehua-3 5s linear infinite;
+        }
+        @keyframes xuehua-3 {
+            25%{
+                transform: translate(0,100px) rotate(180deg);
+                opacity: 1;
+            }
+            50%{
+                transform: translate(0,200px) rotate(360deg);
+                opacity: .3;
+            }
+            75%{
+                transform: translate(0,300px) rotate(540deg);
+                opacity: .8;
+            }
+            100%{
+                transform: translate(0,500px) rotate(720deg);
+                opacity: .3;
+            }
+        }
+        .xuehua-4 li{
+            animation: xuehua-4 10s linear infinite;
+        }
+        @keyframes xuehua-4 {
+            25%{
+                transform: translate(0,100px) rotate(50deg);
+                opacity: .8;
+            }
+            50%{
+                transform: translate(0,200px) rotate(140deg);
+                opacity: .3;
+            }
+            75%{
+                transform: translate(0,300px) rotate(280deg);
+                opacity: 1;
+            }
+            100%{
+                transform: translate(0,500px) rotate(400deg);
+                opacity: .3;
+            }
+        }
+        .xuehua-5 li{
+            animation: xuehua-5 3s linear infinite;
+        }
+        @keyframes xuehua-5 {
+            25%{
+                transform: translate(0,100px) rotate(90deg);
+                opacity: 1;
+            }
+            50%{
+                transform: translate(0,200px) rotate(180deg);
+                opacity: .3;
+            }
+            75%{
+                transform: translate(0,300px) rotate(270deg);
+                opacity: 1;
+            }
+            100%{
+                transform: translate(0,500px) rotate(360deg);
+                opacity: .3;
+            }
+        }
+        .xuehua-6 li{
+            animation: xuehua-6 4s linear infinite;
+        }
+        @keyframes xuehua-6 {
+            25%{
+                transform: translate(0,25px) rotate(90deg);
+                opacity: 1;
+            }
+            50%{
+                transform: translate(0,50px) rotate(180deg);
+                opacity: .3;
+            }
+            75%{
+                transform: translate(0,75px) rotate(270deg);
+                opacity: 1;
+            }
+            100%{
+                transform: translate(0,100px) rotate(360deg);
+                opacity: .3;
+            }
+        }
+
+        /* 点击效果 */
+        .con{
+            box-sizing: border-box;
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            margin-top: -3px;
+            border: 3px solid red;
+            border-radius: 50%;
+            animation: con .5s linear;
+            opacity: 1;
+            
+        }
+        @keyframes con {
+            100%{
+                width: 40px;
+                height: 40px;
+                opacity: 0;
+                margin-left: -20px;
+                margin-top: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="wrap">
+            <li><img src="./images/1.jpg" alt=""></li>
+            <li><img src="./images/2.jpg" alt=""></li>
+            <li><img src="./images/3.jpg" alt=""></li>
+            <li><img src="./images/4.jpg" alt=""></li>
+            <li><img src="./images/5.jpg" alt=""></li>
+            <li><img src="./images/6.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <div class="xin"></div>
+
+    <ul class="xuehua xuehua-1">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="xuehua xuehua-2">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="xuehua xuehua-3">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="xuehua xuehua-4">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="xuehua xuehua-5">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="xuehua xuehua-6">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!-- 音频 -->
+    <audio src="./like.mp3" autoplay loop></audio>
+
+    <script src="./libs/jquery/jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            // 点击效果
+            $(document).mousedown(function(e){
+                var left = e.pageX;
+                var top = e.pageY;
+                var div ='';
+                div += '<div class="con" style="';
+                div += 'position:absolute;top:'+top+'px;left:'+left+'px;';
+                div += '"></div>';
+                $("body").append(div);
+
+                $(".con").on("animationend",function(){
+                    $(this).remove();
+                })
+            })
+        })
+    </script>
+</body>
+</html>

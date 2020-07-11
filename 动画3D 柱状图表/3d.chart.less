@@ -1,0 +1,178 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: repeating-linear-gradient(skyblue 0,violet 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+}
+.v-chart-3d{
+    transform-style: preserve-3d;
+    position: relative;
+    transform-origin: center center 150px;
+    transition: transform .5s linear;
+    cursor: pointer;
+    .v-card{
+        display: block;
+        width: 250px;
+        height: 350px;
+        border-radius: 10px;
+        background: url('./card-bg.jpg') center top no-repeat;
+        background-size: cover;
+        .v-gray{
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .2);
+            transition: background .5s linear;
+            h1,p,ul{
+                padding: 0;
+                margin: 0;
+            }
+            h1,span{
+                font-size: 36px;
+            }
+            p{
+                font-size: 20px;
+            }
+            .chart{
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                transform-style: preserve-3d;
+                li{
+                    width: 20px;
+                    height: 20px;
+                    background-color: #fff;
+                    margin: 10px;
+                    position: relative;
+                    transform-style: preserve-3d;
+                    transition: all .5s linear;
+                    transform: rotate(-45deg);
+                    .plane{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        text-align: right;
+                        
+                    }
+                    .plane-a{
+                        width: 100px;
+                        height: 100%;
+                        background-image: linear-gradient(to right,skyblue,#fff);
+                        transform-origin: bottom left;
+                        transform: rotateY(-90deg);
+                        color: #666;
+                    }
+                    .plane-b{
+                        width: 100%;
+                        height: 100px;
+                        background-color: skyblue;
+                        transform-origin: top center;
+                        transform: rotateX(90deg) translateZ(-20px);
+                    }
+                    .plane-c{
+                        width: 100%;
+                        height: 100%;
+                        background-color: #fff;
+                        transform: translateZ(100px);
+                        text-align: center;
+                        line-height: 20px;
+                        transition: color .5s linear;
+                    }
+                    &:nth-child(1){
+                        transform: rotate(-45deg) translateZ(-100px);
+                        .plane-a{
+                            width: 100px;
+                        }
+                        .plane-b{
+                            height: 100px;
+                        }
+                        .plane-c{
+                            transform: translateZ(100px);
+                        }
+                    }
+                    &:nth-child(2){
+                        transform: rotate(-45deg) translateZ(-50px);
+                        .plane-a{
+                            width: 50px;
+                        }
+                        .plane-b{
+                            height: 50px;
+                        }
+                        .plane-c{
+                            transform:translateZ(50px);
+                        }
+                    }
+                    &:nth-child(3){
+                        transform: rotate(-45deg) translateZ(-150px);
+                        .plane-a{
+                            width: 150px;
+                        }
+                        .plane-b{
+                            height: 150px;
+                        }
+                        .plane-c{
+                            transform:translateZ(150px);
+                        }
+                    }
+                    &:nth-child(4){
+                        transform: rotate(-45deg) translateZ(-100px);
+                        .plane-a{
+                            width: 100px;
+                        }
+                        .plane-b{
+                            height: 100px;
+                        }
+                        .plane-c{
+                            transform:translateZ(100px);
+                        }
+                    }
+                    &:nth-child(5){
+                        transform: rotate(-45deg) translateZ(-50px);
+                        .plane-a{
+                            width: 50px;
+                        }
+                        .plane-b{
+                            height: 50px;
+                        }
+                        .plane-c{
+                            transform:translateZ(50px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .v-card-behind{
+        width: 250px;
+        height: 350px;
+        border-radius: 10px;
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        transform: translateZ(-10px);
+        box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+
+    }
+    &:hover{
+        transform: rotateX(60deg);
+    }
+    &:hover .v-gray{
+        background: rgba(0,0,0,.5);
+    }
+    &:hover li{
+        transform: rotate(-45deg) translateZ(0px) !important;
+        .plane-c{
+            color: #333;
+        }
+    }
+}
