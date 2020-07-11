@@ -1,0 +1,94 @@
+.pro-backg{
+	min-width: 1226px;
+	overflow: hidden;
+	background: #F5F5F5;
+}
+.pro-home1{
+	height: 620px;
+	position: relative;
+}
+.pro-home1 .pro-slide-img{
+	height: 620px;
+	margin-left: -663px;
+}
+
+/* 左右箭头按钮 */
+.pro-home1 .arrbut-box{
+	height: 69px;
+	width: 100%;
+	position: absolute;
+	top: 275px;
+	left: 0;
+}
+.pro-home1 .pro-butL{
+	width: 41px;
+	height: 69px;
+	background: url(../images/icon-slides.png) no-repeat -83px center;
+}
+.pro-home1 .pro-butR{
+	width: 41px;
+	height: 69px;
+	background: url(../images/icon-slides.png) no-repeat right center;
+}
+.pro-home1 .pro-butL:hover{
+	background: url(../images/icon-slides.png) no-repeat left center;
+}
+.pro-home1 .pro-butR:hover{
+	background: url(../images/icon-slides.png) no-repeat -42px center;
+}
+
+/* home1轮播图 radio按钮设置 */
+.pro-home1>.radio-box{
+	height: 10px;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 25px;
+	left: 0;
+}
+.pro-home1>.radio-box .pro-radio{
+	display: inline-block;
+	height: 6px;
+	width: 6px;
+	background-color: #777692;
+	border: 2px solid #A2A0B5;
+	border-radius: 50%;
+}
+.pro-home1>.radio-box .pro-radio:hover{
+	background-color: #DDDCF8;
+	border-color: #A2A0B5;
+}
+
+/* home2产品介绍 */
+
+.pro-home2{
+	width: 100%;
+	height: 499px;
+}
+.pro-home2>h1{
+	height: 58px;
+	line-height: 58px;
+	margin-top: 7px;
+	width: 100%;
+	color: #333333;
+	font-weight: 500;
+}
+.pro-home2>.first-probox{
+	height: 409px;
+	width: 100%;
+	background: #B0B0B0; /* 要消去 */
+}
+.pro-home2>.first-probox>.img{
+	width: 854px;
+}
+.pro-home2>.first-probox>.img>img{
+	height: 409px;
+}
+.pro-home2 .firprobox-R{
+	height: 409px;
+	background: white;
+}
+.pro-home2{}
+.pro-home2{}
+.pro-home2{}
+

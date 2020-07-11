@@ -1,0 +1,292 @@
+*{
+	/* 去除标签自带预设 */
+	margin: 0;	
+	padding: 0;
+}
+
+.top_back{
+	height: 40px;
+	background: #333333;
+}
+.top_back .center{
+	width: 1226px;
+	height: 40px;
+	margin: 0 auto;
+}
+.center .boxl{
+	height: 40px;
+	display: inline-block;
+}
+.center a{
+	text-decoration: none;
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	color: #B0B0B0;
+	font-size: 12px;
+}
+.center span{
+	color: #424242;
+	font-size: 12px;
+}
+
+.boxr{
+	height: 40px;
+	display: inline-block;
+	float: right;
+}
+
+.boxr .rboxr{
+	display: inline-block;
+	width: 120px;
+	height: 40px;
+	margin-left: 22px;
+	background-color: #424242;
+	text-align: center;
+}
+ 
+.rboxr a{
+	display: inline-block;
+	height: 40px;
+	padding-left: 28px;
+	background: #424242 url(../images/cart.png) no-repeat left 10px;
+}
+.center a:hover{
+	color: floralwhite;
+}
+/* -------------header-------------- */
+.header{
+	height:100px;
+	width:1226px;
+	margin: 0 auto;
+}
+.header .header-Left{
+	height: 100px;
+	width: 234px;
+	display: inline-block;
+	float: left;
+}
+.header-Left .header-logo{
+	height:55px;
+	width: 55px;
+	margin-top: 22px;
+	margin-right: 178px;
+}
+.header-logo a{
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: #FF6700 url(../images/mi-logo.png) no-repeat center center;
+	text-indent:-199px;
+	overflow: hidden;
+}
+.header-center{
+	width: 660px;
+	heith: 100px;
+	display: inline-block;
+}
+
+.header-center ul{
+	width: 766px;
+	heith: 100px;
+	list-style: none;
+	line-height: 100px;
+}
+.header-center ul li{
+	float:left;
+}
+.header-center ul li a{
+	text-decoration: none;
+	font-size: 16px;
+	padding: 0 10px;
+	color: #333333;
+}
+.header-center li:hover a{
+	color:#FF6700;
+}
+
+#search{
+	width:294px;
+	height: 75px;
+	float: right;
+	position: relative;
+	top: 0px;
+	right: 0px;
+}
+
+#search .headerRstyle{
+	display:inline-block;
+	float: right;
+	margin-top:25px;
+	/*  */
+}
+
+#search button{
+	height: 50px;
+	width: 50px;
+	background: #FFFFFF url(../images/smallfind.png) no-repeat center center;
+	text-indent: -199em;
+	overflow: hidden;
+	border-top: 1px solid #E0E0E0;
+	border-right: 1px solid #E0E0E0;
+	border-bottom: 1px solid #E0E0E0;
+	border-left: 0px solid #E0E0E0;
+	outline: none;
+}
+#search input{
+	height:50px;
+	width: 244px;
+	border: 1px solid #E0E0E0;
+	outline: none;
+}
+#search a{
+	display: inline-block;
+	font-size: 12px;
+	color: #757575;
+	background: #EEEEEE;
+	margin-left:5px;
+	padding: 0 5px;
+	text-decoration: none;
+}
+a.mi{
+	display: inline-block;
+	position: absolute;
+	top: 42px;
+	right: 128px;
+	
+}
+a.mi-se{
+	display: inline-block;
+	position: absolute;
+	top: 42px;
+	right: 60px;
+}
+
+#search a.mi:hover{
+	color: ghostwhite;
+	background: #FF6700;
+}
+#search a.mi-se:hover{
+	color: ghostwhite;
+	background: #FF6700;
+}
+#search button:hover{
+	background: #FF6700 url(../images/smallfind2.png) no-repeat center center;
+}
+
+
+
+#search:hover .headerRstyle{
+	border-color: #B0B0B0;
+}
+#search dl{
+	width: 242px;
+	position: absolute;
+	top: 75px;
+	left: 0px;
+	border: 1px solid #FF6700;
+	border-top: 0px;
+	z-index: 20;
+	background-color: #FFFFFF;
+	display: none;
+}
+#search dd{
+	height: 37px;
+	color: #424242;
+	padding-left: 20px;
+	line-height: 37px;
+	font-size: 16px;
+}
+#search dd:hover{
+	background-color: #FAFAFA;
+}
+#search:hover .list{
+	display: block;
+}
+#search .text:focus{
+	border-color: #FF6700;
+}
+
+
+
+/* header-hidbox */
+.header .header-hidbox{
+	height: 229px;
+	background-color: #FFFFFF;
+	position: absolute;
+	top: 134px;
+	left: 0px;
+	right: 0px;
+	border-top: 1px solid #E0E0E0;
+	display: none;
+	z-index: 10;
+	/* padding-bottom: 5px; */
+	/* background: url(../images/边渐变.png) repeat-x left bottom; */
+	box-shadow: 0px 3px 4px rgba(0,0,0,0.1);
+	
+}
+.header-hidbox .hidtable{
+	height: 229px;
+	/* background-color: #FFFFFF; */
+}
+.header-hidbox .hidtable .hidtab-td1{
+	height: 229px;
+	width: 204px;
+	text-align: center;
+	position: relative;
+}
+.header-hidbox .hidtable .border:after{
+	content: "";
+	display: block;
+	height: 100px;
+	width: 1px;
+	position: absolute;
+	left: 0;
+	top:36px;
+	background: #E0E0E0;
+}
+.header-hidbox .hidtab-td1>span{
+	font-size:12px;
+	color: #FF6700;
+}
+.header-hidbox .hidtab-td1>.span1{
+	width: 64px;
+	height: 20px;
+	border: 1px solid #FF6700;
+	line-height: 20px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: -1px;
+	
+}
+.header-hidbox .hidtab-td1>a.img{
+	height: 110px;
+	margin-top: 14px;
+}
+.header-hidbox .hidtab-td1>a.last{
+	border: 0px;
+}
+.header-hidbox .hidtab-td1>a>img{
+	display: block;
+	height: 110px;
+	margin: 0 auto;
+}
+.header-hidbox .hidtab-td1>a.title{
+	height: 20px;
+	margin-top:15px;
+	line-height: 20px;
+	font-size: 12px;
+}
+.header-hidbox .hidtab-td1>span.span2{
+	height: 20px;
+	line-height: 20px;
+	color: #FF6700;
+}
+.header-center li:hover .header-hidbox{
+	display: block;
+}
+.header-hidbox .hidtab-td1>a.title:hover{
+	color: #333333;
+}
+
+
