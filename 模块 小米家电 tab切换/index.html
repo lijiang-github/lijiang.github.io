@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta title="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mi</title>
+
+    <style>
+        html,body,ul,ol,h3,a,p,img,div{
+            margin: 0;
+            padding: 0;
+        }
+        a,
+        a:hover,
+        a:active{
+            text-decoration: none;
+            color: #333;
+        }
+        ol,
+        ul{
+            list-style: none;
+        }
+
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            line-height: 0;
+            opacity: 0;
+        }
+
+        /* 价格字段样式预设 */
+        .price-now{
+            /* 当前价格 */
+            color: #FF6700;
+        }
+        .price-pre{
+            /* 之前的价格 */
+            color: #B0B0B0;
+            text-decoration-line: line-through;
+        }
+
+        .active{
+            color: #FF6700;
+            border-bottom: 2px solid #FF6700;
+        }
+
+        /* 预设过渡动画效果 css3 */
+        .hov{
+            /* 过渡 必选 */
+            transition-property: all;
+            transition: all .2s linear;
+        }
+        .hov-sha{
+            box-shadow: 0 15px 30px rgba(0,0,0,0);
+        }
+        .hov-sha:hover{
+            /* 阴影浮现 */
+            box-shadow: 0 15px 30px rgba(0,0,0,.1);
+        }
+        
+        .hov-mov-top-2:hover{
+            /* 触发位移 translate3d可以触发GPU加速，使动画更流畅 */
+            transform: translate3d(0,-2px,0);
+        }
+
+        /* 预设标题类名样式 */
+        .title{
+            /* 产品标题 */
+            text-align: center;
+        }
+        /* 预设产品简介类名样式 */
+        .introduce{
+            /* 产品介绍 */
+            text-align: center;
+            color: #B0B0B0;
+        }
+
+        /* 版心 */
+        .container{
+            width: 1226px;
+            margin: 0 auto;
+        }
+
+        /* 家电 */
+        .jiadian{
+            height: 674px;
+            /* 背景色 */
+            background-color: #F5F5F5;
+        }
+        /* 家电头部 */
+        .jiaidan .header{
+            width: 100%;
+            height: 60px;
+        }
+        .jiadian .header h3{
+            height: 60px;
+            line-height: 60px;
+            font-weight: lighter;
+            font-size: 24px;
+        }
+        .jiadian .header ul{
+            height: 60px;
+        }
+        .jiadian .header ul li{
+            margin: 20px 0 0 30px;
+            cursor: pointer;
+        }
+
+        /* 家电内容排版 */
+        .jiadian .content{
+            width: 100%;
+            height: 614px;
+        }
+        /* 家电内容左边 */
+        .jiadian .content .recommend{
+            width: 234px;
+            height: 614px;
+        }
+        .jiadian .content .recommend a{
+            height: 300px;
+            display: block;
+        }
+        .jiadian .content .recommend img{
+            width: 100%;
+            height: 300px;
+        }
+        .jiadian .content .recommend a:nth-child(2){
+            margin-top: 14px;
+        }
+        /* 家电内容右边 */
+        .jiadian .content ol{
+            max-width: 992px;
+        }
+        .jiadian .content ol li{
+            margin: 0 0 14px 14px;
+            padding: 20px 0;
+            background-color: #fff;
+        }
+        .jiadian .content ol li>a{
+            display: block;
+            width: 234px;
+            height: 260px;
+            text-align: center;
+        }
+        .jiadian .content ol li:nth-child(8) a,
+        .jiadian .content ol li:nth-child(9) a{
+            padding: 0;
+            height: 143px;
+
+            position: relative;
+        }
+        .jiadian .content ol li img{
+            width: 160px;
+            height: 160px;
+            display: block;
+            margin: 0 auto 20px;
+
+        }
+        .jiadian .content ol li:nth-child(8) img{
+            width: 80px;
+            height: 80px;
+
+            position: absolute;
+            top: 30px;
+            right: 20px;
+        }
+        .jiadian .content ol li:nth-child(9) img{
+            width: 61px;
+            height: 61px;
+
+            position: absolute;
+            top: 40px;
+            right: 20px;
+        }
+        .jiadian .content ol li .title{
+            font-weight: 400;
+            font-size: 14px;
+            margin: 0 10px 4px 10px;
+        }
+        .jiadian .content ol li:nth-child(8) .title,
+        .jiadian .content ol li:nth-child(9) .title{
+            margin: 0;
+            width: 104px;
+            padding: 40px 0 10px 30px;
+
+            text-align: left;
+        }
+        .jiadian .content ol li:nth-child(9) .title{
+            font-size: 18px;
+            padding-bottom: 5px;
+        }
+        .jiadian .content ol li .introduce{
+            font-size: 10px;
+            margin: 0 10px 10px 10px;
+        }
+        .jiadian .content ol li:nth-child(9) .introduce{
+            font-size: 12px;
+            text-align: left;
+            padding-left: 20px;
+            color: #666;
+        }
+        .jiadian .content ol li span{
+            font-size: 13px;
+        }
+        .jiadian .content ol li:nth-child(8) span{
+            display: block;
+            margin-left: 30px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="jiadian">
+        <div class="container">
+            <div class="header">
+                <ul class="fr clearfix">
+                    <li class="active fl hov">热门</li>
+                    <li class="fl hov">电视影音</li>
+                </ul>
+                <h3>家电</h3>
+            </div>
+            <div class="content clearfix">
+                <div class="recommend fl">
+                    <a class="hov hov-sha hov-mov-top-2" href="javascript:;"><img src="./images/01.webp" alt=""></a>
+                    <a class="hov hov-sha hov-mov-top-2" href="javascript:;"><img src="./images/02.webp" alt=""></a>
+                </div>
+                <div class="togglebox fl clearfix">
+                    <ol class="fl">
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/ta1.webp" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-1</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/ta2.jpg" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-2</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/ta3.webp" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-3</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/ta4.jpg" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-4</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/ta5.webp" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-5</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/ta6.webp" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-6</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/ta7.webp" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-7</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/ta8.webp" alt="">
+                                <h3 class="title">就是帅到爆炸 ta-8 爆款</h3>
+                                <span class="price-now">4999元起</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/icon-right-arrow.png" alt="">
+                                <h3 class="title">浏览更多</h3>
+                                <p class="introduce">热门</p>
+                            </a>
+                        </li>
+                        
+                    </ol>
+                    <ol class="fl" style="display: none;">
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/tb1.jpg" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-1</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/tb2.webp" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-2</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/tb3.webp" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-3</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/tb4.jpg" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-4</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/tb5.jpg" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-5</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/tb6.jpg" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-6</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/tb7.webp" alt="最有型的电器TVBS-1">
+                                <h3 class="title">最有型的电器TVBS-7</h3>
+                                <p class="introduce">一用就爱上，欲罢不能</p>
+                                <span class="price-now">2599元</span>
+                                <span class="price-pre">2699元</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/tb8.jpg" alt="">
+                                <h3 class="title">就是帅到爆炸 tb-8 爆款</h3>
+                                <span class="price-now">4999元起</span>
+                            </a>
+                        </li>
+                        <li class="fl hov hov-sha hov-mov-top-2">
+                            <a href="javascript:;">
+                                <img src="./images/icon-right-arrow.png" alt="">
+                                <h3 class="title">浏览更多</h3>
+                                <p class="introduce">电视影音</p>
+                            </a>
+                        </li>
+                        
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./libs/jquery/jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            // 给.jiadian .header>ul>li节点添加触发事件 mouseover
+            $(".jiadian .header>ul>li").mouseover(function(){
+                // 记录当前触发节点的位置
+                var index = $(".jiadian .header>ul>li").index(this);
+                // 给触发者添加类名.active（效果）,并移除相邻其他节点的类名.active（效果）
+                $(this).addClass("active").siblings().removeClass("active");
+                // 获取与触发节点位置相同的.jiadian .content ol节点并让该节点显示，而其他相邻节点隐藏
+                $(".jiadian .content ol").eq(index).show().siblings().hide();
+
+            })
+        })
+    </script>
+</body>
+</html>

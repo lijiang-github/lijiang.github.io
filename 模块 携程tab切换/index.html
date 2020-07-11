@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>携程</title>
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.css">
+    <style>
+        ul,ol{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+            visibility: hidden;
+        }
+        a,
+        a:hover,
+        a:focus{
+            text-decoration: none;
+        }
+
+        .xiecheng{
+            background-color: #F6F6F6;
+        }
+        .container{
+            padding: 0;
+            width: 1180px;
+        }
+
+        /* ----修改---- */
+        .nav-tabs {
+            border-bottom: 2px solid #3983E5;
+        }
+        
+        a {
+            color: #333333;
+            text-decoration: none;
+        }
+        .nav > li {
+            position: relative;
+            display: block;
+            margin-right: 30px;
+        }
+        /* 新添 三角 */
+        .nav > li:after{
+            content: "";
+            display: none;
+            width: 14px;
+            height: 14px;
+            background-color: transparent;
+            border-bottom: 7px solid #3983E5;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -8px;
+        }
+        .nav-tabs > li > a {
+            margin-right: 2px;
+            line-height: 1.42857143;
+            border: 0px solid transparent;
+            border-radius: 4px 4px 0 0;
+        }
+        .nav > li > a {
+            height: 38px;
+            line-height: 38px;
+            font-size: 16px;
+            position: relative;
+            display: block;
+            padding: 0;
+            
+        }
+        a:hover, a:focus {
+            color: #0066cc;
+        }
+        .nav-tabs > li > a:hover {
+            border-color: transparent;
+        }
+        .nav > li > a:hover, .nav > li > a:focus {
+            text-decoration: none;
+            background-color: transparent;
+        }
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+            color: #0066cc;
+            cursor: default;
+            background-color: transparent;
+            border: 0;
+            border-bottom-color: transparent;
+        }
+        .nav-tabs > li.active:after {
+            display: block;
+        }
+
+        /* ---------------- */
+
+        .xiecheng .content{
+            width: 1180px;
+            box-sizing: border-box;
+            height: 390px;
+            border: 1px solid #E0E0E0;
+            border-top: 0;
+            background-color: #fff;
+        }
+        .xiecheng .recommend-word-box{
+            width: 227px;
+            padding: 0 20px;
+        }
+        .xiecheng .recommend-word-box>h3,
+        .xiecheng .recommend-word-box>ul{
+            margin: 0;
+            padding: 0;
+        }
+        .xiecheng .recommend-word-box>h3{
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            
+        }
+        .xiecheng .recommend-word-box>ul>li{
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 14px;
+        }
+        .xiecheng .recommend-word-box>ul>li>a:hover,
+        .xiecheng .recommend-word-box>ul>li>a:focus{
+            text-decoration: none;
+        }
+
+        .xiecheng .recommend-pic-box{
+            width: calc(1178px - 229px);
+            height: 390px;
+            border-left: 1px dashed #A3A3A3;
+            padding: 10px 20px;
+        }
+        .xiecheng .recommend-pic-box>.pic-nav{
+            padding: 0;
+            margin-top: 5px;
+            list-style: none;
+        }
+        .xiecheng .recommend-pic-box>.pic-nav li a{
+            font-size: 12px;
+            padding: 4px 10px;
+            margin-right: 10px;
+            border-radius: 4px;
+            color: #3983E5;
+        }
+        .xiecheng .recommend-pic-box>.pic-nav li a.con,
+        .xiecheng .recommend-pic-box>.pic-nav li a:hover{
+            color: white;
+            background-color: #3983E5;
+        }
+        .xiecheng .recommend-pic-box>.more-recommend{
+            margin-top: 5px;
+        }
+        .xiecheng .recommend-pic-box>.more-recommend>a{
+            font-size: 12px;
+            color: #3983E5;
+        }
+        .xiecheng .recommend-pic-box>.more-recommend>a>.icon{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #3983E5;
+            border-bottom: 2px solid #3983E5;
+            border-top: 2px solid transparent;
+            border-left: 2px solid transparent;
+
+            transform: rotate(-45deg);
+        }
+        .xiecheng .recommend-pic-box>.pic-show{
+            width: 910px;
+        }
+        .xiecheng .recommend-pic-box>.pic-show li{
+            width: 220px;
+            height: 160px;
+            margin: 10px 10px 0 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .xiecheng .recommend-pic-box>.pic-show li.ad{
+            width: 220px;
+            height: 330px;
+            margin: 10px 0 0 0;
+        }
+        .xiecheng .recommend-pic-box>.pic-show li img{
+            width: 220px;
+
+            transition: all 0.5s ease;
+        }
+        .xiecheng .recommend-pic-box>.pic-show li:hover img{
+            transform: scale(1.1);
+        }
+        .xiecheng .recommend-pic-box>.pic-show li>a,
+        .xiecheng .recommend-pic-box>.pic-show li>a:hover,
+        .xiecheng .recommend-pic-box>.pic-show li>a:focus{
+            display: block;
+            color: white;
+            text-align: center;
+        }
+        .xiecheng .recommend-pic-box>.pic-show li .introduce{
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -56px;
+            margin-top: -56px;
+        }
+        .xiecheng .recommend-pic-box>.pic-show li>a:hover .introduce{
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .xiecheng .pic-show .introduce .title{
+            font-size: 20px;
+            height: 20px;
+            line-height: 20px;
+            font-weight: bold;
+            margin: 20px 0 4px 0;
+        }
+        .xiecheng .pic-show .introduce .hotal{
+            font-size: 12px;
+            margin: 0 0 4px;
+        }
+        .xiecheng .pic-show .introduce .line{
+            width: 100px;
+            height: 1px;
+            margin: auto;
+            background-color: #98A6B1;
+        }
+        .xiecheng .pic-show .introduce .icon{
+            display: inline-block;
+            width: 5px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            font-weight: lighter;
+            vertical-align: top;
+        }
+        .xiecheng .pic-show .introduce .num{
+            display: inline-block;
+            font-size: 20px;
+            font-weight: lighter;
+            color: #FF6600;
+        }
+        .xiecheng .pic-show .introduce .word{
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="xiecheng">
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#">海外酒店</a></li>
+                <li role="presentation"><a href="http://www.mi.com">海外民宿+短租</a></li>
+                <li role="presentation"><a href="#">国内酒店</a></li>
+                <li role="presentation"><a href="#">酒店+景点</a></li>
+                <li role="presentation"><a href="#">客栈民宿</a></li>
+                <li role="presentation"><a href="#">团购</a></li>
+            </ul>
+
+            <div class="content">
+                <div class="con-1">
+                    <div class="fl recommend-word-box">
+                        <h3>促销</h3>
+                        <ul>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                        </ul>
+                        <h3>发现酒店</h3>
+                        <ul>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="fl recommend-pic-box">
+                        <div class="fr more-recommend"><a href="#">更多海外酒店<i class="icon"></i></a></div>
+                        <ul class="pic-nav clearfix">
+                            <li class="con fl"><a class="con" href="#">热门城市</a></li>
+                            <li class="con fl"><a href="#">都市购物</a></li>
+                            <li class="con fl"><a href="#">海岛休闲</a></li>
+                            <li class="con fl"><a href="#">旅游胜地</a></li>
+                        </ul>
+                        <div class="pic-show">
+                            <ul class="pic-show-1 clearfix">
+                                <li class="fr ad"><a href="#"><img src="./img/220330.jpg" alt=""></a></li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/1.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/1.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/1.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/1.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/1.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/1.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <ul class="pic-show-2 clearfix" style="display: none;">
+                                <li class="fr ad"><a href="#"><img src="./img/220330.jpg" alt=""></a></li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <ul class="pic-show-3 clearfix" style="display: none;">3</ul>
+                            <ul class="pic-show-4 clearfix" style="display: none;">4</ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="con-2" style="display: none;">
+                    <div class="fl recommend-word-box">
+                        <h3>促销</h3>
+                        <ul>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                        </ul>
+                        <h3>发现酒店</h3>
+                        <ul>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                            <li><a href="#">水边全世界</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="fl recommend-pic-box">
+                        <div class="fr more-recommend"><a href="#">更多海外酒店<i class="icon"></i></a></div>
+                        <ul class="pic-nav clearfix">
+                            <li class="con fl"><a class="con" href="#">热门城市</a></li>
+                            <li class="con fl"><a href="#">都市购物</a></li>
+                            <li class="con fl"><a href="#">海岛休闲</a></li>
+                            <li class="con fl"><a href="#">旅游胜地</a></li>
+                        </ul>
+                        <div class="pic-show">
+                            <ul class="pic-show-1 clearfix">
+                                <li class="fr ad"><a href="#"><img src="./img/220330.jpg" alt=""></a></li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/3.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <ul class="pic-show-2 clearfix" style="display: none;">
+                                <li class="fr ad"><a href="#"><img src="./img/220330.jpg" alt=""></a></li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/2.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/2.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/2.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/2.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/2.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="fl">
+                                    <a href="#">
+                                        <img src="./img/2.jpg" alt="">
+                                        <div class="introduce">
+                                            <h3 class="title">新加坡</h3>
+                                            <p class="hotal">666家</p>
+                                            <div class="line"></div>
+                                            <span class="icon">￥</span>
+                                            <span class="num">70</span>
+                                            <span class="word">起</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <ul class="pic-show-3 clearfix" style="display: none;">3</ul>
+                            <ul class="pic-show-4 clearfix" style="display: none;">4</ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="con-3" style="display: none;">3</div>
+                <div class="con-4" style="display: none;">4</div>
+                <div class="con-5" style="display: none;">5</div>
+                <div class="con-6" style="display: none;">6</div>
+            </div>
+            
+            
+        </div><!-- /.container -->
+    </div>
+    <script src="./jquery/jquery-3.4.1.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.js"></script>
+    <script>
+        $(function(){
+            $(".nav>li>a").click(function(){
+                var index = $(".nav>li>a").index(this);
+                $(this).parent().addClass("active").siblings().removeClass("active");
+                $(".xiecheng .con-"+(index+1)+"").show().siblings().hide();
+            })
+            $(".pic-nav li").click(function(){
+                var index = $(this).parent().parent().find(".pic-nav li").index(this);
+                $(this).find("a").addClass("con").parent().siblings().find("a").removeClass("con")
+                $(this).parent().parent().find(".pic-show-"+(index+1)+"").show().siblings().hide();
+            })
+        })
+    </script>
+</body>
+</html>
