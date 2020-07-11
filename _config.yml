@@ -1,0 +1,8 @@
+title: Lijiang.GitHub.io
+description: 作品站点
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
