@@ -1,0 +1,1056 @@
+/* ----------------------------------小米主页面头部 miheader------------------------------ */
+.top_back{
+	height: 40px;
+	background: #333333;
+}
+.top_back .center{
+	width: 1226px;
+	height: 40px;
+	margin: 0 auto;
+}
+.center .boxl{
+	height: 40px;
+	display: inline-block;
+}
+.center a{
+	text-decoration: none;
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	color: #B0B0B0;
+	font-size: 12px;
+}
+.center span{
+	color: #424242;
+	font-size: 12px;
+}
+
+.boxr{
+	height: 40px;
+	float: right;
+}
+
+.boxr .rboxr{
+	display: inline-block;
+	width: 120px;
+	height: 40px;
+	margin-left: 22px;
+	background-color: #424242;
+	text-align: center;
+}
+ 
+.rboxr a{
+	display: inline-block;
+	height: 40px;
+	padding-left: 28px;
+	background: #424242 url(../images/cart.png) no-repeat left 10px;
+}
+.center a:hover{
+	color: floralwhite;
+}
+/* -------------header-------------- */
+.header{
+	height:100px;
+	width:1226px;
+	margin: 0 auto;
+}
+.header .header-Left{
+	height: 100px;
+	width: 234px;
+	float: left;
+}
+.header-Left .header-logo{
+	height:55px;
+	width: 55px;
+	margin-top: 22px;
+	margin-right: 178px;
+}
+.header-logo a{
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: #FF6700 url(../images/mi-logo.png) no-repeat center center;
+	text-indent:-199px;
+	overflow: hidden;
+}
+.header-center{
+	width: 660px;
+	height: 100px;
+	display: inline-block;
+}
+
+.header-center ul{
+	width: 766px;
+	height: 100px;
+	list-style: none;
+	line-height: 100px;
+}
+.header-center ul li{
+	float:left;
+}
+.header-center ul li a{
+	text-decoration: none;
+	font-size: 16px;
+	padding: 0 10px;
+	color: #333333;
+}
+.header-center li:hover a{
+	color:#FF6700;
+}
+
+#search{
+	width:294px;
+	height: 75px;
+	float: right;
+	position: relative;
+	top: 0px;
+	right: 0px;
+}
+
+#search .headerRstyle{
+	float: right;
+	margin-top:25px;
+	/*  */
+}
+
+#search button{
+	height: 50px;
+	width: 50px;
+	background: #FFFFFF url(../images/smallfind.png) no-repeat center center;
+	text-indent: -199em;
+	overflow: hidden;
+	border-top: 1px solid #E0E0E0;
+	border-right: 1px solid #E0E0E0;
+	border-bottom: 1px solid #E0E0E0;
+	border-left: 0px solid #E0E0E0;
+	outline: none;
+}
+#search input{
+	height:50px;
+	width: 244px;
+	border: 1px solid #E0E0E0;
+	outline: none;
+}
+#search a{
+	display: inline-block;
+	font-size: 12px;
+	color: #757575;
+	background: #EEEEEE;
+	margin-left:5px;
+	padding: 0 5px;
+	text-decoration: none;
+}
+a.mi{
+	display: inline-block;
+	position: absolute;
+	top: 42px;
+	right: 128px;
+	
+}
+a.mi-se{
+	display: inline-block;
+	position: absolute;
+	top: 42px;
+	right: 60px;
+}
+
+#search a.mi:hover{
+	color: ghostwhite;
+	background: #FF6700;
+}
+#search a.mi-se:hover{
+	color: ghostwhite;
+	background: #FF6700;
+}
+#search button:hover{
+	background: #FF6700 url(../images/smallfind2.png) no-repeat center center;
+}
+
+
+
+/* #search:hover .headerRstyle{
+	border-color: #B0B0B0;
+} */
+#search dl{
+	width: 242px;
+	position: absolute;
+	top: 75px;
+	left: 0px;
+	border: 1px solid #FF6700;
+	border-top: 0px;
+	z-index: 20;
+	background-color: #FFFFFF;
+	display: none;
+}
+#search dd{
+	height: 37px;
+	color: #424242;
+	padding-left: 20px;
+	line-height: 37px;
+	font-size: 16px;
+}
+#search dd:hover{
+	background-color: #FAFAFA;
+}
+
+
+
+
+/* header-hidbox */
+.header .header-hidbox{
+	height: 229px;
+	background-color: #FFFFFF;
+	position: absolute;
+	top: 134px;
+	left: 0px;
+	right: 0px;
+	border-top: 1px solid #E0E0E0;
+	display: none;
+	z-index: 10;
+	box-shadow: 0px 3px 4px rgba(0,0,0,0.1);
+	overflow: hidden;
+}
+.header-hidbox .hidtable{
+	height: 229px;
+	position: relative;
+}
+.header-hidbox .hidtable .hidtab-td1{
+	height: 229px;
+	width: 204px;
+	text-align: center;
+	position: relative;
+}
+.header-hidbox .hidtable .border:after{
+	content: "";
+	display: block;
+	height: 100px;
+	width: 1px;
+	position: absolute;
+	left: 0;
+	top:36px;
+	background: #E0E0E0;
+}
+.header-hidbox .hidtab-td1>span{
+	font-size:12px;
+	color: #FF6700;
+}
+.header-hidbox .hidtab-td1>.span1{
+	width: 64px;
+	height: 20px;
+	border: 1px solid #FF6700;
+	line-height: 20px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: -1px;
+	
+}
+.header-hidbox .hidtab-td1>a.img{
+	height: 110px;
+	margin-top: 14px;
+}
+.header-hidbox .hidtab-td1>a.last{
+	border: 0px;
+}
+.header-hidbox .hidtab-td1>a>img{
+	display: block;
+	height: 110px;
+	margin: 0 auto;
+}
+.header-hidbox .hidtab-td1>a.title{
+	height: 20px;
+	margin-top:15px;
+	line-height: 20px;
+	font-size: 12px;
+}
+.header-hidbox .hidtab-td1>span.span2{
+	height: 20px;
+	line-height: 20px;
+	color: #FF6700;
+}
+.header-center li:hover .header-hidbox{
+	display: block;
+}
+.header-hidbox .hidtab-td1>a.title:hover{
+	color: #333333;
+}
+
+/* ------------------------------------------小米轮播图 home1-------------------------------------- */
+
+.wrapper {
+	position: relative;
+}
+
+/* 轮播图 */
+.slide {
+	position: relative;
+}
+
+.slide img {
+	width: 100%;
+	float: left;
+	display: none;
+}
+
+.slide .btn {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.slide .Lbtn {
+	width: 41px;
+	height: 69px;
+	background: url(../images/icon-slides.png) no-repeat -84px center;
+	position: absolute;
+	left: 235px;
+	top: 195px;
+	opacity: 0.5;
+}
+.slide .Lbtn>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.slide .Rbtn {
+	width: 41px;
+	height: 69px;
+	background: url(../images/icon-slides.png) no-repeat right center;
+	position: absolute;
+	right: 0px;
+	top: 195px;
+	opacity: 0.5;
+}
+.slide .Rbtn>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.slide .Lbtn:hover {
+	background: url(../images/icon-slides.png) no-repeat 0px center;
+}
+
+.slide .Rbtn:hover {
+	background: url(../images/icon-slides.png) no-repeat -42px center;
+}
+
+.slide ol{
+	height: 10px;
+	width: 100px;
+	position: absolute;
+	right: 30px;
+	bottom: 28px;
+}
+
+.slide>ol>li{
+	width: 6px;
+	height: 6px;
+	margin-left: 10px;
+	border: 2px solid #A9A49E;
+	border-radius: 50%;
+	background-color: rgba(0,0,0,0.18);
+	float: left;
+}
+.slide>ol>li>a{
+	display: block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+}
+
+
+/* 分类 */
+.category {
+	width: 235px;
+	height: 460px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.category ul {
+	width: 235px;
+	height: 420px;
+	padding: 20px 0;
+}
+
+.category ul li {
+	width: 205px;
+	height: 42px;
+	line-height: 42px;
+	padding-left: 30px;
+	background: url(../images/arrow-right.png) no-repeat 200px 12px;
+}
+
+.category ul li a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* 绝对定位position：absolute；当上一级没有relative时，会一直往上一级继续跳到有relative或者body为止*/
+.category li .hidden-box {
+	position: absolute;
+	top: 0px;
+	left: 235px;
+	width: 990px;
+	height: 458px;
+	border-top: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
+	border-right: 1px solid #e0e0e0;
+	background: #fff;
+	display: none;
+	overflow: hidden;
+	/* z-index: ; */
+	/* 层级0-999，使用前提：一定要有定位 */
+}
+
+.category .hidden-box dl{
+	width: 1000px;
+	margin-top: 1px;
+}
+.category .hidden-box dd {
+	width: 248px;
+	height: 76px;
+	/* line-height: 76px; */
+	float: left;
+}
+.category .hidden-box dd img{
+	width: 42px;
+	margin-left: 18px;
+	height: 42px;
+	margin-top:18px;
+	margin-left:20px;
+}
+.category .hidden-box dd a{
+	display: inline-block;
+	height: 76px;
+	line-height: 76px;
+	text-decoration: none;
+	padding-left: 12px;
+	font-size: 14px;
+	color: #333333;
+}
+.category .hidden-box dd a:hover{
+	color: #FF6700;
+}
+
+
+/* ------------------虽然是home3 但是放在home1下面  home3---------------------------------------- */
+.home3{
+	height: 170px;
+	margin-top: 14px;
+	overflow: hidden;
+}
+.home3>ol{
+	height: 170px;
+}
+.home3>ol>li.home3-li-1{
+	width: 234px;
+	background: #5F5750;
+	position: relative;
+}
+.home3>ol>li.home3-li-1>a{
+	height: 85px;
+	width: 78px;
+	background: url(../images/米粉卡.png) no-repeat center 16px;
+}
+.home3>ol>li.home3-li-1>a>span{
+	color: #CFCDCB;
+	font-size: 12px;
+	margin-top: 49px;
+	text-align: center;
+}
+.home3>ol>li.home3-li-1>a:hover{
+	background: url(../images/米粉卡hover.png) no-repeat center 16px;
+}
+.home3>ol>li.home3-li-1>a:hover>span{
+	color:#E5F4D2;
+}
+.home3>ol>li.home3-li-1>.border1{
+	width: 1px;
+	height: 70px;
+	background: #665E57;
+}
+.home3>ol>li.home3-li-1>.border2{
+	width: 64px;
+	height: 1px;
+	background: #665E57;
+}
+.home3>ol>li.home3-li-1>.bor1{
+	position: absolute;
+	bottom: 9px;
+	right: 78px;
+}
+.home3>ol>li.home3-li-1>.bor2{
+	position: absolute;
+	bottom: 9px;
+	left: 78px;
+}
+.home3>ol>li.home3-li-1>.bor3{
+	position: absolute;
+	top: 9px;
+	left: 78px;
+}
+.home3>ol>li.home3-li-1>.bor4{
+	position: absolute;
+	top: 9px;
+	right: 78px;
+}
+.home3>ol>li.home3-li-1>.bor5{
+	position: absolute;
+	top: 85px;
+	left: 7px;
+}
+.home3>ol>li.home3-li-1>.bor6{
+	position: absolute;
+	top: 85px;
+	right: 7px;
+}
+.home3>ol>li.home3-li-1>.bor7{
+	position: absolute;
+	top: 85px;
+	right: 85px;
+}
+
+
+.home3>ol>li.home3-li-2{
+	height: 170px;
+	width: 316px;
+	margin-left: 15px;
+}
+.home3>ol>li.first{
+	margin-left: 14px;
+}
+
+.home3>ol>li.home3-li-2>a>img{
+	height: 170px;
+	float: left;
+}
+
+
+/*  ------------------home2开始背景颜色改变 home2开始都要在这里写代码了 home2 ------------------------*/
+.home2{
+	padding-top: 20px;
+	height: 670px;
+	clear: both;
+	position: relative;
+}
+.home2 .top{
+	height: 54px;
+}
+.home2 .top .title1{
+	display: block;
+	float: left;
+	height: 54px;
+	line-height: 54px;
+	color: #333333;
+	font-size: 22px;
+	font-weight: 200;
+}
+.home2 .top .title2{
+	display: block;
+	float: right;
+	height: 54px;
+	line-height: 54px;
+}
+.home2 .top .title2>a{
+	font-size: 16px;
+	color: #424242;
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;
+	padding-bottom: 4px;
+	border-bottom: 2px solid hidden;
+	margin: 16px 0 16px 30px;
+}
+
+/* table */
+.home2 .table{
+	width: 1226px;
+	display: none;
+	
+}
+/* table bottomLbox */
+.home2 .bottomLbox{
+	width: 234px;
+	height: 616px;
+}
+.home2 .bottomLbox a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.home2 .bottomLbox img{
+	width: 100%;
+	height: 100%px;
+	float: left;
+}
+/* table bottomRbox */
+.home2 .bottomRbox{
+	width: 992px;
+	height: 100%;
+	float: left;
+}
+.home2 .bottomRbox .tab-td2{
+	width: 234px;
+	height: 300px;
+	margin-left: 14px;
+	margin-bottom: 14px;
+	background: #FFFFFF;
+	position: relative;
+}
+.home2 .bottomRbox .tab-td2 .td2-span1{
+	display: block;
+	width: 64px;
+	height: 20px;
+	background-color: #83C44E;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 20px;
+	font-size: 12px;
+	margin: 0 85px;
+}
+.home2 .tab-td2 .td2-img{
+	height: 160px;
+	margin-left: 37px;
+}
+.home2 .tab-td2 .td2-name{
+	display: block;
+	height: 24px;
+	width: 100%;
+	text-align: center;
+	line-height: 24px;
+	margin-top: 14px;
+	font-size: 12px;
+	color: #333333;
+}
+.home2 .tab-td2 .td2-span2{
+	display: block;
+	height: 16px;
+	width: 100%;
+	text-align: center;
+	line-height: 16px;
+	font-size: 12px;
+	color: #B0B0B0;
+	overflow: hidden;
+}
+.home2 .tab-td2 .td2-span3{
+	display: block;
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	line-height: 30px;
+	margin-top: 6px;
+	font-size: 12px;
+	color: #FF6700;
+}
+.home2 .tab-td2 .td2-color1{
+	color: #B0B0B0;
+}
+.home2 .tab-td2 .hidbox{
+	display: none;
+	width: 100%;
+	height: 76px;
+	background: #FF6700;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+.home2 .tab-td2 .hidbox .hidcom{
+	display: block;
+	width: 164px;
+	height: 36px;
+	line-height: 18px;
+	margin-top: 8px;
+	margin-left: 29px;
+	overflow: hidden;
+	color: white;
+}
+.home2 .hidbox .hidspan{
+	display: block;
+	width: 164px;
+	height: 12px;
+	font-size: 12px;
+	line-height: 12px;
+	overflow: hidden;
+	color: #FFC299;
+	margin-top: 6px;
+	margin-left: 29px;
+}
+.home2 .tab-td2:hover .hidbox{
+	display: block;
+}
+
+.home2 .bottomLbox:hover{
+	position: relative;
+	bottom: 2px;
+	left: 0px;
+	box-shadow: 3px 3px 4px rgba(0,0,0,0.18);
+}
+.home2 .tab-td2:hover{
+	position: relative;
+	bottom: 2px;
+	left: 0px;	
+	box-shadow: 4px 4px 5px rgba(0,0,0,0.18);
+}
+.ad-img{
+	width: 1226px;
+	margin: 20px auto;
+}
+.ad-img>img{
+	width: 100%;
+}
+.home3-3{
+	margin-top: 26px;
+	margin-bottom: 42px;
+}
+
+/* -------------------------------------小米推荐栏 -------------------------------- */
+.recommend{
+	height: 360px;
+	padding-bottom: 20px;
+}
+.recommend .rec-top{
+	width:1226px;
+}
+.recommend .rec-top>span{
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	color: #333333;
+	font-size: 22px;
+	font-weight: 200;
+	float: left;
+	/* 这次能瘦了？？!! */
+}
+.recommend .rec-top>div{
+	width: 70px;
+	height: 22px;
+	border: 1px solid #E0E0E0;
+	border-right: 0px;
+	margin-top: 17px;
+} 
+.recommend .rec-top>div>a{
+	display: block;
+	width: 34px;
+	height: 22px;
+	border-right: 1px solid #E0E0E0;
+}
+.recommend .rec-top .butL{
+	background: url(../images/icon-slides.png) no-repeat -84px center;
+}
+.recommend .rec-top .butR{
+	background: url(../images/icon-slides.png) no-repeat -130px center;
+}
+.recommend .rec-top>div>a:hover{
+	background: #FF6700;
+}
+.recommend>ul{
+	width: 100%;
+}
+.recommend>ul>li{
+	width: 234px;
+	height: 300px;
+	margin-left: 14px;
+	background: white;
+}
+.recommend .first-li{
+	margin: 0px;
+}
+.recommend>ul>li>.rec-img{
+	display: block;
+	width: 176px;
+	height: 176px;
+	margin-top: 20px;
+	margin-left: 29px;
+}
+.recommend>ul>li>a>img{
+	width: 100%;
+	height: 100%;
+}
+.recommend>ul>li>.span{
+	display: block;
+	width: 100%;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	font-size: 12px;
+}
+.recommend>ul>li>a.rec-spancol1{
+	color: #333333;
+}
+.recommend>ul>li>span.rec-spancol2{
+	color: #FF6700;
+}
+.recommend>ul>li>span.rec-spancol3{
+	color: #757575;
+	margin-top: 3px;
+}
+.recommend>ul>li:hover{
+	position: relative;
+	bottom: 2px;
+	left: 0;
+	box-shadow: 4px 4px 5px rgba(0,0,0,0.18);
+}
+
+
+
+/* -------------------------------------右边固定定位 ----------------------------------------- */
+div.pos-box{
+	height: 450px;
+	width: 82px;
+	position: fixed;
+	right: 1px;
+	top: 100px;
+	border: 1px solid #F5F5F5 ;
+	z-index: 20;
+}
+div.pos-box ul{
+	height: 450px;
+	width: 82px;
+	list-style: none;
+}
+div.pos-box ul li{
+	height: 90px;
+	width: 82px;
+}
+.rbox{
+	display: block;
+	height: 20px;
+	width: 82px;
+	color: #757575;
+	text-decoration:none;
+	padding-top: 59px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #F5F5F5;
+	text-align: center;
+	font-size:12px ;
+}
+.pos-box .new-window{
+	display: none;
+	height: 238px;
+	width: 170px;
+	position: fixed;
+	top: 100px;
+	right: 85px;
+	background: url(../images/二维弹框.png) no-repeat center center;
+}
+.rbox:hover{
+	color: #FF6700;
+}
+.one:hover .new-window{
+	display:block;
+}
+.pos-box .box1{
+	background: white url(../images/扫码.png) no-repeat center 20px;
+}
+.pos-box .box2{
+	background: white url(../images/个人中心.png) no-repeat center 20px;
+}
+.pos-box .box3{
+	background: white url(../images/售后服务.png) no-repeat center 20px;
+}
+.pos-box .box4{
+	background: white url(../images/联系客服.png) no-repeat center 20px;
+}
+.pos-box .box5{
+	background: white url(../images/购物车.png) no-repeat center 20px;
+}
+.pos-box .box1:hover{
+	background: white url(../images/扫码hover.png) no-repeat center 20px;
+}
+.pos-box .box2:hover{
+	background: white url(../images/个人中心hover.png) no-repeat center 20px;
+}
+.pos-box .box3:hover{
+	background: white url(../images/售后服务hover.png) no-repeat center 20px;
+}
+.pos-box .box4:hover{
+	background: white url(../images/联系客服hover.png) no-repeat center 20px;
+}
+.pos-box .box5:hover{
+	background: white url(../images/购物车hover.png) no-repeat center 20px;
+}
+
+
+.bot-box{
+	display: block;
+	height: 20px;
+	width: 82px;
+	color: #757575;
+	text-decoration:none;
+	padding-top: 59px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size:12px;
+	
+	position: fixed;
+	right: 1px;
+	top: 560px;
+	
+	border: 1px solid #F5F5F5;
+	background: white url(../images/回顶部.png) no-repeat center 20px;
+}
+.bot-box:hover{
+	color: #FF6700;
+	background: white url(../images/回顶部hover.png) no-repeat center 20px;
+}
+
+/* -------- ----------------------小米页脚  不能在home2的背景里----------------------------------------  */
+.pagefoot{
+	height: 272px;
+	overflow: hidden;
+}
+.pagefoot .foot-title{
+	width: 100%;
+	border-bottom: 1px solid #E0E0E0;
+}
+.pagefoot .foot-title>a{
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	margin: 27px 0;
+	/* text-align: center; */
+	font-size: 16px;
+	color: #616161;
+	border-right: 1px solid #E0E0E0;
+	text-indent: 6px;
+	/* background: url(../images/售后服务.png) no-repeat 58px 0; */
+}
+.pagefoot .foot-title .foottitle1{
+	width: 242px;
+}
+.pagefoot .foot-title .foottitle2{
+	width: 243px;
+}
+.pagefoot .foot-title .foottitle3{
+	width: 252px;
+	border: 0;
+}
+.pagefoot .foot-title>a>img{
+	width: 25px;
+	margin-left: 50px;
+}
+.pagefoot .foot-title>a>.img2{
+	display: none;
+}
+.pagefoot .foot-title>a:hover{
+	color: #FF6700;
+}
+.pagefoot .foot-title>a:hover>.img1{
+	display: none;
+}
+.pagefoot .foot-title>a:hover>.img2{
+	display: block;
+}
+
+
+
+
+.pagefoot .footC-ulbox{
+	height: 192px;
+	width: 100%;
+}
+.pagefoot .footC-ulbox>li.footC-firstli{
+	width: 160px;
+}
+.pagefoot .footC-ulbox>li.footC-firstli>span{
+	font-size: 14px;
+	height: 60px;
+	line-height: 60px;
+	color: #424242;
+}
+.pagefoot .footC-ulbox>li.footC-firstli>a{
+	font-size: 12px;
+	height: 28px;
+	line-height: 28px;
+	color: #757575;
+}
+.pagefoot .footC-ulbox>li.footC-firstli>a:hover{
+	color: #FF6700;
+}
+.pagefoot .footC-ulbox .footC-lastli{
+	width: 251px;
+	height: 112px;
+	margin-top: 23px;
+	border-left: 1px solid #E0E0E0;
+	text-align: center;
+}
+.pagefoot .footC-ulbox .footC-lastli>span.red{
+	font-size: 18px;
+	color: #FF6700;
+	margin-bottom: 9px;
+}
+.pagefoot .footC-ulbox .footC-lastli>span.gray{
+	font-size: 12px;
+	height: 18px;
+	line-height: 18px;
+	color: #616161;
+}
+.pagefoot .footC-ulbox .footC-lastli>a{
+	width: 118px;
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid #FF6700;
+	color: #FF6700;
+	font-size: 12px;
+	text-align: center;
+	margin-top: 14px;
+	margin-left: 65px;
+	background: url(../images/icon1.png) no-repeat 28px 7px;
+	text-indent: 15px;
+}
+.pagefoot .footC-ulbox .footC-lastli>a:hover{
+	color: white;
+	background: #FF6700 url(../images/icon1-hover.png) no-repeat 28px 7px;
+}
+
+
+.footB{
+	padding-top:  30px;
+	height: 201px;
+}
+.footB>ol{
+	height: 127px;
+	padding-left: 10px;
+}
+.footB>ol>li{
+	height: 18px;
+	line-height: 18px;
+	font-size: 12px;
+}
+.footB>ol>.footB-li1>a{
+	font-size: 12px;
+	color: #757575;
+}
+.footB>ol>.footB-li1>span{
+	color: #B7CBE7;
+}
+.footB>ol>.footB-li1>a:hover{
+	color: #FF6700;
+}
+.footB>ol>.footB-li2{
+	color: #B0B0B0;
+}
+.footB>ol>.footB-li2>a{
+	font-size: 12px;
+	color: #B0B0B0;
+}
+.footB>ol>.footB-li2>a:hover{
+	color: #FF6700;
+}
+.footB>ol>.footB-li3{
+	height: 36px;
+}
+.footB>ol>.footB-li3>a{
+	margin-right: 2px;
+}
+.footB .footB-last-img{
+	height: 74px;
+	width: 100%;
+	background: url(../images/探索黑科技.png) no-repeat center center;
+}
