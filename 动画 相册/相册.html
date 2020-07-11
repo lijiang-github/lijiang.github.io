@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相册封面效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #C2CCD5;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        /* 版心 */
+        .container{
+            width: 1080px;
+            margin: 100px auto;
+        }
+
+        /* 相册栏 */
+        ul.photobox{
+            width: 100%;
+            height: 936px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /* 相册 */
+        ul>li.photo-album{
+            width: 260px;
+            height: 212px;
+            margin: 50px;
+        }
+        /* 相册封面图片 */
+        ul>li.photo-album ol.album-pic{
+            width: 260px;
+            height: 176px;
+
+            position: relative;
+        }
+        ul>li.photo-album ol.album-pic>li{
+            width: 260px;
+            height: 176px;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+
+            /* 过渡 */
+            transition: all .2s linear;
+        }
+        ol.album-pic>li .pic-bg{
+            width: 250px;
+            height: 166px;
+            padding: 5px;
+            background-color: #fff;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            z-index: 10;
+
+            /* 过渡 */
+            transition: all .5s ease-out;
+        }
+        ol.album-pic>li .pic-bg img{
+            width: 100%;
+            height: 100%;
+        }
+        /* 相册名 */
+        ul>li.photo-album .title{
+            height: 36px;
+            line-height: 36px;
+            font-size: 16px;
+            text-align: center;
+            color: #235F8A;
+            opacity: .9;
+            
+        }
+        /* 相册数量 */
+        .photo-album .title .num{
+            color: #666;
+            font-size: 14px;
+        }
+        /* 相册效果 */
+        .photo-album .album-pic:hover li{
+            z-index: 20;
+        }
+        /* 相册一效果 */
+        .photo-album-1 .album-pic:hover .pic-bg{
+            transform: scale(0.9);
+        }
+        .photo-album-1 .album-pic:hover .pic-bg:nth-child(1){
+            transform: rotate(5deg);
+        }
+        .photo-album-1 .album-pic:hover .pic-bg:nth-child(2){
+            transform: rotate(-15deg);
+        }
+        .photo-album-1 .album-pic:hover .pic-bg:nth-child(3){
+            transform: rotate(15deg);
+        }
+        .photo-album-1 .album-pic:hover .pic-bg:nth-child(4){
+            transform: rotate(-25deg);
+        }
+        .photo-album-1 .album-pic:hover .pic-bg:nth-child(5){
+            transform: rotate(25deg);
+        }
+        .photo-album-1 .album-pic:hover .pic-bg:nth-child(6){
+            transform: rotate(-35deg);
+        }
+        /* 相册二效果 */
+        .photo-album-2 .album-pic:hover .pic-bg:nth-child(1){
+            transform: rotate(-35deg) translate(-10px,-160px);
+        }
+        .photo-album-2 .album-pic:hover .pic-bg:nth-child(2){
+            transform: rotate(-25deg) translate(-22px,-120px);
+        }
+        .photo-album-2 .album-pic:hover .pic-bg:nth-child(3){
+            transform: rotate(-15deg) translate(-26px,-80px);
+        }
+        .photo-album-2 .album-pic:hover .pic-bg:nth-child(4){
+            transform: rotate(-10deg) translate(-22px,-40px);
+        }
+        .photo-album-2 .album-pic:hover .pic-bg:nth-child(5){
+            transform: rotate(-2deg) scale(1.1);
+        }
+        /* 相册三效果 */
+        .photo-album-3 .album-pic:hover .pic-bg:nth-child(1){
+            transform: rotate(-40deg) translate(0px,190px);
+        }
+        .photo-album-3 .album-pic:hover .pic-bg:nth-child(2){
+            transform: rotate(-30deg) translate(22px,140px);
+        }
+        .photo-album-3 .album-pic:hover .pic-bg:nth-child(3){
+            transform: rotate(-20deg) translate(26px,90px);
+        }
+        .photo-album-3 .album-pic:hover .pic-bg:nth-child(4){
+            transform: rotate(-10deg) translate(22px,40px);
+        }
+        .photo-album-3 .album-pic:hover .pic-bg:nth-child(5){
+            transform: rotate(40deg) translate(0px,-190px);
+        }
+        .photo-album-3 .album-pic:hover .pic-bg:nth-child(6){
+            transform: rotate(30deg) translate(22px,-140px);
+        }
+        .photo-album-3 .album-pic:hover .pic-bg:nth-child(7){
+            transform: rotate(20deg) translate(26px,-90px);
+        }
+        .photo-album-3 .album-pic:hover .pic-bg:nth-child(8){
+            transform: rotate(10deg) translate(22px,-40px);
+        }
+        .photo-album-3 .album-pic:hover .pic-bg:nth-child(9){
+            transform: rotate(0deg) scale(1.1);
+        }
+        /* 相册四效果 */
+        .photo-album-4 .album-pic:hover .pic-bg:nth-child(1){
+            transform: rotate(-75deg) translate(165px,-240px) scale(.3);
+        }
+        .photo-album-4 .album-pic:hover .pic-bg:nth-child(2){
+            transform: rotate(-65deg) translate(120px,-240px) scale(.4);
+        }
+        .photo-album-4 .album-pic:hover .pic-bg:nth-child(3){
+            transform: rotate(-55deg) translate(75px,-225px) scale(.5);
+        }
+        .photo-album-4 .album-pic:hover .pic-bg:nth-child(4){
+            transform: rotate(-45deg) translate(30px,-196px) scale(.6);
+        }
+        .photo-album-4 .album-pic:hover .pic-bg:nth-child(5){
+            transform: rotate(-35deg) translate(-10px,-156px) scale(.7);
+        }
+        .photo-album-4 .album-pic:hover .pic-bg:nth-child(6){
+            transform: rotate(-25deg) translate(-30px,-110px) scale(.8);
+        }
+        .photo-album-4 .album-pic:hover .pic-bg:nth-child(7){
+            transform: rotate(-18deg) translate(-28px,-74px) scale(.9);
+        }
+        .photo-album-4 .album-pic:hover .pic-bg:nth-child(8){
+            transform: rotate(-10deg) translate(-20px,-35px) scale(1);
+        }
+        .photo-album-4 .album-pic:hover .pic-bg:nth-child(9){
+            transform: rotate(-2deg) scale(1.1);
+        }
+
+        /* 相册五效果 */
+        .photo-album-5 .album-pic:hover .pic-bg{
+            transform: scale(1.1) rotate(-20deg);
+        }
+        .photo-album-5 .album-pic:hover .pic-bg:nth-child(1){
+            transform: scale(1.1) rotate(-20deg) translate(-60px,80px);
+        }
+        .photo-album-5 .album-pic:hover .pic-bg:nth-child(2){
+            transform: scale(1.1) rotate(-20deg) translate(100px,40px);
+        }
+        .photo-album-5 .album-pic:hover .pic-bg:nth-child(3){
+            transform: scale(1.1) rotate(-20deg) translate(60px,-80px);
+        }
+        .photo-album-5 .album-pic:hover .pic-bg:nth-child(4){
+            transform: scale(1.1) rotate(-20deg) translate(-100px,-40px);
+        }
+        /* 相册六效果 */
+        .photo-album-6 .album-pic:hover .pic-bg:last-child{
+            transform: scale(1.1) rotate(-20deg);
+        }
+        .photo-album-6 .album-pic:hover .pic-bg:nth-child(1){
+            transform: scale(.8) rotate(-20deg) translate(-275px,-190px);
+        }
+        .photo-album-6 .album-pic:hover .pic-bg:nth-child(2){
+            transform: scale(.8) rotate(-20deg) translate(0,-190px);
+        }
+        .photo-album-6 .album-pic:hover .pic-bg:nth-child(3){
+            transform: scale(.8) rotate(-20deg) translate(275px,-190px);
+        }
+        .photo-album-6 .album-pic:hover .pic-bg:nth-child(4){
+            transform: scale(.8) rotate(-20deg) translate(-275px,0);
+        }
+        .photo-album-6 .album-pic:hover .pic-bg:nth-child(5){
+            transform: scale(.8) rotate(-20deg) translate(275px,0);
+        }
+        .photo-album-6 .album-pic:hover .pic-bg:nth-child(6){
+            transform: scale(.8) rotate(-20deg) translate(-275px,190px);
+        }
+        .photo-album-6 .album-pic:hover .pic-bg:nth-child(7){
+            transform: scale(.8) rotate(-20deg) translate(0,190px);
+        }
+        .photo-album-6 .album-pic:hover .pic-bg:nth-child(8){
+            transform: scale(.8) rotate(-20deg) translate(275px,190px);
+        }
+        /* 相册七效果 */
+        .photo-album-7 .album-pic li{
+            z-index: 15;
+        }
+        .photo-album-7 .album-pic li{
+            perspective: 800px;
+        }
+        .photo-album-7 .album-pic:hover .pic-bg:nth-child(1){
+            transform: translate3d(0,-80px,-500px);
+        }
+        .photo-album-7 .album-pic:hover .pic-bg:nth-child(2){
+            transform: translate3d(0,-35px,-300px);
+        }
+        .photo-album-7 .album-pic:hover .pic-bg:nth-child(3){
+            transform: translate3d(0,0,-120px);
+        }
+        .photo-album-7 .album-pic:hover .pic-bg:nth-child(4){
+            transform: translate3d(0,30px,40px);
+        }
+        /* 相册八效果 */
+        .photo-album-8 .album-pic .pic-bg:nth-child(8),
+        .photo-album-8 .album-pic .pic-bg:nth-child(7),
+        .photo-album-8 .album-pic .pic-bg:nth-child(6),
+        .photo-album-8 .album-pic .pic-bg:nth-child(5){
+            transform-origin: right,top;
+        }
+        .photo-album-8 .album-pic .pic-bg:nth-child(4),
+        .photo-album-8 .album-pic .pic-bg:nth-child(3),
+        .photo-album-8 .album-pic .pic-bg:nth-child(2),
+        .photo-album-8 .album-pic .pic-bg:nth-child(1){
+            transform-origin: left,top;
+        }
+        .photo-album-8 .album-pic:hover .pic-bg:nth-child(1){
+            transform: scale(0.3) rotate(-80deg) translate(600px,170px);
+        }
+        .photo-album-8 .album-pic:hover .pic-bg:nth-child(2){
+            transform: scale(0.5) rotate(-60deg) translate(350px,70px);
+        }
+        .photo-album-8 .album-pic:hover .pic-bg:nth-child(3){
+            transform: scale(0.7) rotate(-40deg) translate(230px,30px);
+        }
+        .photo-album-8 .album-pic:hover .pic-bg:nth-child(4){
+            transform: scale(0.9) rotate(-20deg) translate(190px,10px) ;
+        }
+        .photo-album-8 .album-pic:hover .pic-bg:nth-child(5){
+            transform: scale(0.3) rotate(80deg) translate(-600px,170px);
+        }
+        .photo-album-8 .album-pic:hover .pic-bg:nth-child(6){
+            transform: scale(0.5) rotate(60deg) translate(-350px,70px);
+        }
+        .photo-album-8 .album-pic:hover .pic-bg:nth-child(7){
+            transform: scale(0.7) rotate(40deg) translate(-230px,30px);
+        }
+        .photo-album-8 .album-pic:hover .pic-bg:nth-child(8){
+            transform: scale(0.9) rotate(20deg) translate(-190px,10px) ;
+        }
+        .photo-album-8 .album-pic:hover .pic-bg:nth-child(9){
+            transform: scale(1.1) translate(0,20px);
+        }
+        /* 相册九效果 */
+        .photo-album-9 .album-pic li{
+            perspective: 400px;
+            z-index: 15;
+        }
+
+        .photo-album-9 .album-pic:hover .pic-bg:last-child{
+            transform: scale(.8) rotateX(10deg);
+        }
+        .photo-album-9 .album-pic:hover .pic-bg:nth-child(1){
+            transform: scale(.8)  translate(-270px,-175px) rotateX(10deg);
+        }
+        .photo-album-9 .album-pic:hover .pic-bg:nth-child(2){
+            transform: scale(.8) translate(0,-175px) rotateX(10deg);
+        }
+        .photo-album-9 .album-pic:hover .pic-bg:nth-child(3){
+            transform: scale(.8) translate(270px,-175px) rotateX(10deg);
+        }
+        .photo-album-9 .album-pic:hover .pic-bg:nth-child(4){
+            transform: scale(.8) translate(-270px,0) rotateX(10deg);
+        }
+        .photo-album-9 .album-pic:hover .pic-bg:nth-child(5){
+            transform: scale(.8) translate(270px,0) rotateX(10deg);
+        }
+        .photo-album-9 .album-pic:hover .pic-bg:nth-child(6){
+            transform: scale(.8) translate(-270px,190px) rotateX(10deg);
+        }
+        .photo-album-9 .album-pic:hover .pic-bg:nth-child(7){
+            transform: scale(.8) translate(0,190px) rotateX(10deg);
+        }
+        .photo-album-9 .album-pic:hover .pic-bg:nth-child(8){
+            transform: scale(.8) translate(270px,190px) rotateX(10deg);
+        }
+        
+        /* 点击效果 */
+        .con{
+            box-sizing: border-box;
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            margin-top: -3px;
+            border: 3px solid red;
+            border-radius: 50%;
+            animation: con .5s linear;
+            opacity: 1;
+            
+        }
+        @keyframes con {
+            100%{
+                width: 40px;
+                height: 40px;
+                opacity: 0;
+                margin-left: -20px;
+                margin-top: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="photobox">
+            <li class="photo-album photo-album-1">
+                <ol class="album-pic">
+                    <li>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0002.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0003.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0004.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0005.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0006.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0007.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0001.jpg" alt="">
+                        </div>
+                    </li>
+                </ol>
+                <p class="title">.photo-album-1 <span class="num">(7 pictures)</span></p>
+            </li>
+            <li class="photo-album photo-album-2">
+                <ol class="album-pic">
+                    <li>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0002.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0001.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0003.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0004.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0005.jpg" alt="">
+                        </div>
+                    </li>
+                </ol>
+                <p class="title">.photo-album-2 <span class="num">(5 pictures)</span></p>
+            </li>
+            <li class="photo-album photo-album-3">
+                <ol class="album-pic">
+                    <li>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0001.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0002.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0003.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0004.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0005.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0006.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0007.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0008.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0009.jpg" alt="">
+                        </div>
+                    </li>
+                </ol>
+                <p class="title">.photo-album-3 <span class="num">(9 pictures)</span></p>
+            </li>
+            <li class="photo-album photo-album-4">
+                <ol class="album-pic">
+                    <li>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0001.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0002.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0003.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0004.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0005.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0006.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0007.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0008.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0009.jpg" alt="">
+                        </div>
+                    </li>
+                </ol>
+                <p class="title">.photo-album-4 <span class="num">(9 pictures)</span></p>
+            </li>
+            <li class="photo-album photo-album-5">
+                <ol class="album-pic">
+                    <li>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0001.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0002.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0003.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0004.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0005.jpg" alt="">
+                        </div>
+                    </li>
+                </ol>
+                <p class="title">.photo-album-5 <span class="num">(5 pictures)</span></p>
+            </li>
+            <li class="photo-album photo-album-6">
+                <ol class="album-pic">
+                    <li>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0001.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0002.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0003.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0004.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0005.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0006.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0007.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0008.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0009.jpg" alt="">
+                        </div>
+                    </li>
+                </ol>
+                <p class="title">.photo-album-6 <span class="num">(9 pictures)</span></p>
+            </li>
+            <li class="photo-album photo-album-7">
+                <ol class="album-pic">
+                    <li>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0001.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0002.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0003.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0004.jpg" alt="">
+                        </div>
+                    </li>
+                </ol>
+                <p class="title">.photo-album-7 <span class="num">(4 pictures)</span></p>
+            </li>
+            <li class="photo-album photo-album-8">
+                <ol class="album-pic">
+                    <li>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0001.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0002.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0003.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0004.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0005.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0006.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0007.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0008.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0009.jpg" alt="">
+                        </div>
+                    </li>
+                </ol>
+                <p class="title">.photo-album-8 <span class="num">(9 pictures)</span></p>
+            </li>
+            <li class="photo-album photo-album-9">
+                <ol class="album-pic">
+                    <li>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0001.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0002.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0003.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0004.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0005.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0006.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0007.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0008.jpg" alt="">
+                        </div>
+                        <div class="pic-bg">
+                            <img src="./images/studio_0009.jpg" alt="">
+                        </div>
+                    </li>
+                </ol>
+                <p class="title">.photo-album-9 <span class="num">(9 pictures)</span></p>
+            </li>
+        </ul>
+    </div>
+
+    <script src="./libs/jquery/jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            // 点击效果
+            $(document).mousedown(function(e){
+                var left = e.pageX;
+                var top = e.pageY;
+                var div ='';
+                div += '<div class="con" style="';
+                div += 'position:absolute;top:'+top+'px;left:'+left+'px;';
+                div += '"></div>';
+                $("body").append(div);
+
+                $(".con").on("animationend",function(){
+                    $(this).remove();
+                })
+            })
+        })
+    </script>
+</body>
+</html>

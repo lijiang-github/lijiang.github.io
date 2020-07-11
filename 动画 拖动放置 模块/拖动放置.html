@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互换位置</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: burlywood;
+        }
+        ul{
+            list-style: none;
+        }
+        .container{
+            width: 1200px;
+            margin: 100px auto;
+            border: 1px solid #333;
+            box-shadow: 0 0 10px rgba(0,0,0,1);
+        }
+
+        ul{
+            width: 900px;
+            height: 600px;
+            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+
+            position: relative;
+        }
+        ul li{
+            width: 200px;
+            height: 100px;
+            opacity: .8;
+            font-size: 50px;
+            line-height: 100px;
+            text-align: center;
+            color: #fff;
+
+            position: absolute;
+        }
+        ul li:nth-child(1){
+            top: 50px;
+            left: 50px;
+        }
+        ul li:nth-child(2){
+            top: 50px;
+            left: 350px;
+        }
+        ul li:nth-child(3){
+            top: 50px;
+            left: 650px;
+        }
+        ul li:nth-child(4){
+            top: 250px;
+            left: 50px;
+        }
+        ul li:nth-child(5){
+            top: 250px;
+            left: 350px;
+        }
+        ul li:nth-child(6){
+            top: 250px;
+            left: 650px;
+        }
+        ul li:nth-child(7){
+            top: 450px;
+            left: 50px;
+        }
+        ul li:nth-child(8){
+            top: 450px;
+            left: 350px;
+        }
+        ul li:nth-child(9){
+            top: 450px;
+            left: 650px;
+        }
+        ul li.clone{
+            transition: none;
+        }
+        ul li.border-dotted::after{
+            content: "";
+            display: block;
+            width: 200px;
+            height: 100px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px dotted #333;
+        }
+
+
+        /* 点击效果 */
+        .con{
+            box-sizing: border-box;
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            margin-top: -3px;
+            border: 3px solid red;
+            border-radius: 50%;
+            animation: con .5s linear;
+            opacity: 1;
+            
+        }
+        @keyframes con {
+            100%{
+                width: 40px;
+                height: 40px;
+                opacity: 0;
+                margin-left: -20px;
+                margin-top: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li style="background-color: rgb(161, 229, 231);">A</li>
+            <li style="background-color: rgb(150, 152, 238);">B</li>
+            <li style="background-color: rgb(171, 228, 148);">C</li>
+            <li style="background-color: rgb(227, 162, 233);">D</li>
+            <li style="background-color: rgb(237, 241, 169);">E</li>
+            <li style="background-color: rgb(240, 220, 167);">F</li>
+            <li style="background-color: rgb(230, 181, 240);">G</li>
+            <li style="background-color: rgb(146, 238, 203);">H</li>
+            <li style="background-color: rgb(243, 171, 171);">I</li>
+        </ul>
+    </div>
+
+    <a href="">你好</a>
+    <script src="./libs/jquery/jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            // 全屏点击效果
+            $(document).mousedown(function(e){
+                var left = e.pageX;
+                var top = e.pageY;
+                var div ='';
+                div += '<div class="con" style="';
+                div += 'position:absolute;top:'+top+'px;left:'+left+'px;';
+                div += '"></div>';
+                $("body").append(div);
+
+                $(".con").on("animationend",function(){
+                    $(this).remove();
+                })
+            })
+
+            // 获取ul节点
+            var ul = $("ul")[0];
+            // 获取li节点集合
+            var lis = $("ul li");
+
+            // li监听事件
+            lis.mousedown(function(e){
+                // dom 解绑事件 。。。真的不能自己解绑自己喔！！！
+                $(document).off("mouseup");
+                // 使得文字不能选中
+                window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty(); 
+                // 记录自己
+                var _this = this;
+                // 克隆
+                var clone = $(this).clone();
+                // // 添加类名
+                clone.addClass("clone");
+                // // 计算位移
+                var c_left = this.offsetLeft; 
+                var c_top = this.offsetTop;
+                // 记录当前位置
+                var prev_pageX = e.pageX;
+                var prev_pageY = e.pageY;
+                // 位移 和 透明度处理
+                clone.css({
+                    top : c_top + "px",
+                    left : c_left + "px",
+                    opacity : .5
+                });
+                // clone添加到ul节点
+                $("ul").append(clone);
+
+                // dom绑定事件 移动
+                $(document).on("mousemove",function(e){
+                    // 使得文字不能选中 兼容
+                    window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty(); 
+                    // console.log(e);
+                    // 位移设置
+                    var left = e.pageX - prev_pageX + c_left;
+                    var top = e.pageY - prev_pageY + c_top;
+                    // 位移
+                    clone.css({
+                        top : top,
+                        left : left
+                    });
+                    // 判定鼠标所在的li节点
+                    for(var i = 0 ; i < lis.length ; i++){
+                        // 获取li节点的位置
+                        var posileft = lis[i].offsetLeft + ul.offsetLeft;
+                        var positop = lis[i].offsetTop + ul.offsetTop;
+                        // 判断
+                        if(e.pageX < posileft + lis[i].offsetWidth && e.pageX > posileft){
+                            if(e.pageY < positop + lis[i].offsetHeight && e.pageY > positop){
+                                // 添加类名和移除类名
+                                lis[i].classList.add("border-dotted");
+                            }else{
+                                $(lis[i]).removeClass("border-dotted");
+                            }
+                        }else{
+                            $(lis[i]).removeClass("border-dotted");
+                        }
+                    }
+                });
+                // 创建一个对象 记录li节点的定位位置
+                var obj = {
+                    left:0,
+                    top:0
+                };
+                // dom 鼠标松开事件 
+                $(document).on("mouseup",function(e){
+                    // 判定鼠标所在的li节点
+                    for(var i = 0 ; i < lis.length ; i++){
+                        // 过渡
+                        $(lis[i]).css({
+                            "transiton" : "all",
+                            "transition-duration" : "1s",
+                            "transition-timing-function" : "linear"
+                        })
+                        // 获取li节点的位置
+                        var posileft = lis[i].offsetLeft + ul.offsetLeft;
+                        var positop = lis[i].offsetTop + ul.offsetTop;
+                        // 判断
+                        if(e.pageX < posileft + lis[i].offsetWidth && e.pageX > posileft){
+                            if(e.pageY < positop + lis[i].offsetHeight && e.pageY > positop){
+                                // 记录li节点的定位位置样式;
+                                obj.left = lis[i].offsetLeft + "px";
+                                obj.top = lis[i].offsetTop + "px";
+                                // 更新li节点的定位位置样式
+                                $(lis[i]).css({
+                                    left : $(_this).css("left"),
+                                    top : $(_this).css("top")
+                                })
+                                $(_this).css({
+                                    left : obj.left,
+                                    top : obj.top,
+                                })
+                            }
+                        }
+                    }
+                    // 删除克隆
+                    $("ul li").remove(".clone");
+                    // 移除类名
+                    lis.removeClass("border-dotted");
+                    // dom 解绑事件
+                    $(document).off("mousemove");
+                })
+            })
+        })
+        
+    </script>
+</body>
+</html>
