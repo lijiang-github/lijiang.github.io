@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">
+        男：
+        <select name="man" id="man">
+            <option value="鼠">鼠</option>
+            <option value="牛">牛</option>
+            <option value="虎">虎</option>
+            <option value="兔">兔</option>
+            <option value="龙">龙</option>
+            <option value="蛇">蛇</option>
+            <option value="马">马</option>
+            <option value="羊">羊</option>
+            <option value="猴">猴</option>
+            <option value="鸡">鸡</option>
+            <option value="狗">狗</option>
+            <option value="猪">猪</option>
+        </select>
+    </label>
+    <p></p>
+    <label for="">
+        女：
+        <select name="woman" id="woman">
+            <option value="鼠">鼠</option>
+            <option value="牛">牛</option>
+            <option value="虎">虎</option>
+            <option value="兔">兔</option>
+            <option value="龙">龙</option>
+            <option value="蛇">蛇</option>
+            <option value="马">马</option>
+            <option value="羊">羊</option>
+            <option value="猴">猴</option>
+            <option value="鸡">鸡</option>
+            <option value="狗">狗</option>
+            <option value="猪">猪</option> 
+        </select>
+    </label>
+    <p></p>
+    <button>开始配对</button>
+    <img src="./images/timg.gif" style="display: none;width: 100px;height: 100px;" alt="">
+    <div id="result"></div>
+    <script src="./jquery/jquery-3.4.1.min.js"></script>
+    <script>
+        $("button").click(function(){
+            $.ajax({
+                url:'http://api.kele8.cn/agent/http://apis.juhe.cn/sxpd/query',
+                data:{
+                    key:'06b095f84cccb80a501c7bcb7f6f25a6',
+                    men:$("#man").val(),
+                    women:$("#woman").val()
+                },
+                beforeSend:function(xhr){
+                    console.log('数据请求之前',new Date().getTime());
+                    $("img").show();
+                },
+                success:function(data,status,xhr){
+                    console.log("数据请求成功",new Date().getTime());
+                    $("#result").html(
+                        '<p>'+data.result.data+'<p>'
+                    )
+                },
+                error:function(data,status,xhr){
+                    console.log("数据请求失败",new Date().getTime());
+                    
+                },
+                complete:function(status,xhr){
+                    console.log("数据请求完成",new Date().getTime());
+                    $('img').hide();
+                }
+    
+            })
+        })
+    </script>
+</body>
+</html>

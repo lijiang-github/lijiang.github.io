@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="search">
+    <button>搜索</button>
+    <p></p>
+    <ul class="list"></ul>
+
+    <!-- <ul class="text"></ul> -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- 原生ajax -->
+    <!-- <script>
+        function aaa(data){
+            console.log(data);
+            data.result.forEach(function(element,index){
+                console.log(element[0]);
+                $("ul.text").append('<li>'+ element[0] +'</li>')
+            });
+        }
+    </script>
+    <script src="https://suggest.taobao.com/sug?code=utf-8&q=%E6%89%8B&_ksTS=1592894120334_1323&callback=aaa"></script> -->
+    <!-- jQuery-ajax -->
+    <!-- <script>
+        $.get("https://suggest.taobao.com/sug?code=utf-8&q=%E6%89%8B&_ksTS=1592894120334_1323",function(data,status,xhr){
+            console.log(data);
+            data.result.forEach(function(element,index){
+                $("ul.text").append("<li>"+ element[0]+"</li>")
+            })
+        },
+        "jsonp"
+        )
+    </script> -->
+    
+    <script>
+        $("#search").bind("input",function(){
+            $("ul.list").html("");
+            console.log('search',$(this).val());
+            
+            // api
+            $.get("https://suggest.taobao.com/sug",{
+                code:'utf-8',
+                q:$(this).val()
+            },function(data,status,xhr){
+                data.result.forEach(function(element,index){
+                    $("ul.list").append("<li>"+element[0]+"</li>");
+                });
+            },"jsonp")
+        })
+
+        
+    </script>
+
+
+
+</body>
+</html>

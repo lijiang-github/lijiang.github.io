@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    男 :
+    <label for="">
+       <select name="men" id="men">
+           <option value="白羊">白羊</option>
+           <option value="金牛">金牛</option>
+           <option value="双子">双子</option>
+           <option value="巨蟹">巨蟹</option>
+           <option value="狮子">狮子</option>
+           <option value="室女">室女</option>
+           <option value="天秤">天秤</option>
+           <option value="天蝎">天蝎</option>
+           <option value="人马">人马</option>
+           <option value="摩羯">摩羯</option>
+           <option value="宝瓶">宝瓶</option>
+           <option value="双鱼">双鱼</option>
+       </select> 
+    </label>
+    <p></p>
+    女 :
+    <label for="">
+        <select name="women" id="women">
+            <option value="白羊">白羊</option>
+            <option value="金牛">金牛</option>
+            <option value="双子">双子</option>
+            <option value="巨蟹">巨蟹</option>
+            <option value="狮子">狮子</option>
+            <option value="室女">室女</option>
+            <option value="天秤">天秤</option>
+            <option value="天蝎">天蝎</option>
+            <option value="人马">人马</option>
+            <option value="摩羯">摩羯</option>
+            <option value="宝瓶">宝瓶</option>
+            <option value="双鱼">双鱼</option>
+        </select>
+    </label>
+    <p></p>
+    <img class="loading" src="./images/timg.gif" style="width: 100px;height: 100px;display: none;" alt="">
+    <p></p>
+    <button>星座配对</button>
+    <div id="result"></div>
+        
+    <script src="./jquery/jquery-3.4.1.min.js"></script>
+    <script>
+        $('button').click(function(){
+            $.ajax({
+                url:'http://api.kele8.cn/agent/http://apis.juhe.cn/xzpd/query',
+                data:{
+                    key:'99398825e965a1592f7f0d8f5055a749',
+                    men:$("#men").val(),
+                    women:$("#women").val(),
+                },
+                beforeSend:function(xhr){
+                    console.log('请求前',new Date().getTime());
+                    $(".loading").show();
+                },
+                success:function(data,status,xhr){
+                    console.log('请求成功',new Date().getTime());
+                    $("#result").html(
+                        '<p>男 : ' + data.result.men +' ,</p>'
+                        +'<p>女 : ' + data.result.women +' ,</p>'
+                        +'<p>指数 : ' + data.result.zhishu +' ,</p>'
+                        +'<p>比重 : ' + data.result.bizhong +' ,</p>'
+                        +'<p>相约 : ' + data.result.xiangyue +' ,</p>'
+                        +'<p>天长地久 : ' + data.result.tcdj +' ,</p>'
+                        +'<p>结果 : ' + data.result.jieguo +' ,</p>'
+                        +'<p>恋爱 : ' + data.result.lianai +' </p>'
+                        +'<p>注意 : ' + data.result.zhuyi +' </p>'
+                    );
+                },
+                error:function(data,status,xhr){
+                    console.log('请求失败',new Date().getTime());
+                },
+                complete:function(status,xhr){
+                    console.log('请求完成',new Date().getTime());
+                    $(".loading").hide();
+                }
+
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loading{
+            width: 100px;
+            height: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"><br/>
+    <img src="./images/timg.gif" alt="" class="loading">
+
+    <div id="text1"></div>
+    <button>qq号【福祸测试】</button>
+    <script src="./jquery/jquery-3.4.1.min.js"></script>
+    <script>
+        
+        $("button").click(function(e){
+            $.ajax({
+                url: 'http://api.kele8.cn/agent/http://japi.juhe.cn/qqevaluate/qq',
+                method: 'GET',
+                // datatype:"jsonp",    
+                data:{
+                    key: 'b615c27acbaa439dd8c66f05046b52be',
+                    qq: $("input").val()
+                },
+                beforeSend:function(xhr){
+                    console.log('发送ajax请求前',new Date());
+
+                    $('.loading').show();
+                },
+                success:function(data,status,xhr){
+                    console.log('成功',data,status,xhr);
+                    var str = 
+                        '<h2>'+data.result.data.conclusion+'</h2>'
+                        +'<p>'+data.result.data.analysis+'</p>';
+                    
+                    $("#text1").html(str);
+                },
+                erro:function(data,status,xhr){
+                    console.log('失败',data,status,xhr);
+                },
+                complete:function(xhr,status){
+                    // console.log('完成',xhr,status);
+
+                    $('.loading').hide();
+                }
+            })
+        })
+
+        // 今天作业 ajax方法加上 loading gif图片
+    </script>
+</body>
+</html>
