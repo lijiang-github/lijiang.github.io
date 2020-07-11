@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 翻书动画 模块 -->
+    <section class="book">
+        <div class="wrap">
+            <div class="cover cover-face sun-shadow">
+                <h1>CSS</h1>
+                <p>BOOKTRANS</p>
+            </div>
+            <div class="page page-1 sun-shadow"></div>
+            <div class="page page-2 sun-shadow"></div>
+            <div class="page page-3 sun-shadow"></div>
+            <div class="page page-4 sun-shadow">
+                <div class="download">DOWNLOAD</div>
+            </div>
+            <div class="page page-5 sun-shadow"></div>
+            <div class="cover cover-back sun-shadow"></div>
+            <div class="back"></div>
+        </div>
+    </section>
+    <style>
+        .book{
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #fff , #ECF0F1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 500px;
+            transform-style: preserve-3d;
+        }
+        .wrap{
+            width: 150px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .book .cover{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #ffea29;
+            box-shadow:  1px 1px 4px 0 rgba(0, 0, 0, .2);
+            box-sizing: border-box;
+            border-left: 2px solid #666;
+            border-right: 2px solid #666;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            transform: translateZ(30px) translateX(-5px) rotateY(-10deg);
+            transform-origin: center left;
+            transition: transform 1s linear;
+            transform-style: preserve-3d;
+        }
+        .book .cover-face{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ffea29 50%, #fff);
+            
+        }
+        .book .cover-face h1{
+            color: rgba(146, 145, 72, 0.3);
+        }
+        .book .cover-face::after{
+            content: '';
+            display: block;
+            height: 100%;
+            width: calc(100% - 2px);
+            border-left: 2px solid #666;
+            border-right: 2px solid #666;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(#ffea29 4%,#f5f5f5 4%, #f5f5f5 96%, #ffea29 96%);
+            transform: translateZ(-1px);
+        }
+        .book .cover-back{
+            transform: translateZ(0px) translateX(-2px);
+        }
+        .book .page{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-clip: content-box;
+            background-image: linear-gradient(to right, rgba(153, 153, 153, 0.1) 2%, transparent 2%, transparent 98%, rgba(153, 153, 153, 0.1) 98%),linear-gradient(to right,#e1ddd8 0%,#fffbf6 100%);
+            transform-origin: left center;
+            transition: transform 1s linear;
+            transform-style: preserve-3d;
+
+        }
+        .book .back{
+            width: 33px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #e1ddd8;
+            transform-origin: left center;
+            transform: rotateY(-90deg) translateZ(5px);
+        }
+        .book .page-1{
+            transform: translateZ(26px) rotateY(-10deg);
+        }
+        .book .page-2{
+            transform: translateZ(26px) rotateY(-6deg);
+        }
+        .book .page-3{
+            transform: translateZ(26px) rotateY(-3deg);
+        }
+        .book .page-4{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateZ(26px) rotateY(0deg);
+        }
+        .book .page-4 .download{
+            padding: 5px;
+            border: 1px solid red;
+            line-height: 1em;
+            font-size: 16px;
+            color: #666;
+        }
+        .book .page-5{
+            transform: translateZ(26px) rotateY(4deg);
+        }
+        .wrap{
+            transform-origin: center left;
+            transform: rotateY(-20deg);
+        }
+        .wrap:hover .cover-face{
+            transform: translateZ(30px) translateX(-5px) rotateY(-140deg);
+        }
+        .wrap:hover .page-1{
+            transform: translateZ(26px) rotateY(-120deg);
+        }
+        .wrap:hover .page-2{
+            transform: translateZ(26px) rotateY(-100deg);
+        }
+        .wrap:hover .page-3{
+            transform: translateZ(26px) rotateY(-90deg);
+        }
+        .wrap:hover .page-4{
+            transform: translateZ(26px) rotateY(-10deg);
+        }
+        .wrap:hover .page-5{
+            transform: translateZ(26px) rotateY(3deg);
+        }
+        .sun-shadow::before{
+            content: '';
+            display: block;
+            width: 120%;
+            height: 40px;
+            background: radial-gradient(rgba(0, 0, 0, .2),transparent 70%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform-origin: left bottom;
+            transform: rotateX(90deg) translateY(20px) rotateY(1deg);
+        }
+
+    </style>
+</body>
+</html>
