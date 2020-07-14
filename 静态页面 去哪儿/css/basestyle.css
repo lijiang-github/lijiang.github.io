@@ -1,0 +1,93 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+.info_container_1{
+	width: 602px;
+	margin: 0 auto;
+}
+
+ul,ol{
+	list-style: none;
+}
+
+a {
+	color: #333333;
+	text-decoration: none;
+}
+
+input {
+	background: none;
+	outline: none;
+	padding: 0px;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0px;
+	line-height: 0px;
+	visibility: hidden;
+}
+
+.clearfix {
+	zoom: 1;
+	/* 为了兼容ie浏览器 */
+}
+
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+h1{
+	font-size: 22px;
+}
+h2{
+	font-size: 20px;
+}
+h3{
+	font-size: 18px;
+}
+h4{
+	font-size: 16px;
+}
+h5{
+	font-size: 14px;
+}
+h6{
+	font-size: 12px;
+}
+.advLBtishi {
+	display: block;
+	width: 26px;
+	height: 16px;
+	color: #C59FAA;
+	font-size: 12px;
+	padding-left: 23px;
+	line-height: 18px;
+	background: #5B4F64 url(../img/ad_camel.png) no-repeat 1px 3px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-top-right-radius: 8px;
+}
+
+.title_sty1{
+	width: 945px;
+	height: 45px;
+	line-height: 45px;
+	margin-top: 20px;
+	color: #00AFC7;
+	font-size: 24px;
+	border-bottom: 2px solid #00AFC7;
+}
