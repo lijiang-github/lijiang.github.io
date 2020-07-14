@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的太阳系</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+        }
+        .mystar{
+            width: 680px;
+            margin: 350px auto;
+            /* border: 1px solid red ; */
+            display: flex;
+
+        }
+        .mystar>div{
+            width: 20px;
+            height: 20px;
+            margin: 0 10px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: yellow; */
+        }
+        .mystar .sun{
+            margin: 0 90px;
+        }
+        #taiyang{
+            min-width: 100px;
+            min-height: 100px;
+            border-radius: 50%;
+            background-image: radial-gradient(at center center,red,yellow 100%,black 100%);
+            box-shadow: 0 0 500px yellow;
+        }
+        .mystar .star {
+            animation: star 10s linear infinite;
+            z-index: 99999;
+        }
+        .mystar .star .star-i{
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: red;
+        }
+        .mystar .star:nth-child(1),
+        .mystar .star:nth-child(1) .star-i{
+            transform-origin: 330px 10px;
+        }
+        .mystar .star:nth-child(2),
+        .mystar .star:nth-child(2) .star-i{
+            transform-origin: 290px 10px;
+        }
+        .mystar .star:nth-child(3),
+        .mystar .star:nth-child(3) .star-i{
+            transform-origin: 250px 10px;
+        }
+        .mystar .star:nth-child(4),
+        .mystar .star:nth-child(4) .star-i{
+            transform-origin: 210px 10px;
+        }
+        .mystar .star:nth-child(5),
+        .mystar .star:nth-child(5) .star-i{
+            transform-origin: 170px 10px;
+        }
+        .mystar .star:nth-child(6),
+        .mystar .star:nth-child(6) .star-i{
+            transform-origin: 130px 10px;
+        }
+        .mystar .star:nth-child(1),
+        .mystar .star:nth-child(6){
+            animation-duration: 5s;
+        }
+
+        @keyframes star {
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        .mystar .star-trails .round{
+            display: block;
+            border: 1px solid rgb(230, 197, 231);
+            border-radius: 50%;
+            position: absolute;
+        }
+        .mystar .star-trails:nth-last-child(1) .round{
+            min-width: 638px;
+            height: 638px;
+            left: -628px;
+        }
+        .mystar .star-trails:nth-last-child(2) .round{
+            min-width: 558px;
+            height: 558px;
+            left: -548px;
+            background-image: url(./puzzle.jpg);
+            background-size: 60%;
+            border-radius: 50%;
+            z-index: -2;
+            animation: stone 12s linear reverse infinite;
+        }
+        @keyframes stone {
+            100%{
+                transform: rotate(-360deg);
+            }
+        }
+        .mystar .star-trails:nth-last-child(3) .round{
+            min-width: 478px;
+            height: 478px;
+            left: -468px;
+            background-color: #000;
+            z-index: -1;
+        }
+        .mystar .star-trails:nth-last-child(4) .round{
+            min-width: 398px;
+            height: 398px;
+            left: -388px;
+        }
+        .mystar .star-trails:nth-last-child(5) .round{
+            min-width: 318px;
+            height: 318px;
+            left: -310px;
+        }
+        .mystar .star-trails:nth-last-child(6) .round{
+            min-width: 238px;
+            height: 238px;
+            left: -230px;
+        }
+
+        @keyframes stone {
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mystar">
+        <div class="star"><i class="star-i" style="background-image: radial-gradient(circle at right center,white 0%,black 100%); transform: rotate(120deg);"></i></div>
+        <div class="star"><i class="star-i" style="background-image: radial-gradient(circle at right center,white 0%,orange 50%,black 100%) ; transform: rotate(190deg);"></i></div>
+        <div class="star"><i class="star-i" style="background-image: radial-gradient(circle at right center,white 0%,blue 50%,black 100%) ; transform: rotate(310deg);"></i></div>
+        <div class="star"><i class="star-i" style="background-image: radial-gradient(circle at right center,white 0%,green 50%,black 100%) ; transform: rotate(260deg);"></i></div>
+        <div class="star"><i class="star-i" style="background-image: radial-gradient(circle at right center,white 0%,violet 50%,black 100%) ; transform: rotate(10deg);"></i></div>
+        <div class="star"><i class="star-i" style="background-image: radial-gradient(circle at right center,white 0%,red 50%,black 100%) ; transform: rotate(160deg);"></i></div>
+        <div class="sun">
+            <div id="taiyang"></div>
+        </div>
+        <div class="star-trails"><b class="round"></b></div>
+        <div class="star-trails"><b class="round"></b></div>
+        <div class="star-trails"><b class="round"></b></div>
+        <div class="star-trails"><b class="round"></b></div>
+        <div class="star-trails"><b class="round"></b></div>
+        <div class="star-trails"><b class="round"></b></div>
+    </div>
+
+
+</body>
+</html>
