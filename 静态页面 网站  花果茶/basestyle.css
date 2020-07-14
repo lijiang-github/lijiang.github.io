@@ -1,0 +1,301 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.container {
+	width:1200px;
+	margin: 0 auto;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	color: #333333;
+	text-decoration: none;
+}
+
+input {
+	background: none;
+	padding: 0px;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0px;
+	line-height: 0px;
+	visibility: hidden;
+}
+
+.clearfix {
+	zoom: 1;
+	/* 为了兼容ie浏览器 */
+}
+
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+h1{
+	font-size: 22px;
+}
+h2{
+	font-size: 20px;
+}
+h3{
+	font-size: 18px;
+}
+h4{
+	font-size: 16px;
+}
+h5{
+	font-size: 14px;
+}
+h6{
+	font-size: 12px;
+}
+.mi-li-sty1:hover{
+	position: relative;        /* 需要借用的要注意......没想好 */
+	left: 0;
+	bottom: 2px;
+}
+.aSty1,.spSty1{
+	display: block;
+}
+.aSty2,.spSty2{
+	display: inline-block;
+}
+.bcolorhome2star{
+	width: 100%;
+	background-color: #F5F5F5;
+}
+
+.space-boxB:after{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 5px;
+	position:absolute;
+	bottom: -5px;
+	background: rgba(0,0,0,0.1);
+}
+
+.text1{
+	height: 44px;
+	line-height: 44px;
+	font-size: 24px;
+	color: #333333;
+}
+.text2{
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	color: #999999;
+}
+.text3{
+	font-size:16px;
+	color: #333333;
+}
+.text4{
+	font-size:12px;
+	color: #999999;
+}
+
+/* ---------------------------------------------------header---------------------------------------------------------- */
+.header{
+	width: 100%;
+	height: 120px;
+}
+.header .logo{
+	height: 100%;
+	width: 470px;
+	float: left;
+	position: relative;
+}
+.header .logo img{
+	width: 254px;
+	height: 80px;
+	position: absolute;
+	bottom: 14px;
+	cursor: pointer;
+}
+.header .logo .span{
+	height: 56px;
+	line-height: 56px;
+	font-size: 24px;
+	position: absolute;
+	bottom: 14px;
+	left: 264px;
+}
+
+.header ul{
+	width: 710px;
+	height: 100%;
+}
+
+.header ul li{
+	width: 138px;
+	height: 100%;
+	margin-right: 2px;
+	text-align: center;
+	font-size: 16px;
+}
+.header ul li a{
+	display: block;
+	height: 100%;
+	width: 100%;
+	line-height: 120px;
+}
+.header ul li a.con{
+	background: #FF6637;
+	color: white;
+}
+.header ul li:hover{
+	background: #FF6637;
+}
+.header ul li:hover a{
+	color: white;
+}
+
+/* ------------------------------------------------------固定定位--------------------------------------------------- */
+.position_fixed{
+	display: block;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	position: fixed;
+	bottom: 50px;
+	right: 40px;
+}
+.position_fixed img{
+	width: 100%;
+	height: 100%;
+	margin-top: 0;
+	cursor: pointer;
+	position: relative;
+	opacity: 1;
+}
+
+/* ------------------------------------------------------pagefoot页脚---------------------------------------------- */
+.pagefoot{
+	width: 100%;
+	height: 370px;
+	background: #2B2B2B;
+}
+.pagefoot .box1{
+	height: 80px;
+	padding-left: 82px;
+	padding-top: 38px;
+}
+.pagefoot .box1 .td1{
+	height: 100%;
+	width: 420px;
+}
+.pagefoot .box1 .Td{
+	float: left;
+}
+.pagefoot .box1 .Td img{
+	width: 50px;
+	height: 50px;
+}
+.pagefoot .box1 .td1 .content{
+	height: 100%;
+	padding-left: 11px;
+	background: url(images/AD0Iu_ufBxAEGAAgmtvLzwUo_LmkqQcwHjgf.png) no-repeat -14px 10px;
+}
+.pagefoot .box1 .Td .content .span1{
+	height: 20px;
+	line-height: 20px;
+	padding-top: 6px;
+	font-size: 16px;
+	color: white;
+}
+.pagefoot .box1 .Td .content .span2{
+	height: 20px;
+	line-height: 24px;
+	font-size: 16px;
+	color: white;
+}
+.pagefoot .box1 .td2{
+	height: 100%;
+	width: 400px;
+}
+.pagefoot .box1 .td2 .content{
+	height: 100%;
+	padding-left: 22px;
+	background: url(images/AD0Iu_ufBxAEGAAgmtvLzwUo_LmkqQcwHjgf.png) no-repeat -9px 10px;
+}
+.pagefoot .box1 .td3{
+	height: 100%;
+	width: 298px;
+}
+.pagefoot .box1 .td3 .content{
+	height: 100%;
+	padding-left: 11px;
+	background: url(images/AD0Iu_ufBxAEGAAgmtvLzwUo_LmkqQcwHjgf.png) no-repeat -13px 10px;
+}
+.pagefoot .box2 {
+	width: 100%;
+	height: 104px;
+	margin-bottom: 11px;
+	background: url(images/AD0Iu_ufBxAEGAAgmdvLzwUo8PeZ3wMwhgg4Hg.png) no-repeat center -14px;
+	position: relative;
+}
+.pagefoot .box2 ul{
+	height: 16px;
+	width: 700px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.pagefoot .box2 ul li{
+	height: 100%;
+	line-height: 16px;
+	font-size: 14px;
+	color: #999999;
+}
+.pagefoot .box2 ul li a{
+	color: #999999;
+	margin: 0 41px;
+}
+
+.pagefoot .bottombox{
+	height: 136px;
+	width: 100%;
+	background: #222524;
+}
+.pagefoot .bottombox span{
+	height: 14px;
+	line-height: 14px;
+	font-size: 14px;
+	color: #CCCCCC;
+	text-align: center;
+}
+.pagefoot .bottombox span.first{
+	padding-top: 37px;
+}
+.pagefoot .bottombox span.second{
+	margin-top: 7px;
+}
+.pagefoot .bottombox span a{
+	color: #CCCCCC;
+}
+.pagefoot .bottombox span a:hover{
+	color: white;
+}
+.pagefoot .bottombox span b{
+	font-size: 15px;
+	font-weight: 400;
+}

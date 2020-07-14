@@ -1,0 +1,144 @@
+/* -----------------------------------------------pageFour_top_img--------------------------------------------- */
+
+.pageFour_top_img{
+	height: 300px;
+	width: 100%;
+	background: url(../images/ABUIABAEGAAgmJnk3gUo8tuTjQIwgA84rAI.png) no-repeat center center;
+}
+
+/* -------------------------------------------pageThree_pageFour_home1------------------------------------------------- */
+.pageFour_home1 {
+	height: 2092px;
+}
+.pageFour_home1 .container_2{
+	padding: 13px 3px 0 17px;
+	width: 1180px;
+	height: 100%;
+	overflow: hidden;
+}
+.pageFour_home1 .top{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	color: #666666;
+	border-bottom: 1px solid #999999;
+	position: relative;
+}
+.pageFour_home1 .top span{
+	padding-left: 5px;
+}
+
+.pageFour_home1 .top span a{
+	color: #666666;
+}
+
+.pageFour_home1 .bottombox{
+	width: 100%;
+	padding-top: 69px;
+	position: relative;
+}
+
+.pageFour_home1 .bottombox .title{
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	font-size: 16px;
+	color: #FF6637;
+	border-bottom: 1px solid #CCCCCC;
+	position: relative;
+}
+.pageFour_home1 .bottombox .title span{
+	padding-left: 5px;
+	padding-right: 15px;
+}
+.pageFour_home1 .bottombox .title span i{
+	display: inline-block;
+	height: 16px;
+	width: 5px;
+	background: #FF6637;
+	position: relative;
+	top: 2px;
+}
+.pageFour_home1 .bottombox .title span a{
+	color: #747474;
+	font-size: 13px;
+	font-weight: 500;
+}
+.pageFour_home1 .bottombox .content{
+	width: 100%;
+	height: 1728px;
+	padding: 20px 0;
+}
+.pageFour_home1 .bottombox .content li{
+	width: 100%;
+	height: 180px;
+	padding-top: 17px;
+	padding-bottom: 18px;
+	border-bottom: 1px dashed #E5E5E5;
+}
+.pageFour_home1 .bottombox .content li:hover{
+	color: #FF6637;
+}
+.pageFour_home1 .bottombox .content li:hover a{
+	color: #FF6637;
+}
+
+.pageFour_home1 .bottombox .content li.last{
+	border: 0;
+}
+
+.pageFour_home1 .bottombox .content li img{
+	height: 100%;
+	width: 250px;
+	cursor: pointer;
+}
+.pageFour_home1 .bottombox .content li .Rightbox{
+	width: 913px;
+	height: 100%;
+	padding-left: 10px;
+	padding-right: 7px;
+}
+.pageFour_home1 .bottombox .content li .Rightbox .smallTitle{
+	width: 100%;
+	height: 22px;
+	line-height: 22px;
+	font-size: 16px;
+	color: #666666;
+	text-align: right;
+}
+
+.pageFour_home1 .bottombox .content li .Rightbox .smallTitle a{
+	color: #666666;
+	font-weight: bolder;
+	display: inline-block;
+	width: 800px;
+	text-align: left;
+}
+.pageFour_home1 .bottombox .content li .Rightbox .smallTitle:hover{
+	color: #FF6637;
+}
+.pageFour_home1 .bottombox .content li .Rightbox .smallTitle:hover a{
+	color: #FF6637;
+}
+.pageFour_home1 .bottombox .content li .Rightbox .text{
+	width: 915px;
+	line-height: 18px;
+	color: #747474;
+	font-size: 15px;
+	margin-top: 6px;
+}
+.pageFour_home1 .bottombox .pageBtn {
+	height: 20px;
+	width: 100%;
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+}
+.pageFour_home1 .bottombox .pageBtn a{
+	color: #666666;
+	padding: 0 12px;
+}
+.pageFour_home1 .bottombox .pageBtn a.con{
+	color: #FF6637;
+}

@@ -1,0 +1,153 @@
+/* -----------------------------------------------pageFour_top_img--------------------------------------------- */
+
+.pageFive_top_img{
+	height: 300px;
+	width: 100%;
+	background: url(../images/ABUIABAEGAAg6ZXk3gUowN-v7AUwgA84rAI.png) no-repeat center center;
+}
+
+/* -------------------------------------------------pageFive_home1 */
+.pageFive_home1{
+	height: 840px;
+}
+.pageFive_home1 .Bbox{
+	width: 100%;
+	margin-top: 74px;
+	overflow: hidden;
+}
+.pageFive_home1 .Bbox .topBox{
+	width: 100%;
+	height: 381px;
+	position: relative;
+}
+.pageFive_home1 .Bbox .topBox .topLefBox{
+	width: 546px;
+	height: 100%;
+}
+.pageFive_home1 .Bbox .topBox .topLefBox .title{
+	width: 100%;
+	height: 43px;
+	border-bottom: 1px solid #EBEBEB;
+}
+.pageFive_home1 .Bbox .topBox .topLefBox .title span{
+	height: 42px;
+	line-height: 42px;
+	font-size: 16px;
+	color: #F13A3A;
+	border-bottom: 1px solid #F13A3A;
+	padding: 0 12px;
+}
+.pageFive_home1 .Bbox .topBox .topLefBox .infobox{
+	padding: 4px 0 0 37px;
+	height: 333px;
+	width: 509px;
+}
+.pageFive_home1 .Bbox .topBox .topLefBox .infobox p{
+	height: 29px;
+	line-height: 29px;
+	font-size: 16px;
+	color: #666666;
+}
+.pageFive_home1 .Bbox .topBox .topLefBox .infobox .img{
+	height: 160px;
+	width: 100%;
+	margin-top: 30px;
+}
+.pageFive_home1 .Bbox .topBox .topLefBox .infobox img{
+	width: 160px;
+	height: 160px;
+	margin-right: 63px;
+}
+.pageFive_home1 .Bbox .topBox .topLefBox .infobox .span{
+	height: 28px;
+	line-height: 28px;
+	font-size: 16px;
+	color: #666666;
+	font-weight: bolder;
+}
+.pageFive_home1 .Bbox .topBox .topLefBox .infobox .spSty2{
+	padding: 0 16px;
+	margin-right: 63px;
+}
+
+
+.pageFive_home1 .Bbox .topBox .topRigBox{
+	width: 654px;
+	height: 100%;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox{
+	height: 100%;
+	width: 582px;
+	padding-left: 72px;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox .title{
+	height: 52px;
+	line-height: 52px;
+	font-size: 14px;
+	color: #666666;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox .SmaSmabox{
+	padding-left: 14px;
+	padding-top: 4px;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox .input{
+	height: 34px;
+	line-height: 34px;
+	font-size: 14px;
+	color: #666666;
+	padding: 10px 36px 10px 0;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox span{
+	width: 46px;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox input{
+	width: 188px;
+	height: 32px;
+	border:1px solid #DADADA;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox i{
+	display: inline-block;
+	width: 23px;
+	height: 34px;
+	color: #FF0000;
+	text-indent: 5px;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox .last{
+	height: 66px;
+	line-height: 66px;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox .last textarea{
+	width: 252px;
+	height: 62px;
+	padding: 1px;
+	font-size: 14px;
+	color: #666666;
+	text-indent: 5px;
+	border:1px solid #DADADA;
+	line-height: 22px;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox .btn{
+	margin-left: 60px;
+	margin-top: 24px;
+	height: 44px;
+	width: 230px;
+}
+.pageFive_home1 .Bbox .topBox .topRigBox .smallBox .btn button{
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border: 0;
+	font-size: 14px;
+	color: white;
+	background: #F54F4F;
+	cursor: pointer;
+}
+.pageFive_home1 .Bbox .botBox{
+	height: 300px;
+	width: 100%;
+	position: relative;
+}
+.pageFive_home1 .Bbox .botBox img{
+	width: 100%;
+	height: 100%;
+}

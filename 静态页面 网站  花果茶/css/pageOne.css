@@ -1,0 +1,304 @@
+
+/* ---------------------------------------------------pageOne_top_img--------------------------------------------- */
+.pageOne_top_img{
+	height: 800px;
+	width: 100%;
+	background: url(../images/ABUIABAEGAAgiozh3gUotpaWnAYwgA84oAY.png) no-repeat center center;
+}
+/* ---------------------------------------------------home1---------------------------------------------------------- */
+
+.home1{
+	height: 700px;
+}
+.home1 .home1_Hid{
+	/* js效果需要 */
+	height: 160px;
+	width: 100%;
+	overflow: hidden;
+}
+.home1 .titlebox{
+	height: 88px;
+	text-align: center;
+	padding: 36px 0;
+	position: relative;
+	top: 0;
+}
+.home1 .titlebox .titleText_1{
+	height: 44px;
+	line-height: 44px;
+	font-size: 24px;
+	color: #333333;
+}
+.home1 .titlebox .titleText_2{
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	color: #999999;
+}
+.home1 .table{
+	height: 552px;
+	width: 1196px;
+	padding: 0 6px;
+}
+.home1 .table li{
+	width: 200px;
+	height: 259px;
+	padding: 12px 48px 0 48px ;
+}
+.home1 .table li img{
+	width: 200px;
+	height: 200px;
+}
+.home1 .table li span{
+	height: 42px;
+	line-height: 42px;
+	width: 100%;
+	text-align: center;
+	font-size: 16px;
+	color: #333333;
+}
+/* ------------------------------------------------home2-------------------------------------------------------- */
+.home2{
+	height: 719px;
+	width: 100%;
+	min-width: 1200px;
+	background: url(../images/AD0Iu_ufBxACGAAg_trLzwUo9oWitAcwgA84oAY.jpg) no-repeat center center;
+	position: relative;
+	overflow: hidden;
+}
+.home2 .home2_Hid{
+	/* js效果需要 */
+	height: 160px;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+}
+.home2 .home2_Hid b{
+	display: block;
+	width: 0;
+	height: 0;
+	border: 155px solid #E43A3D;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	position: absolute;
+	top: 0;
+	left: 50%; 
+	margin-left: -155px;
+	/* margin: 0 auto; */
+}
+.home2 .home2_Hid .title{
+	height: 75px;
+	width: 100%;
+	text-align: center;
+	padding: 31px 0 109px 0;
+	position: absolute;
+	top: 0;
+}
+
+.home2 .home2_Hid .title .titleText_1{
+	height: 44px;
+	line-height: 44px;
+	font-size: 24px;
+	color: white;
+	/* position: relative; */
+}
+.home2 .home2_Hid .title .titleText_2{
+	height: 31px;
+	line-height: 31px;
+	font-size: 14px;
+	color: white;
+	/* position: relative; */
+}
+.home2 .img{
+	width: 100%;
+	height: 504px;
+	position: absolute;
+	bottom: 0;
+}
+.home2 .img .img1{
+	width: 396px;
+	height: 100%;
+}
+.home2 .img .content{
+	width: 342px;
+	height: 472px;
+	border-left: 1px solid #222327;
+	padding: 32px 29px 0 29px;
+	background: white;
+	position: relative;
+}
+.home2 .img .content .smallTitle{
+	height: 56px;
+	line-height: 56px;
+	font-size: 18px;
+	color: #333333;
+}
+.home2 .img .content .text{
+	height: 406px;
+	line-height: 26px;
+	font-size: 14px;
+	color: #666666;
+}
+.home2 .img .content button{
+	width: 106px;
+	height: 40px;
+	background: #2B2B2B;
+	font-size: 14px;
+	color: white;
+	border-radius: 3px;
+	cursor: pointer;
+	position: absolute;
+	bottom: 10px;
+	right: 32px;
+	border: 0;
+	outline: none;
+}
+.home2 .img .img2{
+	height: 100%;
+	widows: 400px;
+}
+
+/*  -----------------------------------------------------home3-------------------------------------------------------- */
+.home3{
+	height: 575px;
+	overflow: hidden;
+}
+.home3 .home3_Hid{
+	width: 100%;
+	height: 210px;
+	overflow: hidden;
+}
+.home3 .title{
+	width: 100%;
+	height: 76px;
+	padding: 67px 0;
+	text-align: center;
+	position: relative;
+	top: 0;
+}
+.home3 .content{
+	width: 1026px;
+	height: 361px;
+	padding: 2px 87px;
+	position: relative;
+}
+.home3 .content li{
+	width: 218px;
+	height: 100%;
+	padding: 0 62px;
+}
+.home3 .content li .back1{
+	height: 116px;
+	width: 100%;
+	background: url(../images/AD0Iu_ufBxAEGAAg-trLzwUomMaX2QIwdDh0.png) no-repeat center center;
+}
+.home3 .content li .back1 .back1-1{
+	width: 100%;
+	height: 100%;
+	background: url(../images/AD0Iu_ufBxAEGAAgkNvLzwUo3M78zwYwUDhQ.png) no-repeat center center;
+}
+.home3 .content li .back1 .back2-2{
+	width: 100%;
+	height: 100%;
+	background: url(../images/AD0Iu_ufBxAEGAAgktvLzwUogMfmuwMwUDhQ.png) no-repeat center center;
+}
+.home3 .content li .back1 .back3-3{
+	width: 100%;
+	height: 100%;
+	background: url(../images/AD0Iu_ufBxAEGAAglNvLzwUo18KJYDBQOFA.png) no-repeat center center;
+}
+.home3 .content li .text3{
+	height: 34px;
+	line-height: 34px;
+	margin-top: 33px;
+	text-align: center;
+}
+.home3 .content li .text4{
+	line-height: 32px;
+	text-align: center;
+}
+
+/* -------------------------------------------中部大图-------------------------------------------------------------- */
+.pageOne_center_img{
+	height: 450px;
+	width: 100%;
+	background: url(../images/AD0Iu_ufBxACGAAg-NrLzwUo6eX3rQIwgA84wgM.jpg) no-repeat center center;
+}
+.pageOne_center_img .container{
+	position: relative;
+	height: 100%;
+}
+.pageOne_center_img span{
+	height: 68px;
+	font-size: 24px;
+	color: white;
+	line-height: 68px;
+	padding-left: 57px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+/* ------------------------------------------------------lasthome----------------------------------------------------- */
+
+.lasthome{
+	height: 629px;
+	margin-top: 71px;
+}
+.lasthome .lasthome_Hid_1{
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+.lasthome .box1{
+	height: 200px;
+	width: 100%;
+	position: relative;
+}
+.lasthome .box1 img{
+	height: 100%;
+	width: 600px;
+}
+.lasthome .box1 .content{
+	display: inline-block;
+	width: 542px;
+	height: 100%;
+	margin-left: 58px;
+}
+.lasthome .box1 .content .span1{
+	height: 42px;
+	line-height: 42px;
+	font-size: 18px;
+	color: #333333;
+}
+.lasthome .box1 .content .span2{
+	height: 24px;
+	line-height: 24px;
+	font-size: 18px;
+	color: #999999;
+}
+.lasthome .box1 .content .span3{
+	font-size: 16px;
+	color: #333333;
+	line-height: 32px;
+}
+.lasthome .lasthome_Hid_2{
+	width: 100%;
+	height: 260px;
+	margin-top: 54px;
+	overflow: hidden;
+}
+.lasthome .box2{
+	width: 100%;
+	height: 260px;
+	position: relative;
+}
+.lasthome .box2 li{
+	width: 280px;
+	height: 280px;
+	margin-right: 25px;
+}
+.lasthome .box2 li.last{
+	margin: 0;
+}

@@ -1,0 +1,71 @@
+/* -----------------------------------------------pageThree_top_img--------------------------------------------- */
+
+.pageThree_top_img{
+	height: 300px;
+	width: 100%;
+	background: url(../images/ABUIABAEGAAgwtzg3gUo1vSQigcwgA84rAI.png) no-repeat center center;
+}
+
+/* ----------------------------------------------pageThree_pageThree_home1------------------------------------------------- */
+.pageThree_home1{
+	height: 800px;
+}
+.pageThree_home1 .home1_Hid{
+	/* js效果需要 */
+	height: 160px;
+	width: 100%;
+	overflow: hidden;
+}
+.pageThree_home1 .titlebox{
+	height: 88px;
+	text-align: center;
+	padding: 56px 0 16px 0;
+	position: relative;
+	top: 0;
+}
+.pageThree_home1 .titlebox .titleText_1{
+	height: 44px;
+	line-height: 44px;
+	font-size: 24px;
+	color: #333333;
+}
+.pageThree_home1 .titlebox .titleText_2{
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	color: #999999;
+}
+.pageThree_home1 .table{
+	height: 552px;
+	width: 1196px;
+	padding: 0 6px;
+}
+.pageThree_home1 .table .hidbox{
+	height: 271px;
+	overflow: hidden;
+}
+.pageThree_home1 .table .Tab1{
+	height: 271px;
+	position: relative;
+}
+.pageThree_home1 .table .Tab2{
+	height: 271px;
+	position: relative;
+}
+.pageThree_home1 .table li{
+	width: 200px;
+	height: 259px;
+	padding: 12px 48px 0 48px ;
+}
+.pageThree_home1 .table li img{
+	width: 200px;
+	height: 200px;
+}
+.pageThree_home1 .table li span{
+	height: 42px;
+	line-height: 42px;
+	width: 100%;
+	text-align: center;
+	font-size: 16px;
+	color: #333333;
+}
