@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="v-audio.css">
+</head>
+<body>
+    <!-- 音频播放模块 -->
+    <section class="audio-wrapper">
+        <!-- 音频文件 -->
+        <audio id="v_audio" preload="metadata" src="http://www.jq22.com/demo/Music-player201810110019/songs/jq22.mp3"></audio>
+        <div class="audio-box">
+            <!-- 歌曲图片 -->
+            <div class="animate">
+                <div class="circle">
+                    <img src="./images/1.jpg" width="140" alt="">
+                </div>
+            </div>
+            <!-- 歌曲信息 -->
+            <div class="content">
+                <!-- 歌名作者名 -->
+                <h1 class="tit">song-name</h1>
+                <p class="singer">singer</p>
+                <!-- 按钮 -->
+                <div class="radio-box">
+                    <div class="con-play">
+                        <a href="javascript:void(0)" class="radio-pre">
+                            <span class="fa fa-step-backward"></span>
+                        </a>
+                        <a href="javascript:void(0)" class="radio-play">
+                            <span class="fa fa-play play"></span>
+                            <span class="fa fa-pause pause active"></span>
+                        </a>
+                        <a href="javascript:void(0)" class="radio-next">
+                            <span class="fa fa-step-forward"></span>
+                        </a>
+                        <a href="javascript:void(0)" class="play-style">
+                            <span class="fa fa-refresh show" name="refresh"></span>
+                            <span class="fa fa-random" name="random"></span>
+                            <span class="fa fa-reorder" name="reorder"></span>
+                            <span class="fa fa-circle-o-notch" name="no-loop"></span>
+                        </a>
+                    </div>
+                    <div class="con-volume">
+                        <div class="icon">
+                            <a href="javascript:void(0)" class="con">
+                                <span class="fa fa-volume-up show" name="up"></span>
+                                <span class="fa fa-volume-down" name="down"></span>
+                                <span class="fa fa-volume-off" name="off"></span>
+                            </a>
+                        </div>
+                        <div class="slide-volume">
+                            <input type="range" min="0" max="100" value="100" name="" id="">
+                            <div class="slider"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 滑块 -->
+                <div class="progress-line">
+                    <input type="range" min="0" max="100" name="" id="" value="0">
+                    <div class="slider"></div>
+                </div>
+                <!-- 时间 -->
+                <div class="duration-box">
+                    <div class="audio-current">0:00</div>
+                    <div class="audio-duration">0:00</div>
+                </div>
+            </div>
+        </div>
+        <div class="mask"></div>
+    </section>
+
+    <script src="jquery/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function(){
+
+            // 初始化音频文件信息
+            let songList = [
+                {
+                    ID : 123434,
+                    songName: "未知歌名1" ,
+                    image: './images/1.jpg',
+                    singer: "未知歌手1",
+                    source: 'http://www.jq22.com/demo/Music-player201810110019/songs/jq22.mp3'
+                },
+                {
+                    ID : 235423,
+                    songName: "未知歌名2" ,
+                    image: './images/2.jpg',
+                    singer: "未知歌手2",
+                    source: 'http://www.jq22.com/demo/Music-player201810110019/songs/jq22.mp3'
+                },
+                {
+                    ID : 123434,
+                    songName: "未知歌名3" ,
+                    image: './images/3.jpg',
+                    singer: "未知歌手3",
+                    source: 'http://www.jq22.com/demo/Music-player201810110019/songs/jq22.mp3'
+                },
+                {
+                    ID : 4325235,
+                    songName: "未知歌名4" ,
+                    image: './images/4.jpg',
+                    singer: "未知歌手4",
+                    source: 'http://www.jq22.com/demo/Music-player201810110019/songs/jq22.mp3'
+                },
+                {
+                    ID : 134314,
+                    songName: "未知歌名5" ,
+                    image: './images/5.jpg',
+                    singer: "未知歌手5",
+                    source: 'http://www.jq22.com/demo/Music-player201810110019/songs/jq22.mp3'
+                },
+                {
+                    ID : 245256,
+                    songName: "未知歌名6" ,
+                    image: './images/6.jpg',
+                    singer: "未知歌手6",
+                    source: 'http://www.jq22.com/demo/Music-player201810110019/songs/jq22.mp3'
+                },
+                
+            ];
+                
+            // 响应式宽度和大小
+            // 初始化宽度
+            const audio = $(".audio-wrapper");
+            if(window.innerWidth <= 560){
+                audio.css({"transform-origin":"left center","transform":"scale("+ window.innerWidth/560 +")"});
+            }
+            // 宽度监听重设
+            window.onresize = function(){
+                if(window.innerWidth <= 560){
+                    audio.css({"transform-origin":"left center","transform":"scale("+ window.innerWidth/560 +")","min-width":"560px"});
+                }else{
+                    audio.css({"transform-origin":"none","transform": '',"max-width":"1170px","margin":"0 auto"});
+                }
+            }
+            
+            // 初始化音频显示相关变量
+            const audioBox = $(".audio-box");
+            const circlebox = audioBox.find(".circle");
+            const audioTag = $("#v_audio")[0]; // 音频标签
+            let audioDuration = audioTag.duration; // 音频总时长
+            // 获取播放按钮的操作的相关变量
+            const btnPlay = audioBox.find(".radio-play"); // 播放按钮
+            const btnPre = audioBox.find(".radio-pre"); // 播放上一首按钮
+            const btnNext = audioBox.find(".radio-next"); // 播放下一首按钮
+            const btnEndSetStyle = audioBox.find(".play-style"); // 播放结束设置
+            // 获取进度条相关变量
+            const progressLineBox = audioBox.find(".progress-line")[0]; // 进度条盒子
+            const range = audioBox.find('.progress-line input[type=range]')[0]; //隐藏的input标签
+            const slide = audioBox.find(".progress-line .slider"); // 进度条
+            let slideCon = true; // 进度条控制器
+            let index = 0; // 音乐列表下标
+            let slideWidth = 0; // 进度条的长度
+            let styleIndex = 0; // 播放风格下标
+            const toggleStyle = btnEndSetStyle.children(); // 风格切换的目标
+            let endStyle = toggleStyle[styleIndex].getAttribute("name"); // 播放结束后动作
+            const slideVolume = $('.slide-volume .slider'); // 音量控制条
+            // 获取音量相关变量
+            const conVolumeBox = $(".con-volume"); 
+            const btnVolume = conVolumeBox.find('.con'); 
+            let volumeIndex = 0; // 音量切换图标的下标
+            const volumeIcon = btnVolume.children(); // 所有音量切换图标
+            const volumeControl = conVolumeBox.find('input')[0]; // 音量控制条
+            const volumeSlide = conVolumeBox.find('.slider'); // 音量显示条
+            const volumeSlideBox =  conVolumeBox.find('.slide-volume')[0]; // 音量盒子
+            const slideMax = conVolumeBox.find('.slide-volume').width(); // 音量显示条极限
+            let errorTimes = 0;
+            // 播放页面的预设
+            // 初始设置音频文件信息
+            audioInfoLoading(index);            
+            // 在浏览器加载音频文件元数据时触发
+            audioTag.addEventListener("loadedmetadata",function(){
+                // 设置音频总时长文本
+                let TextDuration = audioSetTiemStyle(audioDuration);
+                // 
+                if(isNaN(audioDuration)){
+                    console.log('errorTimes:',errorTimes++);
+                    alert('报错,请刷新页面或点击播放操作按钮尝试下');
+                }
+                $(".audio-duration").text(TextDuration);
+                
+            })
+            // 音频文件加载期间发生错误的动作
+            audioTag.addEventListener('error',function(){
+                // 重设音频文件信息
+                audioInfoLoading(index);
+            });
+            
+            // 播放或暂停播放的功能
+            // 设置播放/暂停按钮的动作
+            btnPlay.click(function(){
+                btnPlay.find('.fa-pause').toggleClass('active').siblings().toggleClass("active");
+                let isboolean = btnPlay.find('.play').hasClass('active');
+                audioPlay(isboolean);
+            })
+
+            // 切换歌曲的功能
+            // 设置切换歌曲按钮的动作
+            btnNext.click(function(){
+                index++;
+                if(index>=songList.length){
+                    index = 0;
+                }
+                // 重新加载歌曲信息
+                audioInfoLoading(index);
+                // 播放页面动作复盘
+                pageReAction();
+            })
+            btnPre.click(function(){
+                index--;
+                if(index<0){
+                    index = songList.length-1;
+                }
+                audioInfoLoading(index);
+                pageReAction();
+            })
+            
+            // 切换播放风格的内容
+            btnEndSetStyle.click(function(){
+                styleIndex++;
+                if(styleIndex >= toggleStyle.length){
+                    styleIndex = 0;
+                }
+                $(toggleStyle[styleIndex]).addClass('show').siblings().removeClass('show');
+                endStyle = toggleStyle[styleIndex].getAttribute("name");
+            })
+            // input 按下放开控制slideCon的值
+            range.addEventListener("mousedown",function(){
+                slideCon = !slideCon;
+            })
+            range.addEventListener("mouseup",function(){
+                slideCon = !slideCon;
+            })
+            // input拖动时 改变slide的长度,并改变播放时长的文本
+            progressLineBox.addEventListener("mousemove", function(){
+                slideWidth = range.value/100*progressLineBox.offsetWidth;
+                slide.width(slideWidth +"px");
+                // 设置音频当前播放位置的显示格式
+                let position = Math.floor(range.value/100*audioDuration);
+                let TextCurrent = audioSetTiemStyle(position);
+                $(".audio-current").text(TextCurrent);
+            })
+            // input值改变时 改变slide的长度,并改变播放时长以及文本
+            range.addEventListener("change",function(){
+                slideWidth = range.value/100*progressLineBox.offsetWidth;
+                slide.width(slideWidth +"px");
+                // 设置音频当前播放位置的显示格式
+                let current = Math.floor(range.value/100*audioDuration);
+                let TextCurrent = audioSetTiemStyle(current);
+                $(".audio-current").text(TextCurrent);
+                audioTag.currentTime = current+0.5;
+            })
+            // 播放时，改变slide和value的值，并显示播放位置, 以及播放完毕时按照endStyle动作
+            audioTag.addEventListener("timeupdate",function(){
+                if(slideCon){
+                    let value = Math.floor(audioTag.currentTime/audioDuration*range.max);
+                    range.value = value;
+                    w = range.value/100*progressLineBox.offsetWidth;
+                    slide.width(w +"px");
+                    // 设置音频当前播放位置的显示格式
+                    let TextCurrent = audioSetTiemStyle(audioTag.currentTime);
+                    $(".audio-current").text(TextCurrent);
+
+                    // 当音频播放完毕时的动作
+                    if(audioTag.currentTime >= audioTag.duration){
+                        pageReAction();
+                        if(endStyle == 'refresh'){
+                            audioPlay(true);
+                        }else if(endStyle == 'random'){
+                            index = myRandom(0,toggleStyle.length-1);
+                            audioInfoLoading(index);
+                            audioPlay(true);
+                        }else if(endStyle == 'reorder'){
+                            index++;
+                            if(index>=songList.length){
+                                index=0;
+                            }
+                            audioInfoLoading(index); //
+                            audioPlay(true); // 这两个可以整合
+                        }
+                    }
+                }
+            })
+            
+            // 设置音量功能
+            // 设置切换音量大小功能
+            // 切换音量 
+            // 点击音量图标切换固定音量 
+            // 点击音量条指定音量大小/或使用键盘方向键调整音量大小 
+            // 拖动音量条调整具体音量
+            btnVolume.click(function(){
+                volumeIndex++;
+                if(volumeIndex >= volumeIcon.length){
+                    volumeIndex = 0;
+                }
+                // 切换图标
+                $(volumeIcon[volumeIndex]).addClass('show').siblings().removeClass('show');
+                // 根据图标调整音量大小
+                let iconName = $(volumeIcon[volumeIndex]).attr('name');
+                if(iconName == 'down'){
+                    volumeSlideControl(50);
+                }else if(iconName == 'off'){
+                    volumeSlideControl(0);
+                }else{
+                    volumeSlideControl(100);
+                }
+            })
+            volumeControl.addEventListener("change",function(){
+                volumeSlideControl(this.value);
+            })
+            volumeSlideBox.addEventListener('mousemove',function(){
+                volumeSlideControl(volumeControl.value);
+            })
+
+            // 设置音频播放时间的格式的函数
+            function audioSetTiemStyle(time){
+                let m = Math.floor(time/60) || 0; // 分钟
+                let s = Math.floor(time%60)+'' || 0 + ''; // 秒
+                if(s.length==1){
+                    s = "0" + s;
+                }
+                let str = m+":"+s;
+                return str;
+            }
+            // 加载音频信息的函数
+            function audioInfoLoading(index){
+                circlebox.html('<img src="'+songList[index].image+'" width="140" alt="">');
+                audioTag.src = songList[index].source;
+                audioBox.find('.tit').text(songList[index].songName);
+                audioBox.find('.singer').text(songList[index].singer);
+                audioBox.siblings('.mask').css({"background": "url("+songList[index].image + ") no-repeat bottom center",
+                "background-size":"cover"});
+            }
+            // 音频播放页面动作复盘函数
+            function pageReAction(){
+                audioTag.pause();
+                circlebox.css({'animation':''});
+                btnPlay.find('.fa-pause').addClass('active').siblings().removeClass("active");
+            }
+            // 音频播放/暂停函数
+            function audioPlay(isboolean){
+                if(isboolean){
+                    audioTag.play();
+                    circlebox.css({'animation':'animateRorate 5s linear infinite'});
+                }else{
+                    audioTag.pause();
+                    circlebox.css({'animation':'animateRorate 5s linear infinite paused'});
+                }
+            }
+            // 随机函数
+            function myRandom(minNum,maxNum){
+                return Math.round(Math.random()*(maxNum-minNum)+minNum);
+            }
+            // 设置音量大小的函数
+            function volumeSlideControl(num){
+                volumeControl.value = num;
+                volumeSlide.width(num/100*slideMax);
+                audioTag.volume = num/100;
+            } 
+            
+        })
+    </script>
+</body>
+</html>

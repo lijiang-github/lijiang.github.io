@@ -1,0 +1,216 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 90vh;
+    // vh 设置100 会有响应的bug 超出屏幕高度 另滚动条出现 又使得宽度超限？？？？
+    display: flex;
+    align-items: center;
+}
+a,
+a:hover,
+a:active{
+    color: #333;
+    text-decoration: none;
+}
+.audio-wrapper{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    height: 200px;
+    padding: 30px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    .slider{
+        box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    }
+    .mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        background: url('./images/1.jpg') no-repeat bottom center;
+        background-size: cover;
+        border-radius: 20px;
+        filter: blur(7px);
+    }
+    .audio-box{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        &::after{
+            content: '';
+            display: block;
+            height: 0;
+            line-height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .animate{
+            width: 140px;
+            height: 140px;
+            position: relative;
+            .circle{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                overflow: hidden;
+                position: relative;
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: radial-gradient(transparent 50%, rgb(56, 16, 21) 50%);
+                }
+            }
+        }
+        .content{
+            width: calc(100% - 140px);
+            height: 100%;
+            padding: 0 30px;
+            color: #fff;
+            text-shadow: 1px 1px 2px #333;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            .tit{
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                font-size: 30px;
+                // font-weight: lighter;
+                line-height: 1.2em;
+            }
+            .singer{
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                font-weight: lighter;
+                line-height: 2em;
+            }
+            .radio-box{
+                width: 100%;
+                font-size: 20px;
+                display: flex;
+                margin-bottom: 10px;
+                justify-content: space-between;
+                .con-play{
+                    display: flex;
+                    a{
+                        display: block;
+                        margin-right: 20px;
+                        color: #fff;
+                        &:active,&:hover{
+                            color: #333;
+                        }
+                        .active{
+                            display: none;
+                        }
+                        .fa-pause{
+                            font-size: 18px;
+                        }
+                        &.play-style{
+                            span{
+                                display: none;
+                                &.show{
+                                    display: inline;
+                                }
+                            }
+                        }
+                    }
+                }
+                .con-volume{
+                    display: flex;
+                    align-items: center;
+                    .icon{
+                        a.con{
+                            color: #fff;
+                            display: block;
+                            width: 20px;
+                            display: flex;
+                            margin-right: 5px;
+                            font-size: 24px;
+                            &:active,&:hover{
+                                color: #333;
+                            }
+                            span{
+                                display: none;
+                                &.show{
+                                    display: inline;
+                                }
+                            }
+                        }
+                    }
+                    .slide-volume{
+                        display: flex;
+                        height: 4px;
+                        background-color: #fff;
+                        box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+                        position: relative;
+                        border-radius: 2px;
+                        input{
+                            z-index: 1;
+                            opacity: 0;
+                        }
+                        .slider{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: inherit;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background-color: #333333;
+                        }
+                    }
+                }
+            }
+            .progress-line{
+                width: 100%;
+                height: 6px;
+                background-color: #fff;
+                border-radius: 3px;
+                box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+                position: relative;
+                input{
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    opacity: 0;
+                }
+                .slider{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    background-color: #333;
+                    border-radius: 3px;
+                }
+            }
+            .duration-box{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+@keyframes animateRorate {
+    to{
+        transform: rotate(360deg);
+    }
+}
