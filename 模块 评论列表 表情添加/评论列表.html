@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>评论小功能</title>
+		<link rel="stylesheet" type="text/css" href="css/basestyle.css"/>
+		<style type="text/css">
+			body{
+				background: #333333;
+			}
+			.pinglun-wraper{
+				width: 600px;
+			}
+			.pinglun{
+				width: 580px;
+				height: 190px;
+				margin: 20px 0;
+				border-radius: 5px;
+				background: white;
+				padding: 10px;
+			}
+			
+			.pinglun .show-span{
+				width: 100%;
+				height: 30px;
+				font-size: 12px;
+				color: #666666;
+			}
+			.pinglun .content{
+				width: 568px;
+				height: 100px;
+				border: 1px solid #999999;
+				padding: 5px;
+				font-size: 12px;
+				color: black;
+				line-height: 30px;
+				outline: none;
+			}
+			.pinglun .bottom{
+				margin: 10px 0 0;
+				width: 580px;
+				height: 40px;
+				padding: 4px 0;
+			}
+			.pinglun .img-box{
+				width: 22px;
+				height: 22px;
+				position: relative;
+			}
+			.pinglun .img-box img{
+				width: 100%;
+				height: 100%;
+			}
+			
+			.pinglun .img-box .face-hide{
+				width: 440px;
+				height: 66px;
+				padding: 5px;
+				box-shadow: 0 0 10px 2px #333333;
+				background: white;
+				position: absolute;
+				left: 50%;
+				top: 100%;
+				display: none;
+			}
+			.pinglun .img-box .face-hide ul{
+				width: 100%;
+				height: 100%;
+			}
+			.pinglun .img-box .face-hide ul li{
+				width: 22px;
+				height: 22px;
+				float: left;
+				cursor: pointer;
+			}
+			.pinglun .img-box .face-hide{}
+			
+			.pinglun .bottom .fr{
+				width: 100px;
+				height: 30px;
+				border-radius: 5px;
+				background: darkorange;
+				color: white;
+				line-height: 22px;
+				text-align: center;
+				font-size: 12px;
+				border: 0;
+				outline: none;
+				cursor: pointer;
+			}
+			
+			.pinglun-showList,.pinglun-showList2{
+				width: 580px;
+				background: white;
+				border-radius: 5px;
+				padding: 10px;
+				margin-bottom: 10px;
+				display: none;
+			}
+			.pinglun-showList .top{
+				width: 100%;
+				height: 50px;
+				border-bottom: 1px solid #999999;
+			}
+			.pinglun-showList .top .user-img{
+				width: 46px;
+				height: 46px;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+			.pinglun-showList .top .user-info{
+				width: 300px;
+				height: 100%;
+				overflow: hidden;
+				padding: 0 0 0 10px;
+			}
+				
+			.pinglun-showList .top .user-info .userName{
+				width: 100%;
+				height: 20px;
+				font-size: 16px;
+				color: blueviolet;
+			}
+			.pinglun-showList .top .user-info .submit-data{
+				width: 100%;
+				height: 20px;
+				font-size: 16px;
+				color: dodgerblue;
+			}
+			.pinglun-showList .top .delete{
+				height: 50px;
+				padding: 0 10px;
+				line-height: 50px;
+				text-align: center;
+				font-size: 14px;
+			}
+			.pinglun-showList .top .delete a{
+				color: red;
+			}
+			.pinglun-showList .list-content{
+				width: 100%;
+				text-indent: 10px;
+				font-size: 16px;
+				color: #999999;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pinglun-wraper container">
+			<div class="pinglun"><!-- 评论框 -->
+				<div class="show-span"><!-- 评论小标题 -->
+					<span>新鲜事分享</span>
+				</div>
+				<div class="content" contenteditable="true" id="content"></div><!-- 评论内容 -->
+				<div class="bottom clearfix"><!-- 评论框底部内容 -->
+					<div class="img-box fl" ><!-- 表情栏 -->
+						<img src="img/bba_thumb.gif" id="face_img"><!-- 隐藏表情栏的显示触发gif -->
+						<div class="face-hide" id="face_hide"><!-- 隐藏表情栏 -->
+							<ul class="clearfix">
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+								<li><img src="img/hsa_thumb.gif" ></li>
+							</ul>
+						</div>
+					</div>
+					<input type="submit" name="" id="submit" value="发表" class="fr"/><!-- 发表按钮 --> 
+				</div>
+			</div>
+			
+			<div class="pinglun-showList"><!-- 评论显示框模板1 隐藏 -->
+				<div class="top clearfix"><!-- 顶部内容 -->
+					<div class="user-img fl"><!-- 用户头像 -->
+						<img src="img/user-img.jpg" >
+					</div>
+					<div class="user-info fl"><!-- 用户名和评论发表时间 -->
+						<div class="userName">罗亦森</div>
+						<div class="submit-data">2019-8-30</div>
+					</div>
+					
+					<div class="delete fr"><!-- 删除评论按钮 -->
+						<a href="javaScript:;">删除</a>
+					</div>
+				</div>
+				<div class="list-content"><!-- 评论内容 -->
+					
+				</div>
+			</div>
+		</div>
+		
+		<script src="js-jq/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				// 表情栏的显示触发事件
+				$("#face_img").click(function(){
+					$("#face_hide").slideDown();
+					
+					// 表情栏的收起触发事件
+					$(document).click(function(event){
+						var event = event || window.event;
+						var leftL = $("#face_hide").offset().left;
+						var leftR = leftL + $("#face_hide").innerWidth();
+						var topT = $("#face_hide").offset().top;
+						var topB = topT +  $("#face_hide").innerHeight();
+						
+						// 当点击表情栏外的任意一点,收起表情栏
+						if(event.target.id != "face_img" ){
+							if(event.pageX < leftL || event.pageX > leftR || event.pageY < topT || event.pageY > topB){
+								$("#face_hide").slideUp();
+							}
+						}
+					})
+				})
+				// 点击添加表情触发事件
+				$("#face_hide li").click(function(){
+					$(this).find("img").clone().appendTo($("#content"));
+				})
+				
+				// 点击发表按钮触发事件
+				$("#submit").click(function(){
+					// 判定当前评论内容框是否存在内容
+					if($("#content").html()){
+						var div = $(".pinglun-showList").last().clone();
+						div.insertAfter(".pinglun").show().find(".list-content").html($("#content").html());//将当前评论发表到第一位去
+						$("#content").html("");//发表后清空当前评论框内容
+						
+						div.find(".delete a").click(function(){ //删除当前评论的触发事件
+							div.remove();
+						})
+					}
+				})
+			})
+		</script>
+	</body>
+</html>
