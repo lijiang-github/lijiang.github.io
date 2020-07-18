@@ -1,0 +1,191 @@
+@orange : #f4d03f;
+@part-bg-1: #666;
+@part-bg-2: #f5f5f5;
+.v-orange{
+    color: @orange;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+// header
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1;
+    .navbar{
+        margin-bottom: 0;
+    }
+    .navbar-default{
+        background-color: transparent;
+        border: 0;
+        .navbar-brand{
+            color: #fff;
+            height: 80px;
+            padding: 25px 15px;
+            font-size: 24px;
+            line-height: 30px;
+            &:hover,
+            &:active
+            {
+                color: #fff;
+            }
+        }
+        .navbar-nav>li>a{
+            color: #fff;
+            &:focus{
+                color: #fff;
+            }
+            &:hover,
+            &:active{
+                color: @orange;
+            }
+            &.active{
+                color: @orange;
+            }
+        }
+        .nav>li>a{
+            padding: 30px 5px;
+        }
+        .navbar-toggle{
+            border-color: #fff;
+            margin: 20px 15px;
+            padding: 12px 10px;
+            .icon-bar{
+                background-color: #fff;
+            }
+            &:hover{
+                .icon-bar{
+                    background-color: #333;
+                }
+            }
+            &:focus{
+                .icon-bar{
+                    background-color: #333;
+                }
+            }
+        }
+    }
+}
+
+// main
+main{
+    background: url('../images/part1-1.png') no-repeat center top;
+    background-size: contain;
+    
+    .part-1{
+        .wrap{
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 1px 1px #fff;
+            .tit{
+                font-size: 48px;
+                font-weight: bold;
+            }
+            p{
+                font-size: 20px;
+                color: #000;
+            }
+            a,
+            a:hover,
+            a:active{
+                color: @orange;
+                text-decoration: none;
+            }
+            .btn{
+                height: 90px;
+                margin-top: 150px;
+                a{
+                    display: inline-block;
+                    font-size: 90px;
+                    height: 90px;
+                    line-height: 90px;
+                    transform: translate3d();
+                    position: relative;
+                    transition: margin .4s linear;
+                    &:hover{
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+    }
+    // static page
+    .part-2{
+        padding: 30px;
+        background-color: @part-bg-1;
+        .tit-h2{
+            color: @part-bg-2;
+        }
+    }
+    // 响应式page responsive
+    // animate
+    // animate 3D
+    // Canvas
+    // demo
+    .part-3,
+    .part-4,
+    .part-5,
+    .part-6,
+    .part-7,
+    .part-8{
+        padding: 30px;
+        background-color: @part-bg-2;
+        .tit-h2{
+            color: @part-bg-1;
+        }
+    }
+    // 公用样式
+    .tit-h2{
+        color: @part-bg-2;
+        margin: 20px 0 15px;
+        position: relative;
+        text-align: center;
+        &::after{
+            content: '';
+            display: block;
+            height: 4px;
+            width: 80px;
+            background-color: @orange;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            margin-left: -40px;
+        }
+    }
+    .row{
+        margin: 50px 0 0;
+        a{
+            box-sizing: border-box;
+            margin-bottom:20px;
+            &:hover,
+            &:active{
+                text-decoration: none;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width:767px){
+    header{
+        .navbar-default{
+            .nav>li>a{
+                padding: 10px 10px;
+            }
+        }
+    }
+}
+@media (max-width:1286px){
+    main{
+        background-size: 1286px auto;
+    }
+}
